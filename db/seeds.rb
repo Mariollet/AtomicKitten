@@ -79,7 +79,6 @@ end
 ################# CART creation ##########################
 
 (1..15).each do |i|
-
   cart = Cart.new(
   user_id: i,
   )
@@ -125,4 +124,3 @@ end
 
   orderitems.save
   puts "order_item seed n°#{i}"
-end

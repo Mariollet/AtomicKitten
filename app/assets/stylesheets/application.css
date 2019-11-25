@@ -32,7 +32,7 @@
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;
    height: 500px;
-   color: whitesmoke;
+   color: #DABECA;
  }
 
  :root {
@@ -155,5 +155,11 @@
  }
 
  footer {
+  background-color: black;
   display: block;
+  color: #AD7E79;
+}
+
+body {
+  font-family: 'Didact Gothic', sans-serif;
 }

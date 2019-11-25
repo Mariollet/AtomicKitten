@@ -14,6 +14,20 @@
  *= require_self
  */
 
+ .sign {
+  margin-right: 5px;
+  background-color: #51344D;
+  color: whitesmoke;
+ }
+
+ .sign:hover {
+   color: whitesmoke;
+ }
+
+ .log {
+  background-color: #DABECA;
+ }
+
  .jumbotron {
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;

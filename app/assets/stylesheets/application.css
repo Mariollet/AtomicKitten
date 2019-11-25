@@ -46,13 +46,13 @@
  }
 
  .bg-image {
-   background-image: url('https://images.pexels.com/photos/1485968/pexels-photo-1485968.jpeg?cs=srgb&dl=adorable-animal-animal-photography-1485968.jpg&fm=jpg');
+   background-image: url('https://images.pexels.com/photos/3069334/pexels-photo-3069334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
    background-size: cover;
    background-position: center;
  }
 
  .bg-image2 {
-   background-image: url('https://images.pexels.com/photos/1765832/pexels-photo-1765832.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+   background-image: url('https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
    background-size: cover;
    background-position: center;
  }

@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-  validates :title, :description, :price, :image_url, 
+  validates :title, :price, :image_url, 
     presence: true
 end

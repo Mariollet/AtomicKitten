@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit]
 
   def show
-
+    
     @global_amount = @cart.items.inject(0) {|sum, price| sum+price }
 
   end
@@ -24,9 +24,13 @@ class CartsController < ApplicationController
   # end
 
   def set_cart
-    @cart = Cart.find_by(user_id: current_user.id)
+
+    unless Cart.exists?(user_id: current_user.id)
+      @cart = Cart.create(user_id: current_user.id)
+    else 
+      @cart = Cart.find_by(user_id: current_user.id)
+    end
+    
   end
-
-
 
 end

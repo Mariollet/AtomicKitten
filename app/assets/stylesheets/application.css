@@ -31,8 +31,9 @@
  .jumbotron {
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;
-   height: 500px;
+   height: 600px;
    color: #DABECA;
+   margin-top: -20px;
  }
 
  :root {

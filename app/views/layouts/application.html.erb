@@ -15,10 +15,10 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="jumbo.jpeg" width="112" height="28">
+    <a class="navbar-item" href="#">
+      <h1>ATOMIC KITTEN</h1>
+      <!-- <img src="logo.png" class="logo" alt="logo" width="112" height="28"> -->
     </a>
-
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -62,11 +62,9 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+          <strong><a class="button is-primary" <%= link_to "Sign up", new_user_registration_path %></strong>
           </a>
-          <a class="button is-light">
-            Log in
+          <a class="button is-light" <%= link_to "Log in", new_user_session_path %>
           </a>
         </div>
       </div>

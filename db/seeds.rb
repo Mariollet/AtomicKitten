@@ -124,3 +124,4 @@ end
 
   orderitems.save
   puts "order_item seed n°#{i}"
+end

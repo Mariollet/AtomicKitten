@@ -49,13 +49,17 @@ kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/co
 require 'faker'
 
 ################# User creation #######################
-(1..15).each do |i|
+(0..15).each do |i|
+  username = Faker::GreekPhilosophers.name
+  lastnameuser = Faker::Creature::Dog.name
+  
   user = User.new(
-    first_name:Faker::GreekPhilosophers.name, 
-    last_name:Faker::Creature::Dog.name, 
-    email:"#{first_name}.#{last_name}@myopmail.com", 
-    password:Faker::Creature::Cat.name,
+    first_name: username, 
+    last_name: lastnameuser, 
+    email:"#{username}.#{lastnameuser}@yopmail.com", 
+    password:"AZERTY93",
   )
+
   user.save
   puts "user seed n°#{i}" 
 end
@@ -64,9 +68,9 @@ end
 (0..15).each do |i|
   item = Item.new(
   title: Faker::Book.title,
-  description:Faker::GreekPhilosophers.quote,
-  price:rand(10..55),
-  image_url:(kitten_pictures_url[i]),
+  description: Faker::GreekPhilosophers.quote,
+  price: rand(10..55),
+  image_url: (kitten_pictures_url[i]),
   )
 
   item.save
@@ -74,31 +78,26 @@ end
 end
 
 ################# CART creation ##########################
-user_id_with_cart = []
 
-(0..15).each do |i|
+(1..15).each do |i|
+  
   cart = Cart.new(
   user_id: i,
   )
-  
-  user_id_with_cart << user_id
+
   cart.save
   puts "cart seed n°#{i}"
 end
 
-puts user_id_with_cart
-
 ################# Cart item ##########################
-cart_id_used = []
-item_in_cart = []
+
 
 (1..15).each do |i|
   cartitems = CartItem.new(
  cart_id: rand(0..14),
  item_id: rand(0..14),
 )
-  cart_id_used << cart_id
-  item_in_cart << item_id
+
 
  cartitems.save
  puts "Cart item seed n°#{i}"
@@ -110,7 +109,7 @@ end
 
 (1..15).each do |i|
   order = Order.new(
-  user_id: user_id_with_cart,
+  user_id: rand(1..15),
   )
 
   order.save
@@ -126,5 +125,5 @@ end
   )
 
   orderitems.save
-  puts " order_item seed n°#{i}"
+  puts "order_item seed n°#{i}"
 end

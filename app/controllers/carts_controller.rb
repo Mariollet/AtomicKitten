@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit]
 
   def show
-    
+
     @global_amount = @cart.items.inject(0) {|sum, price| sum+price }
 
   end

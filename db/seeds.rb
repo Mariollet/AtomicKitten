@@ -51,7 +51,6 @@ require 'faker'
 (0..15).each do |i|
   username = Faker::GreekPhilosophers.name
   lastnameuser = Faker::Creature::Dog.name
-
   user = User.new(
     first_name: username, 
     last_name: lastnameuser, 
@@ -79,7 +78,6 @@ end
 ################# CART creation ##########################
 
 (1..15).each do |i|
-
   cart = Cart.new(
   user_id: i,
   )

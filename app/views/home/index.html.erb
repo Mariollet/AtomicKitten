@@ -1,26 +1,9 @@
-<h1>Index</h1>
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
-
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
-
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
-  <% end %>
-</ul>
+<body>
+  <div class="jumbotron"style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.5) 100%), url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)"><br><br>
+    <h1 class="display-4">Atomic Kitten</h1>
+    <p class="lead">Vous-êtes en manque d'amour ?</p>
+    <hr class="my-4">
+    <p>Commander dès maintenant les photos de châton les plus mignonnes de votre région !</p><br>
+    <a class="btn btn-light btn-lg" href="#" role="button">Show Room</a>
+  </div>
+</body>

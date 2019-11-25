@@ -158,6 +158,9 @@
   background-color: black;
   display: block;
   color: #AD7E79;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 body {

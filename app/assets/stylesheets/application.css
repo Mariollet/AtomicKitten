@@ -31,7 +31,7 @@
  .jumbotron {
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;
-   height: 600px;
+   height: 800px;
    color: #DABECA;
    margin-top: -20px;
  }
@@ -156,7 +156,7 @@
  }
 
  footer {
-  background-color: white;
+  background-color: black;
   display: block;
   color: #AD7E79;
   position: absolute;

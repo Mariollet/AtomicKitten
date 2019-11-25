@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.decimal :price
-      t.string :image_url
+      t.string :image_url, default: "https://coactivehealthshop.co.uk/wp-content/uploads/test-product.png"
 
       t.timestamps
     end

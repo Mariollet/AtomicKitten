@@ -6,23 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('users') 
-
-Cart.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('carts')
-
-Item.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('items') 
-
-Order.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
-
 OrderItem.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('order_items')
-
 CartItem.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('cart_items') 
+Cart.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('carts')
+Item.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('items') 
+Order.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
+User.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('user') 
 
 
 kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg", 

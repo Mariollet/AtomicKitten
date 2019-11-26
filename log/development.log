@@ -23143,3 +23143,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (28.5ms)[0m  [1m[35mCREATE DATABASE "AtomicKitten_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "AtomicKitten_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9

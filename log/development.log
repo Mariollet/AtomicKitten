@@ -22882,3 +22882,81 @@ clitus.bruno@yopmail.com.=0D
   ↳ bin/rails:9
   [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "AtomicKitten_test" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (38.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-26 13:54:26 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 712ms (Views: 676.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 13:55:10 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 87ms (Views: 79.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 13:57:21 +0100
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 622ms (Views: 563.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 13:57:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___421092513274145973_70221608813400 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 148ms (Views: 117.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 13:57:30 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb__3357285978925138429_70221541094400 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/new.html.erb:14)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 87ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 13:57:32 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 0.7ms)
+
+

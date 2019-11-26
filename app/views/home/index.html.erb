@@ -20,19 +20,19 @@
     </div>
   </section>
 
-<div class="container">
-  
-  <div class="card-columns">
-  
-    <% @items.each do |item|%>
-        <a href="<%=item_path(item.id)%>" class="d-block mb-8">
-          <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
-        </a>
+  <div class="container">
+    
+    <div class="card-columns">
+    
+      <% @items.each do |item|%>
+          <a href="<%=item_path(item.id)%>" class="d-block mb-8">
+            <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+          </a>
 
-    <% end %>
+      <% end %>
+
+    </div>
 
   </div>
-
-</div>
 
 </body>

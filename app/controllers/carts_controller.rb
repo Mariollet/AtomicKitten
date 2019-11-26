@@ -4,7 +4,8 @@ class CartsController < ApplicationController
 
   def show
 
-    @global_amount = @cart.items.inject(0) {|sum, price| sum+price }
+    @global_amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
+    @items = @cart.items
 
   end
 

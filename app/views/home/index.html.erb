@@ -3,21 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <h1 class="ml11">
-            <span class="text-wrapper">
-              <span class="line line1"></span>
-              <span class="letters">Hello Goodbye</span>
-            </span>
-          </h1>
+          <h1 class="display-4">Atomic Kitten</h1>
           <p class="lead">Vous-êtes en manque d'amour ?</p>
           <hr class="my-4">
           <p>Commander dès maintenant les photos de châton les plus mignonnes de votre région !</p><br>
-          <a class="btn btn-light btn-lg" href="#" role="button">Show Room</a>
+          <a class="btn btn-light btn-lg" href="/showroom" role="button">Show Room</a>
         </div>
       </div>
     </div>
   </div>
-   <section class="hero is-small is-black text-center">
+   <section class="hero is-small is-light text-center">
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-4"> Gallerie :</h1>
@@ -25,21 +20,19 @@
     </div>
   </section>
 
-  <div class="container">
+<div class="container">
+  
+  <div class="card-columns">
+  
+    <% @items.each do |item|%>
+        <a href="<%=item_path(item.id)%>" class="d-block mb-8">
+          <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+        </a>
 
-    <div class="row text-center text-lg-left">
+    <% end %>
 
-      <% @items.each do |item|%>
-        <div class="col-lg-3 col-md-4 col-6">
-          <a href="<%=item_path(item.id)%>" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
-          </a>
-        </div>
-      <% end %>
-
-    </div>
-    
   </div>
 
+</div>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>

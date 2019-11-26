@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+  
   def index
-    @items = Item.all
+    @items = Item.first(7)
   end
+
 end
    

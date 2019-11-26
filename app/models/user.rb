@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  after_create :welcome_send
+  #after_create :welcome_send
 
   has_one :cart
   has_many :cart_items, through: :cart
@@ -13,5 +13,6 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
+  
        
 end

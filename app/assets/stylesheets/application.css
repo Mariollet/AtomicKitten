@@ -54,8 +54,15 @@
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;
    height: 800px;
-   color: #DABECA;
    margin-bottom: -5px;
+ }
+
+ .jumbotron1 {
+  background-size: cover;
+  height: 400px;
+  text-align: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
  }
 
  :root {

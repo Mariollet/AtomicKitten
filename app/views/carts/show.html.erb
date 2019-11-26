@@ -16,3 +16,6 @@
     <% end %>
 </ul>
 <p> global_amount = <%= @global_amount %> </p>
+
+<%= form_tag url_for(action: 'update'),method: "put" do %>
+    <%= submit_tag "Ajouter" %> 

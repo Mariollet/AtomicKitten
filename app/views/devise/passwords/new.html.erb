@@ -1,16 +1,33 @@
-<h2>Forgot your password?</h2>
+<div class="jumbotron1 jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 20%,rgba(255,255,255,0.4) 100%), url(https://images.pexels.com/photos/1440387/pexels-photo-1440387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+   <div class="overlay"></div>
+   <div class="container">
+     <h1 class="display-3 mb-1" style="color: #635255;">Un petit trou de mémoire?</h1>
+   </div>
+ </div>
 
+<br>
+<div class="container" style="margin: auto; width:40%; padding:10px;">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+<br>
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Ton adresse mail" <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <span class="icon is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fas fa-check"></i>
+    </span>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="actions">
+  <%= f.submit "Envoyer", class: "btn btn-sm btn-outline-dark btn-block" %>
+</div>
+<%end%>
+<hr class="my-3">
+<a class="btn btn-sm btn-outline-secondary btn-block" <%= link_to "S'inscrire", new_user_registration_path %></a>
+<a class="btn btn-sm btn-outline-secondary btn-block" <%= link_to "Se connecter", new_user_session_path %></a>
+</div>

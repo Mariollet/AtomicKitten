@@ -1,5 +1,5 @@
 <body>
-  <div class="jumbotron"style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.5) 100%), url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)"><br><br>
+  <div class="jumbotron"style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.5) 100%), url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)"><br><br>
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -7,12 +7,13 @@
           <p class="lead">Vous-êtes en manque d'amour ?</p>
           <hr class="my-4">
           <p>Commander dès maintenant les photos de châton les plus mignonnes de votre région !</p><br>
-          <a class="btn btn-secondary btn-lg"  href="#" role="button" style="color:#DABECA;">Showroom</a>
+          <a class="btn btn-secondary btn-lg"  href="items" role="button" style="color:#DABECA;">Showroom</a>
         </div>
       </div>
     </div>
   </div>
-   <section class="hero is-small is-light text-center">
+  
+  <section class="hero is-small is-light text-center">
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-4"> Gallerie :</h1>
@@ -20,19 +21,19 @@
     </div>
   </section>
 
-<div class="container">
-  
-  <div class="card-columns">
-  
-    <% @items.each do |item|%>
-        <a href="<%=item_path(item.id)%>" class="d-block mb-8">
-          <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
-        </a>
+  <div class="container">
+    
+    <div class="card-columns">
+    
+      <% @items.each do |item|%>
+          <a href="<%=item_path(item.id)%>" class="d-block mb-8">
+            <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+          </a>
 
-    <% end %>
+      <% end %>
+
+    </div>
 
   </div>
-
-</div>
 
 </body>

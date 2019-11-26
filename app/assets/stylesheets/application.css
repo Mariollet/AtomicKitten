@@ -50,20 +50,6 @@
    line-height: 1em;
  }
 
- .sign {
-  background-color: #51344D;
-  color: whitesmoke;
- }
-
- .sign:hover {
-   color: whitesmoke;
- }
-
- .log {
-  margin-right: 5px;
-  background-color: #DABECA;
- }
-
  .jumbotron {
    background-image: url(/assets/jumbo.jpeg);
    background-size: cover;
@@ -215,4 +201,8 @@ body {
 
 h1 {
   color: #DABECA;
+}
+
+body {
+  background-color: #E9E7E8;
 }

@@ -17,7 +17,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('items')
 Order.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
 User.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('user') 
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
 
 
 kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg", 
@@ -47,6 +47,14 @@ kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/co
 require 'faker'
 
 ################# User creation #######################
+user = User.new(
+  first_name: "username", 
+  last_name: "lastnameuser", 
+  email:"anthony.phim@gmail.com", 
+  password:"AZERTY93",
+)
+user.save
+
 (0..15).each do |i|
   username = Faker::GreekPhilosophers.name
   lastnameuser = Faker::Creature::Dog.name
@@ -75,13 +83,23 @@ end
   puts "item seed n°#{i}" 
 end
 
+################# Order creation ##########################
+
+
+(0..15).each do |i|
+  order = Order.new(
+    user_id: i,
+  )
+  order.save
+  puts "order seed n°#{i}"
+end
+
 ################# CART creation ##########################
 
 (1..15).each do |i|
   cart = Cart.new(
-  user_id: i,
+  user_id: rand(1..15),
   )
-
   cart.save
   puts "cart seed n°#{i}"
 end
@@ -99,18 +117,6 @@ end
  cartitems.save
  puts "Cart item seed n°#{i}"
 
-end
-
-################# Order creation ##########################
-
-
-(1..15).each do |i|
-  order = Order.new(
-  user_id: rand(1..15),
-  )
-
-  order.save
-  puts "order seed n°#{i}"
 end
 
 ################# Order items ##########################

@@ -20,13 +20,13 @@
       <a class="navbar-item" href="/">
         <strong><h1>ATOMIC KITTEN</h1></strong>
       <a class="navbar-item">
-        <h3> |</h3>
+        <h3> | </h3>
       </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a class="navbar-item" href="<%= items_path %>">
           Showroom
         </a>
 
@@ -36,10 +36,10 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="/">
+            <a class="navbar-item" href="/team">
               Qui sommes-nous?
             </a>
-            <a class="navbar-item" href="/">
+            <a class="navbar-item" href="/contact">
               Contactez-nous
             </a>
           </div>
@@ -50,27 +50,38 @@
         <div class="navbar-item">
           <div class="buttons">
             <a href="#">
-              <img class="navbar-brand" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
+              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
             </a>
           <% if user_signed_in? %>
 
-          <a class="btn log"href="<%= edit_user_registration_path %>"><%= current_user.email %></a>
-          <a class="btn sign" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+
+            <a class="navbar-link">
+              <img class="navbar-brand" height="40px" width="40px" href="" src="https://image.flaticon.com/icons/svg/145/145842.svg">
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="<%= edit_user_registration_path %>">Mon profil</a>
+              <a class="navbar-item" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
+            </div>
+
+          </div>
 
           <% else %>
 
           <div class="navbar-item has-dropdown is-hoverable">
+
             <a class="navbar-link">
-              <img class="navbar-brand" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
+              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item"<a class="navbar-item"<%= link_to "Se connecter", new_user_session_path %>
-              </a>
-              <a class="navbar-item"<%= link_to "S'inscrire", new_user_registration_path %>
-              </a>
+              <a class="navbar-item"<%= link_to "Se connecter", new_user_session_path %></a>
+              <a class="navbar-item"<%= link_to "S'inscrire", new_user_registration_path %></a>
             </div>
+
           </div>
+
           <% end %>
           </div>
         </div>
@@ -79,12 +90,42 @@
   </nav>
     <%= yield %>
   </body>
-
-  <footer class="py-2">
+<br><br>
+  <!-- Site footer -->
+  <footer class="site-footer">
     <div class="container">
-      <p class="text-center">© Atomic Kitten</p>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>A propos</h6>
+          <p class="text-justify">Pellentesque vestibulum lacinia dignissim. In ut libero vel nulla fermentum dignissim a vel quam. Proin faucibus condimentum nulla, at ornare metus placerat non. Aliquam sit amet ante vitae felis blandit luctus at non ante. Nunc blandit massa sed purus interdum vulputate. Praesent pulvinar mi ut nulla facilisis mattis.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>En plus</h6>
+          <ul class="footer-links">
+            <li><a href="/team">La team</a></li>
+            <li><a href="/contact">Contactez-nous</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+       <div class="row">
+         <div class="col-md-8 col-sm-6 col-xs-12">
+           <p class="copyright-text">Copyright &copy; Atomic Kitten</p>
+         </div>
+
+         <div class="col-md-4 col-sm-6 col-xs-12">
+           <ul class="social-icons">
+             <li><img class="github" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/25/25231.svg"></li>
+             <li><img class="linkedin" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/1384/1384014.svg"></li>
+             <li><img class="insta" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/1384/1384015.svg"></li>
+           </ul>
+         </div>
+       </div>
+     </div>
     </div>
-  </footer>
+</footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

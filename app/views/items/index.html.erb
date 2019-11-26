@@ -1,2 +1,32 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<br><br><br><br>
+
+  <section class="hero is-small is-light text-center">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-4"> Showroom :</h1>
+      </div>
+    </div>
+  </section><br>
+  
+<div class="container">
+    
+  <div class="card-columns">
+
+    <% @items.each do |item|%>
+      <div class="card h-60 shadow-lg">
+        <div class="card-body">
+          <h1 class="card-title"><em><strong><%= item.title %></strong></em></h1>
+          <a href="<%= item_path(item.id) %>" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+          </a>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Plus d'infos", item_path(item.id), :class => "btn btn-outline-secondary" %>
+        </div>
+
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

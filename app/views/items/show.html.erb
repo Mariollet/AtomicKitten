@@ -12,3 +12,6 @@
 <p><%= @item.description%></p>
 <p><%= @item.price%></p>
 
+<%= form_tag url_for(action: 'update',controller: 'carts'),method: "put" do %>
+<%= submit_tag "Ajouter" %> 
+<% end %>

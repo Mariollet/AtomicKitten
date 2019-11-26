@@ -30506,3 +30506,12 @@ Processing by HomeController#contact as HTML
 Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-11-26 18:14:22 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 31.2ms | ActiveRecord: 3.0ms)
+
+

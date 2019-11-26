@@ -12,13 +12,11 @@
         <div class="card-body">
           <p><%= @item.description%></p>
         </div><br>
-        <div class="card-footer">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Nom : <%= @item.title%></li>
-            <li class="list-group-item">Prix : <%= @item.price%>€</li>
-            <a href="#" class="btn btn-primary">Mettre au panier</a>
-          </ul>
-        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nom : <%= @item.title%></li>
+          <li class="list-group-item">Prix : <%= @item.price%>€</li>
+          <li class="list-group-item"><a href="" class="btn btn-outline-dark">Ajouter au panier<br><i class="fas fa-cart-arrow-down" style="height: 60px; width: 60px"></i></a></li>
+        </ul>
       </div>
     </div>
   </div>

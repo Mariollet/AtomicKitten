@@ -38,17 +38,10 @@
 
           <div class="navbar-dropdown">
             <a class="navbar-item">
-              About
+              Qui sommes-nous?
             </a>
             <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
+              Contactez-nous
             </a>
           </div>
         </div>
@@ -57,6 +50,9 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+            <a href="#">
+              <img class="navbar-brand" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
+            </a>
           <% if user_signed_in? %>
 
           <a class="btn log"href="<%= edit_user_registration_path %>"><%= current_user.email %></a>
@@ -64,14 +60,19 @@
 
           <% else %>
 
-            <strong><a class="btn log" style="font-family: 'Didact Gothic', sans-serif;" <%= link_to "Se connecter", new_user_session_path %>
-            </a></strong>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <img class="navbar-brand" height="30px" width="30px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
+            </a>
 
-            <strong><a class="btn sign" style="font-family: 'Didact Gothic', sans-serif;" <%= link_to "S'inscrire", new_user_registration_path %>
-            </a></strong>
-
+            <div class="navbar-dropdown">
+              <a class="navbar-item"<a class="navbar-item"<%= link_to "Se connecter", new_user_session_path %>
+              </a>
+              <a class="navbar-item"<%= link_to "S'inscrire", new_user_registration_path %>
+              </a>
+            </div>
+          </div>
           <% end %>
-
           </div>
         </div>
       </div>

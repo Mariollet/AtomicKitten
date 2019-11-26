@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get 'team', to: "home#team"
+  get 'contact', to: "home#contact"
   resources :items 
   resources :orders, only: [:index, :show, :create]
   resources :cart_items, only: [:create,:destroy]

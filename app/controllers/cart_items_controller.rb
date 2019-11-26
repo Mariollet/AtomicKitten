@@ -21,3 +21,13 @@ def create
 
 
 end
+
+def destroy
+  @cart = Cart.find_by(user_id: current_user.id) 
+  @cart_item = CartItem.find_by(cart_id: @cart.id)
+  @cart_item.destroy 
+    flash[:danger] = "L'item #{@cart_item.item.title} à bien été supprimmé"
+    redirect_to cart_path(@cart.id)
+end
+
+  

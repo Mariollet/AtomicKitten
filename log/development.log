@@ -30598,3 +30598,2004 @@ Processing by Devise::RegistrationsController#update as HTML
 Completed 200 OK in 183ms (Views: 32.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/users/edit" for ::1 at 2019-11-26 18:21:16 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:21:29 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 52ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:21:35 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.9ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:21:38 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:21:40 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (3.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 56ms (Views: 44.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:21:40 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:21:42 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:21:44 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:21:46 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/7" for ::1 at 2019-11-26 18:21:49 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:21:51 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:24:26 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:24:32 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:25:24 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:28:07 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:28:09 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:28:11 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 76ms (Views: 67.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:28:12 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 89ms (Views: 83.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:29:13 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:32:13 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 67ms (Views: 59.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:33:01 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:33:44 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (11.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 71ms (Views: 66.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:34:18 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:34:26 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZHykuZBhfWsjJ2xjbkI9JbAAts+oF/O3aN+mU+O/J3OC8J/XLcR1l6MBcCdMj5QELkx5bS3NSk0x55j50Xq2fg==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.9ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 221ms (Views: 65.5ms | ActiveRecord: 2.7ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:34:38 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQHtKHlyJMZl37cJXbA13btR7wgz8kO0ke4dljfsLsUrjdZGxNcsOuX5q01/fZz8JR0gqrYo+k7I1iM8BSm/yA==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 318ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2019-11-26 18:34:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-26 18:34:47 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-11-26 18:34:51 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kG9V9/cjtj887oMHHAVKW7+qCSHt4Ht/d2tP+vA7Lz92426ZSoa+w7zIn0M+yON6IebGg2g6woUuU3FQwv6+Mg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:34:51 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 94ms (Views: 91.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 18:34:52 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_47172065403060 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-11-26 18:34:54 +0100
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 60ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2019-11-26 18:35:00 +0100
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qKJ4bk6YFNUEoCsAqSigaVX0cR48qQfXuA0pAKMTpQNhIMArsV0GDizLQZErX04JJBfj3Epupze+OhdaUBYrmw==", "user"=>{"email"=>"amos8@hotmail.fr"}, "commit"=>"Envoyer"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "20cbe7f2118c3f834afd7c35aac12f64a4c5a37a3d115fbb8b3b23ff58f23735"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "20cbe7f2118c3f834afd7c35aac12f64a4c5a37a3d115fbb8b3b23ff58f23735"], ["reset_password_sent_at", "2019-11-26 17:35:00.165700"], ["updated_at", "2019-11-26 17:35:00.170457"], ["id", 17]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (49.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.7ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 322.2ms
+Sent mail to amos8@hotmail.fr (16.2ms)
+Date: Tue, 26 Nov 2019 18:35:00 +0100
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: amos8@hotmail.fr
+Message-ID: <5ddd62449c158_ae82ae71a6f7f5811367@amos-GP62MVR-7RFX.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello amos8@hotmail.fr!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=4CEJbPsJY5Zm2iKokDTi">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 623ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 18:35:00 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_70157256962820 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 18:35:13 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb___3419219211102642533_70157262155320 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/new.html.erb:14)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-11-26 18:35:36 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BGVVoLoGks7+AqsuUvvGZ/RJbkYZUIwrN53GTHNuPiKG2/Jbi3lHZyv8FQGZtW3hLT4QBrZchPRJLM7kVU2CFA==", "user"=>{"first_name"=>"Thib", "last_name"=>"Mario", "email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+Unpermitted parameters: :first_name, :last_name
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb___3419219211102642533_70157269457960 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/new.html.erb:14)
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb___3419219211102642533_70157269457960 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/new.html.erb:17)
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 236ms (Views: 76.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 18:35:39 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_70157272901480 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-26 18:35:44 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OqU8svg9/9p9qxIP0b3MO5rPQ6N30Lh8PtRAzrWEbawAzLTpdpN5bEEVXheklwRtero95eqoXc/mLii5GLjMRQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:35:44 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 73ms (Views: 64.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:35:49 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:36:34 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:37:22 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:37:30 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7xhgGaCaFi+33cACZwThy5il9MkSftO4C3EFgx4gZRgXEXKBqFGUp501vCjsXXQTUi1HKRQryQSZwT6fjvVzQg==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 211ms (Views: 65.3ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:37:40 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g6A/d61lBDLDWbRG4Rcsm8X2Q2IiAFIgUwqk8j1gY/F7qS3vpa6GuumxyGxqTrlDD37wgiRVSJzBup/urbV1qw==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 155ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:37:40 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 101ms (Views: 98.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:37:43 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:37:55 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCTj5eygb2mr/jvE+vlwv9NVOlRp6HtjdaztmMa63pluQZclsnCxW0EdKEP9AMG8iowjAZxLC6j+C8rdtxyk2w==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:37:55 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 53ms (Views: 43.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:37:59 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:38:19 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:38:28 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bu/6fZ1x/CYv4tPA+Z7Y6k5aod0YuAuN96l00VXf0FOW5ujllbp+rgUKr+pyx00yhNISPR7tETFlGU/NxQrGCQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 143ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:38:28 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:38:31 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:38:33 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 104ms (Views: 94.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:40:04 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `firstname' for #<User:0x00007f9d84842bb8>
+Did you mean?  first_name
+               first_name?
+               first_name=):
+    109: 
+    110:       <div class="form-group">
+    111:         <%= f.label :firstname %><br />
+    112:         <%= f.text_field :firstname %>
+    113:       </div>
+    114: 
+    115:       <div class="form-group">
+  
+app/views/devise/registrations/edit.html.erb:112:in `block in _app_views_devise_registrations_edit_html_erb__336373298407435772_70157255336760'
+app/views/devise/registrations/edit.html.erb:107:in `_app_views_devise_registrations_edit_html_erb__336373298407435772_70157255336760'
+Started GET "/users/edit" for ::1 at 2019-11-26 18:40:42 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `firstname' for #<User:0x00007f9d8684b8b0>
+Did you mean?  first_name
+               first_name?
+               first_name=):
+    109: 
+    110:       <div class="form-group">
+    111:         <%= f.label :first_name %><br />
+    112:         <%= f.text_field :firstname %>
+    113:       </div>
+    114: 
+    115:       <div class="form-group">
+  
+app/views/devise/registrations/edit.html.erb:112:in `block in _app_views_devise_registrations_edit_html_erb__336373298407435772_70157271713760'
+app/views/devise/registrations/edit.html.erb:107:in `_app_views_devise_registrations_edit_html_erb__336373298407435772_70157271713760'
+Started GET "/users/edit" for ::1 at 2019-11-26 18:40:55 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (60.9ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<User:0x00007f9d8746cbf8>):
+    147: 
+    148:       <div class="form-group">
+    149:         <%= f.label :description %><br />
+    150:         <%= f.text_area :description %>
+    151:       </div>
+    152: 
+    153: 
+  
+app/views/devise/registrations/edit.html.erb:150:in `block in _app_views_devise_registrations_edit_html_erb__336373298407435772_70157278048880'
+app/views/devise/registrations/edit.html.erb:107:in `_app_views_devise_registrations_edit_html_erb__336373298407435772_70157278048880'
+Started GET "/users/edit" for ::1 at 2019-11-26 18:41:08 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.1ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 121ms (Views: 115.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:41:56 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:42:15 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CfzSGr8ktVI6zEEdLED2iRgUWTFn6u4VJlGVO6pvuvvx9cCCt+832hAkPTenGWNR0pzq0WG/9Km04a4nOrqsoQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "reset_password_token" = $2, "reset_password_sent_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["encrypted_password", "$2a$11$5mBkMFDdsyaE8duxLd5x9.hr7cwJC2cdSI7J1e1VEJmbkhfw.UA4i"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["updated_at", "2019-11-26 17:42:15.506448"], ["id", 17]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:42:15 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:42:17 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 18:42:20 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jCQFgGu5ZUeO0Y9aSS3MGldptNv6f1eb5vHiTUIze9eyQXFANWm7dWQynN1O1H0ZDrCtjg/cJ1BtVsUIM5UBlQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (5.0ms)
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 251ms (Views: 102.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:43:43 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:43:47 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items/15" for ::1 at 2019-11-26 18:43:50 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:43:54 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items/12" for ::1 at 2019-11-26 18:43:55 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/12" for ::1 at 2019-11-26 18:44:04 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 18:44:06 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:44:19 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:44:45 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:46:22 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:46:39 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 71ms (Views: 63.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items" for ::1 at 2019-11-26 18:47:39 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:47:40 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:47:47 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 66ms (Views: 62.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:47:47 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:47:47 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:47:48 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 76ms (Views: 66.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-26 18:48:12 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 59ms (Views: 54.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:48:15 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:48:20 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:52:26 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:54:50 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 86ms (Views: 76.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:55:31 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:56:15 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 119ms (Views: 113.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 18:57:15 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 81ms (Views: 71.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:09:27 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 108ms (Views: 93.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:10:51 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 63ms (Views: 59.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:14:25 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 73ms (Views: 66.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:14:57 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 86ms (Views: 83.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:15:33 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 99ms (Views: 95.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:17:15 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 69ms (Views: 60.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:23:04 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 101ms (Views: 89.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:23:44 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 60ms (Views: 51.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:24:41 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:25:36 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 63ms (Views: 54.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:27:09 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:28:00 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 90ms (Views: 84.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:28:37 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 82ms (Views: 72.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:28:42 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:28:56 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:29:21 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 94ms (Views: 86.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:29:45 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 129ms (Views: 121.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:29:56 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 81ms (Views: 77.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:30:04 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:30:16 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:30:21 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 76ms (Views: 71.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:31:05 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.8ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 115ms (Views: 105.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 19:31:09 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OS2jXbZn6VGq35yXaU69ClzACN+kMqyMbOGhMA+yHVnBJLHFvqxr2YA34L3iFyjSlki7P6JntjD+UZosn2cLAw==", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"amos8@hotmail.fr", "current_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :first_name, :last_name
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 201ms (Views: 52.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2019-11-26 19:31:23 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-26 19:31:28 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:31:31 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:31:39 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 19:31:44 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVbc6uMrNaGBfiohBWsuVwCKz/L0E18l1TRkEyA4Q175X85y6+C3KauWVguOMruPygJ8EvJGRZlHhF8PsO1VBA==", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"amos8@hotmail.fr", "current_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :first_name, :last_name
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 191ms (Views: 49.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 19:31:50 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eQ9IpAF1o0/k1/hNe91OFs4r7S1HFjQG0SQdDZgwoUWBBlo8Cb4hx84/hGfwhNvOBKNezUFDLrpDlCYRCOW3Hw==", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"amos8@hotmail.fr", "current_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :first_name, :last_name
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 194ms (Views: 54.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 19:31:55 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZepIORJ5IzxVymMXNR6OovL6+Djq1E+KuDYuOvGA6DKd41qhGrKhtH8iHz2+Rxt6OHJL2OyBVTYqhhUmYVX+aA==", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"amos8@hotmail.fr", "current_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :first_name, :last_name
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 192ms (Views: 43.2ms | ActiveRecord: 2.7ms)
+
+
+Started PUT "/users" for ::1 at 2019-11-26 19:32:11 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vROe1BPSwdsscujZkig15NtA3CRCt3E5LK8/GBu5pd5FGoxMGxlDUwaalPMZcaA8EchvxETia4W+HwQEi2yzhA==", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"amos8@hotmail.fr", "current_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :first_name, :last_name
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 170ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-11-26 19:32:12 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2019-11-26 19:32:24 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-26 19:32:27 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:32:29 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 79ms (Views: 72.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:33:31 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 104ms (Views: 95.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:33:38 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:33:55 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/edit.html.erb:120: syntax error, unexpected ':', expecting ')'
+..._buffer.append=( f.label :Nom : );@output_buffer.safe_append...
+...                              ^
+/home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/edit.html.erb:155: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+              ^~~
+/home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/edit.html.erb:167: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/edit.html.erb:169: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/devise/registrations/edit.html.erb:120: syntax error, unexpected ':', expecting ')'
+app/views/devise/registrations/edit.html.erb:155: syntax error, unexpected keyword_end, expecting ')'
+app/views/devise/registrations/edit.html.erb:167: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/devise/registrations/edit.html.erb:169: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/edit" for ::1 at 2019-11-26 19:34:01 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 91ms (Views: 86.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:35:25 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 85ms (Views: 75.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:35:43 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:36:00 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:36:25 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 59ms (Views: 51.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:36:26 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (19.3ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 83ms (Views: 79.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:37:34 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 47ms (Views: 40.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users" for ::1 at 2019-11-26 19:37:38 +0100
+Processing by Devise::RegistrationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xvipYSbuk+tdaS/BjyGGQxWRElfkYEXm5D7jg8502FM+8bv5LiURY3eBU+sEeBOb3xmht+I1X1p2jtifXqHOCQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 29.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:37:38 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-26 19:37:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_70157272649820 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-26 19:37:48 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RF402uGGhDwU5XB3IMphxUkehiI+wv7VLf+w/9JPLwJkLMVD2QjDgruAJC4Pjr8mZwdZ0lqkqXi76XgyoWFbuQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 9ms (ActiveRecord: 4.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RF402uGGhDwU5XB3IMphxUkehiI+wv7VLf+w/9JPLwJkLMVD2QjDgruAJC4Pjr8mZwdZ0lqkqXi76XgyoWFbuQ==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_70157254212520 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 209ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-26 19:37:53 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZiA63RY8SDF8VKTyfR4lkbcoVGRf8iOzc5MoWrlJjhm2n7GORoWb2pfEH4jStdO3eL84bpC1j7yYhlbnT5Bqhw==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZiA63RY8SDF8VKTyfR4lkbcoVGRf8iOzc5MoWrlJjhm2n7GORoWb2pfEH4jStdO3eL84bpC1j7yYhlbnT5Bqhw==", "user"=>{"email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb___225054076911136516_70157259228700 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 160ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-26 19:37:55 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb___3419219211102642533_47172052283700 at /home/amos/Documents/THP/Semaine 9/AtomicKitten/app/views/devise/registrations/new.html.erb:14)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 86ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-11-26 19:38:42 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nh6Orpbn5QuZucuROULdLv2ERCSeLrlvqf5FBIVUWXoPq9STeZrFNiIJA6hpvTIh7FmNMOpnPXbaEq84tGQPIA==", "user"=>{"first_name"=>"Thib", "last_name"=>"Mario", "email"=>"amos8@hotmail.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+Unpermitted parameters: :first_name, :last_name
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "amos8@hotmail.fr"], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "amos8@hotmail.fr"], ["encrypted_password", "$2a$11$lO5cfEhgC0i8XhBHtn6Iqepa.bZ3pu4nouyIh9SwULIN57fq2Czxu"], ["created_at", "2019-11-26 18:38:42.200717"], ["updated_at", "2019-11-26 18:38:42.200717"]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (2.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 49.9ms
+Sent mail to amos8@hotmail.fr (2.2ms)
+Date: Tue, 26 Nov 2019 19:38:42 +0100
+From: no-reply@chaton-mignon.fr
+To: amos8@hotmail.fr
+Message-ID: <5ddd713258745_ae82ae71a6f66e411515@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddd713257eab_ae82ae71a6f66e411460";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddd713257eab_ae82ae71a6f66e411460
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgYW1vczhAaG90bWFpbC5mciBldCBiaWVudmVudWUgY2hleiBub3Vz
+ICENCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT0NCiANClR1IHQnZXMgaW5zY3JpdCBzdXIgbW9u
+c2l0ZS5mciBlbiB1dGlsaXNhbnQgbCdlLW1haWwgc3VpdmFudCA6IGFtb3M4
+QGhvdG1haWwuZnIuDQogDQpQb3VyIGFjY8OpZGVyIMOgIHRvbiBlc3BhY2Ug
+Y2xpZW50LCBjb25uZWN0ZS10b2kgdmlhIDogaHR0cDovL21vbnNpdGUuZnIv
+bG9naW4uDQogDQrDgCB0csOocyB2aXRlIHN1ciBtb25zaXRlLmZyICENCg==
+
+----==_mimepart_5ddd713257eab_ae82ae71a6f66e411460
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <h1>Salut amos8@hotmail.fr et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : amos=
+8@hotmail.fr.=0D
+    </p>=0D
+    <p>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : http=
+://monsite.fr/login.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur monsite.fr !=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddd713257eab_ae82ae71a6f66e411460--
+
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 341ms (ActiveRecord: 29.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:38:42 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:38:44 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 59ms (Views: 55.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:38:56 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 105ms (Views: 95.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:39:21 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 66ms (Views: 55.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:40:02 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 142ms (Views: 129.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:40:34 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 70ms (Views: 61.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:40:43 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:41:05 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:42:10 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_error_messages.html.erb (0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:42:31 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 69ms (Views: 66.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-26 19:42:32 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:42:44 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 60ms (Views: 49.0ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/items/3" for ::1 at 2019-11-26 19:42:45 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 68ms (Views: 63.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-26 19:42:48 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (8.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:55
+Completed 200 OK in 99ms (Views: 87.0ms | ActiveRecord: 8.3ms)
+
+

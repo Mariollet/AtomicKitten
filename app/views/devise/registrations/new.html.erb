@@ -11,8 +11,12 @@
                   <div style="font-family:'Source Code Pro', monospace">
                   <h1 class="h1 mb-3 font-weight-normal text-center">S'inscrire</h1><hr>
                   </div>
-                  <%= devise_error_messages! %>
-                  <div class="field">
+                  <% if devise_error_messages!.empty? %>
+                  <% else %>
+                    <div class="alert alert-danger" role="alert">
+                      <%= devise_error_messages! %>
+                    </div>
+                  <% end %>                  <div class="field">
                     <%= f.label :first_name, "Prénom" %><br />
                     <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
                   </div>

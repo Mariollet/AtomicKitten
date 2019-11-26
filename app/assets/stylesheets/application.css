@@ -33,7 +33,7 @@
    background-size: cover;
    height: 800px;
    color: #DABECA;
-   margin-top: -20px;
+   margin-bottom: -5px;
  }
 
  :root {
@@ -161,7 +161,7 @@
   color: #AD7E79;
   position: absolute;
   width: 100%;
-  bottom: 0;
+  flex-shrink: 0;
 }
 
 body {

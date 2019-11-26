@@ -6,23 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('users') 
-
-Cart.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('carts')
-
-Item.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('items') 
-
-Order.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
-
 OrderItem.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('order_items')
-
 CartItem.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('cart_items') 
+Cart.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('carts')
+Item.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('items') 
+Order.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
+User.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('user') 
 
 
 kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg", 
@@ -43,6 +38,10 @@ kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/co
 "https://images.pexels.com/photos/3250642/pexels-photo-3250642.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
 "https://cdn.radiofrance.fr/s3/cruiser-production/2018/06/38dd3787-27c5-4001-a0c8-c87add17328c/870x489_870x489_jeremy_b_williams-r-3e2a7262-modifier.jpg",
 "https://images.pexels.com/photos/1416792/pexels-photo-1416792.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+"https://jngnposwzs-flywheel.netdna-ssl.com/wp-content/uploads/2019/05/kitten-2249619_1920-1024x683.jpg",
+"https://cdn.pixabay.com/photo/2015/10/12/15/01/cat-984097__340.jpg",
+"https://cdn.pixabay.com/photo/2019/08/03/15/05/cat-4381938_960_720.jpg",
+"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg"
 ]
 
 require 'faker'
@@ -64,7 +63,7 @@ require 'faker'
 end
 ################# ITEM creation ##########################
 
-(0..15).each do |i|
+(0..20).each do |i|
   item = Item.new(
   title: Faker::Book.title,
   description: Faker::GreekPhilosophers.quote,

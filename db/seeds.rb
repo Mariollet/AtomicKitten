@@ -51,6 +51,7 @@ require 'faker'
 (0..15).each do |i|
   username = Faker::GreekPhilosophers.name
   lastnameuser = Faker::Creature::Dog.name
+
   user = User.new(
     first_name: username, 
     last_name: lastnameuser, 

@@ -16,15 +16,17 @@ class CartsController < ApplicationController
   end
 
   def update
-    @item = Item.find_by(params[:id])
+    @item = Item.find(params[:id])
+    @cart_id = @cart.id
     @additem = CartItem.new(item_id:@item.id, cart_id: @cart.id)
+    
     if @additem.save # essaie de sauvegarder en base @gossip
       flash[:notice] = "item sauvegardé"    
       redirect_to '/' # si ça marche, il redirige vers la page d'index du site
       
     else
       flash[:notice] = "echec"
-      redirect_to '/'  # sinon, il render la view new (qui est celle sur laquelle on est déjà)
+      redirect_to item_path(@item.id)   # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
   
  

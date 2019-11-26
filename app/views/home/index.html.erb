@@ -19,4 +19,21 @@
       </div>
     </div>
   </section>
+
+  <div class="container">
+
+    <div class="row text-center text-lg-left">
+
+      <% @items.each do |item|%>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="<%=item_path(item.id)%>" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+          </a>
+        </div>
+      <% end %>
+
+    </div>
+    
+  </div>
+
 </body>

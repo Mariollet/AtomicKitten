@@ -7,7 +7,7 @@
           <p class="lead">Vous-êtes en manque d'amour ?</p>
           <hr class="my-4">
           <p>Commander dès maintenant les photos de châton les plus mignonnes de votre région !</p><br>
-          <a class="btn btn-light btn-lg" href="/showroom" role="button">Show Room</a>
+          <a class="btn btn-secondary btn-lg"  href="#" role="button" style="color:#DABECA;">Showroom</a>
         </div>
       </div>
     </div>
@@ -31,6 +31,19 @@
 
     <% end %>
 
+<<<<<<< HEAD
+=======
+      <% @items.each do |item|%>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="<%=item_path(item.id)%>" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
+          </a>
+        </div>
+      <% end %>
+
+    </div>
+
+>>>>>>> c5e8ab515b94aa1db81d0c4115da4ff5ea3ec500
   </div>
 
 </div>

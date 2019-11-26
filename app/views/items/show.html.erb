@@ -1,25 +1,35 @@
-<br>
-<br>
-<br>
-<br>
+<div class="container">
+  <div class="card shadow-lg">
+    <div class="row">
+      <div class="col-8">
+        <img style="height: 100%; width: 100%; display: block;" src='<%= @item.image_url %>' alt="Card image">
+      </div>
+      <div class="col-4"><br>
+        <h1 class="title is-2"><%= @item.title%></h1>
+        <hr>
+        <div class="card-body">
+          <p><%= @item.description%></p>
+        </div><br>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nom : <%= @item.title%></li>
+          <li class="list-group-item">Prix : <%= @item.price%>€</li>
+          <li class="list-group-item"><%= form_for @item, url: :cart, html: { method: :put } do |f| %>
+            <div >
+              <%= f.hidden_field :'id' %>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn btn-outline-dark">
+              <img style="height: 60px; width: 60px" src='https://image.flaticon.com/icons/svg/126/126083.svg'> Ajouter au panier
+              
+              </button>
+            </div>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div><br><br>
 
 
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
-
-<img src=“<%= @item.image_url %>“>
-<h1><%= @item.title%></h1>
-<p><%= @item.description%></p>
-<p><%= @item.price%></p>
-
-
-<%= form_for @item, url: :cart, html: { method: :put } do |f| %>
  
 
-  <div >
-    <%= f.hidden_field :'id' %>
-  </div>
-    <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

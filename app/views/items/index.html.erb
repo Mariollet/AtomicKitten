@@ -1,21 +1,21 @@
-<br><br><br><br>
+<br><br>
 
   <section class="hero is-small is-light text-center">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title is-4"> Showroom :</h1>
+        <h1 style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"> Showroom :</h1>
       </div>
     </div>
   </section><br>
-  
+
 <div class="container">
-    
+
   <div class="card-columns">
 
     <% @items.each do |item|%>
       <div class="card h-60 shadow-lg">
         <div class="card-body">
-          <h1 class="card-title"><em><strong><%= item.title %></strong></em></h1>
+          <h1 class="card-title text-center" style="color:#635255; font-size:17px;font-family: 'Hammersmith One', sans-serif;"><em><strong><%= item.title %></strong></em></h1>
           <a href="<%= item_path(item.id) %>" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
           </a>

@@ -15,7 +15,7 @@
 
   <body>
 
-  <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <strong><h1>ATOMIC KITTEN</h1></strong>
@@ -26,20 +26,21 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="<%= items_path %>">
-          Showroom
-        </a>
+
+          <a class="navbar-item" href="<%= items_path %>">
+            Showroom
+          </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <a class="navbar-item">
             A propos
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="/team">
+            <a class="navbar-item drop" href="/team">
               Qui sommes-nous?
             </a>
-            <a class="navbar-item" href="/contact">
+            <a class="navbar-item drop" href="/contact">
               Contactez-nous
             </a>
           </div>
@@ -47,22 +48,35 @@
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a href="#">
-              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
-            </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="cart" href="<%= carts_path %>">
+            <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
+          </a>
+          <div class="navbar-dropdown is-right">
+            <% if user_signed_in? %>
+              <% current_user.items.each do |item| %>
+                <a class="navbar-item drop" href="<%= carts_path %>">
+                <strong><em><%= item.title %></em></strong>
+                </a>
+              <% end %>
+            <% else %>
+              <a class="navbar-item drop" href="" >Connecte-toi d'abord !</a>
+            <% end %>
+          </div>
+        </div>
+
           <% if user_signed_in? %>
 
           <div class="navbar-item has-dropdown is-hoverable">
 
-            <a class="navbar-link">
-              <img class="navbar-brand" height="40px" width="40px" href="" src="https://image.flaticon.com/icons/svg/145/145842.svg">
+            <a class="avatar">
+              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/145/145842.svg">
             </a>
 
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="<%= edit_user_registration_path %>">Mon profil</a>
-              <a class="navbar-item" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item drop" <%= link_to "Mon profil", edit_user_registration_path %></a>
+              <a class="navbar-item drop" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
             </div>
 
           </div>
@@ -71,13 +85,13 @@
 
           <div class="navbar-item has-dropdown is-hoverable">
 
-            <a class="navbar-link">
+            <a class="avatar">
               <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
             </a>
 
-            <div class="navbar-dropdown">
-              <a class="navbar-item"<%= link_to "Se connecter", new_user_session_path %></a>
-              <a class="navbar-item"<%= link_to "S'inscrire", new_user_registration_path %></a>
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item drop"<%= link_to "Se connecter", new_user_session_path %></a>
+              <a class="navbar-item drop"<%= link_to "S'inscrire", new_user_registration_path %></a>
             </div>
 
           </div>

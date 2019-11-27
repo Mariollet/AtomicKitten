@@ -1,13 +1,8 @@
 class CartsController < ApplicationController
-  # before_action :authenticate_user!
-  before_action :set_cart, only: [:show, :edit, :update]
+  before_action :authenticate_user!
+  before_action :set_cart, only: [:index, :edit, :update]
 
   def index
-
-  end
-    
-
-  def show
     @global_amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
     @items = @cart.items
   end

@@ -55,6 +55,7 @@
    background-size: cover;
    height: 800px;
    margin-bottom: -5px;
+   color: whitesmoke;
  }
 
  .jumbotron1 {
@@ -357,9 +358,22 @@ body {
   background-color: #E9E7E8;
 }
 
+.navbar {
+  height: 65px;
+  background-color: #33353d;
+  color: whitesmoke;
+}
+
 .navbar-link {
-  background-color: #0A0A0A;
-  color: white;
+  color: black;
+}
+
+.navbar-item {
+  color: whitesmoke;
+}
+
+.drop {
+ color: black;
 }
 
 h1 {
@@ -401,4 +415,5 @@ margin-right: 15px;
 
 .avatar {
   margin-right: 10px;
-  }
+}
+

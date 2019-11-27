@@ -17,7 +17,7 @@
 
   <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/" style="text-decoration:none">
         <strong><h1>ATOMIC KITTEN</h1></strong>
       <a class="navbar-item">
         <h3> | </h3>
@@ -27,7 +27,7 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
 
-          <a class="navbar-item" href="<%= items_path %>">
+          <a class="navbar-item" href="<%= items_path %>" >
             Showroom
           </a>
 
@@ -55,10 +55,17 @@
           </a>
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>
-              <% current_user.items.each do |item| %>
-                <a class="navbar-item drop" href="<%= carts_path %>">
-                <strong><em><%= item.title %></em></strong>
-                </a>
+              <% if current_user.items.length < 1 %>
+                <a class="navbar-item drop" href="" >Aucun article</a>
+              <% else %>
+                <% current_user.items.each do |item| %>
+                  <a class="navbar-item drop" href="<%= carts_path %>">
+                  <em><%= item.title %></em></a>
+                  <hr class="dropdown-divider">
+                <% end %>
+               <a class="navbar-item drop title is-6" href="<%= carts_path %>" >Voir le panier : 
+               <img class="navbar-brand shop" height="35px" width="35px" src="https://image.flaticon.com/icons/svg/897/897295.svg">
+               </a>
               <% end %>
             <% else %>
               <a class="navbar-item drop" href="" >Connecte-toi d'abord !</a>

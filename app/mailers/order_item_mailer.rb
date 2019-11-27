@@ -8,17 +8,15 @@ class OrderItemMailer < ApplicationMailer
     @lastname = User.find(@user_id).last_name
     @email = User.find(@user_id).email
     #url de l'item
-    puts orderitem
     @picture_id = orderitem.item_id
     @item_url = Item.find(@picture_id).image_url
-    
-    puts @item_url
+    @item_price = Item.find(@picture_id).price
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'www.chaton-mignon.fr' 
 
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: "unknown", subject: 'Merci pour votre achat !') 
+    mail(to: @email, subject: 'Merci pour votre commande !') 
   end
 
 end

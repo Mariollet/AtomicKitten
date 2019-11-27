@@ -5,6 +5,7 @@ class CartsController < ApplicationController
   def index
     @global_amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
     @items = @cart.items
+    @cart_id = @cart.id
   end
 
   def edit
@@ -44,6 +45,9 @@ class CartsController < ApplicationController
       @cart = Cart.find_by(user_id: current_user.id)
     end
     
+  end
+
+  def destroy
   end
 
 end

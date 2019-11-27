@@ -68,3 +68,4 @@ gem 'font-awesome-rails'
 gem 'letter_opener'
 gem 'dotenv'
 gem 'administrate'
+gem "aws-sdk-s3", require: false

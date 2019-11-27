@@ -7,15 +7,15 @@
         <img style="height: 100%; width: 100%; display: block;" src='<%= @item.image_url %>' alt="Card image">
       </div>
       <div class="col-4"><br>
-        <h1 class="title is-2"><%= @item.title%></h1>
+        <h1 class=" text-center" style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"><%= @item.title%></h1>
         <hr>
         <div class="card-body">
           <p><%= @item.description%></p>
         </div><br>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Nom : <%= @item.title%></li>
-          <li class="list-group-item">Prix : <%= @item.price%>€</li>
-          <li class="list-group-item"><a href="#" class="btn btn-outline-dark">Ajouter au panier<img style="height: 60px; width: 60px" src='https://image.flaticon.com/icons/svg/126/126083.svg'></a></li>
+          <li class="list-group-item"><h1 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom :</h1> <%= @item.title%></li>
+          <li class="list-group-item"><h1 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prix :</h1> <%= @item.price%>€</li>
+          <li class="list-group-item text-center"><a href="#" class="btn btn-outline-dark"><img style="height: 30px; width: 30px" src='https://image.flaticon.com/icons/svg/982/982528.svg'> Ajouter au panier</a></li>
         </ul>
       </div>
     </div>

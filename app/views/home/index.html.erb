@@ -12,19 +12,19 @@
       </div>
     </div>
   </div>
-  
+
   <section class="hero is-small is-light text-center">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title is-4"> Gallerie :</h1>
+        <h1 style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"> Gallerie :</h1>
       </div>
     </div>
   </section>
 
   <div class="container">
-    
+
     <div class="card-columns">
-    
+
       <% @items.each do |item|%>
           <a href="<%=item_path(item.id)%>" class="d-block mb-8">
             <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">

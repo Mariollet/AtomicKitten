@@ -387,7 +387,6 @@ h1 {
 
 .card-signin .card-img-left {
   width: 45%;
-  /* Link to your background image using in the property below! */
   background: scroll center url('https://images.pexels.com/photos/2614/night-animal-pet-eyes.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   background-size: cover;
 }

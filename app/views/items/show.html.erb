@@ -1,4 +1,3 @@
-<br><br><br><br><br><br>
 
 <div class="container">
   <div class="card shadow-lg">
@@ -13,9 +12,18 @@
           <p><%= @item.description%></p>
         </div><br>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><h1 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom :</h1> <%= @item.title%></li>
-          <li class="list-group-item"><h1 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prix :</h1> <%= @item.price%>€</li>
-          <li class="list-group-item text-center"><a href="#" class="btn btn-outline-dark"><img style="height: 30px; width: 30px" src='https://image.flaticon.com/icons/svg/982/982528.svg'> Ajouter au panier</a></li>
+          <li class="list-group-item">Nom : <%= @item.title%></li>
+          <li class="list-group-item">Prix : <%= @item.price%>€</li>
+          <li class="list-group-item"><%= form_for @item, url: :cart, html: { method: :put } do |f| %>
+            <div >
+              <%= f.hidden_field :'id' %>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn btn-outline-dark">
+              <img style="height: 60px; width: 60px" src='https://image.flaticon.com/icons/svg/126/126083.svg'> Ajouter au panier
+              </button>
+            </div>
+            <% end %>
         </ul>
       </div>
     </div>

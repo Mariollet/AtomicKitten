@@ -83,6 +83,32 @@ end
   puts "item seed n°#{i}" 
 end
 
+################# CART creation ##########################
+
+(0..15).each do |i|
+  cart = Cart.new(
+  user_id: i,
+  )
+  cart.save
+  puts "cart seed n°#{i}"
+end
+
+
+################# Cart item ##########################
+
+
+(0..15).each do |i|
+  cartitems = CartItem.new(
+ cart_id: i,
+ item_id: i,
+)
+
+
+ cartitems.save
+ puts "Cart item seed n°#{i}"
+
+end
+
 ################# Order creation ##########################
 
 
@@ -94,39 +120,21 @@ end
   puts "order seed n°#{i}"
 end
 
-################# CART creation ##########################
-
-(1..15).each do |i|
-  cart = Cart.new(
-  user_id: rand(1..15),
-  )
-  cart.save
-  puts "cart seed n°#{i}"
-end
-
-################# Cart item ##########################
-
-
-(1..15).each do |i|
-  cartitems = CartItem.new(
- cart_id: rand(0..14),
- item_id: rand(0..14),
-)
-
-
- cartitems.save
- puts "Cart item seed n°#{i}"
-
-end
-
 ################# Order items ##########################
 
-(1..15).each do |i|
-   orderitems= OrderItem.new(
-  order_id: rand(1..15),
-  item_id: rand(1..15) ,
-  )
+(0..15).each do |i|
+  orderitems = OrderItem.new(
+ order_id: i,
+ item_id: i ,
+ )
 
-  orderitems.save
-  puts "order_item seed n°#{i}"
+ orderitems.save
+
+ puts "order_item seed n°#{i}"
 end
+orderitems = OrderItem.new(
+  order_id: 3,
+  item_id: 5 ,
+  )
+  orderitems.save
+

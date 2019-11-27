@@ -1,4 +1,4 @@
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -6,8 +6,16 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="jumbotron3 jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" style="color:#51344D;">Mon panier</h1>
+  </div>
+</div>
+<br><br>
+
 <div class="container">
-	<table id="cart" class="table table-hover table-condensed"  style="background-color:#626364; border-radiux:9px;">
+	<table id="cart" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
     				<thead>
 						<tr>
 							<th style="width:50%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Produits</th>
@@ -35,6 +43,7 @@
 							</td>
 							<td data-th="Subtotal" class="text-center"><%= item.price %></td>
 							<td class="actions" data-th="">
+                <% item.id %>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 							</td>
 						</tr>
@@ -42,7 +51,7 @@
           <%end%>
 					<tfoot>
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td><a href="/items" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuer à shopper</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong><%= @global_amount %></strong></td>
 								

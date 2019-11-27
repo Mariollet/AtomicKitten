@@ -4,13 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @user.email %> et bienvenue chez nous !</h1>
+   <center>
+    <h1>Salut <%= @user.first_name %> et bienvenue chez nous !</h1>
     <p>
-      Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+      Tu t'es inscrit sur <%= @url %> en utilisant l'e-mail suivant : <%= @user.email %>.
     </p>
+    <h3>
+    <br>
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !
+    </h3>
     <p>
+    <br>
       Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
     </p>
-    <p> À très vite sur monsite.fr !
+    <p> À très vite sur <%= @url %> !</p>
+
+    <p> Miaousement votre. </p>
+     </center>
   </body>
 </html>

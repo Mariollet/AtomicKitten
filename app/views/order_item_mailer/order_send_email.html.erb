@@ -4,17 +4,21 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%=  %> et merci pour ton achat !</h1>
+    <h1>Salut <%=@firstname%> et merci pour ton achat !</h1>
     <p>
-      Tu as passé une commande chez <%= %> en utilisant l'e-mail suivant : <%= %>.
+      Tu as passé une commande chez <%= @url %> en utilisant l'e-mail suivant : <%= @email %>.
     </p>
     <p>
     Voici la photo que tu as acheté : 
-    <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:50%; height: auto">
+    <br>
+    <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:40%; height: auto">
+    <br>
     </p>
     <%= %> 
     <p>
-      Pour accéder à ton espace client et commander de nouvelles photos, connecte-toi via : <%= %>/login.
+      Mignon n'est-ce pas ?
+      <br>
+      Pour accéder à ton espace client et commander de nouvelles photos, connecte-toi via : <%=@url%>/login.
     </p>
     <p> À très vite sur Chaton-mignon.fr !
   </body>

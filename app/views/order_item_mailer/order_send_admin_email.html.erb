@@ -8,11 +8,19 @@
     <p>
       Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@user.email%>.
       <br>
-      le numéro de commande est : <%=@order_id%>
-    </p>
     <p>
       Le client s'appelle <%=@user.first_name%> <%=@user.last_name%>.
     </p>
+    <br>
+      le numéro de commande est : <%=@order_id%>.
+      <br>
+      Il a acheté la photo n° <%=@picture_id%>.
+      <br>
+       <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:25%; height: auto">
+       <br>
+      au prix de : <%=@item_price%> €.
+    </p>
+
     <p> Bonne journée chef !
   </body>
 </html>

@@ -15,7 +15,7 @@
     <% @items.each do |item|%>
       <div class="card h-60 shadow-lg">
         <div class="card-body">
-          <h1 class="card-title"><em><strong><%= item.title %></strong></em></h1>
+          <h1 class="card-title text-center" style="color:#635255; font-size:17px;font-family: 'Hammersmith One', sans-serif;"><em><strong><%= item.title %></strong></em></h1>
           <a href="<%= item_path(item.id) %>" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src='<%= item.image_url %>' alt="">
           </a>

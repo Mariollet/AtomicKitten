@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut Administrateur une nouvelle commande a été passé</h1>
+    <p>
+      Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@user.email%>.
+      <br>
+    <p>
+      Le client s'appelle <%=@user.first_name%> <%=@user.last_name%>.
+    </p>
+    <br>
+      le numéro de commande est : <%=@order_id%>.
+      <br>
+      Il a acheté la photo n° <%=@picture_id%>.
+      <br>
+       <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:25%; height: auto">
+       <br>
+      au prix de : <%=@item_price%> €.
+    </p>
+
+    <p> Bonne journée chef !
+  </body>
+</html>
+<!--Il faut envoyer un email à l'administrateur du site (email décidé arbitrairement en attendant la classe "admin"), qui fait un récapitulatif de la commande qui vient d'être faite.-->

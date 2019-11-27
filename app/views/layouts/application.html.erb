@@ -55,7 +55,11 @@
           </a>
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>
-              <a class="navbar-item drop" href="" ><%= current_user.cart.items %></a>
+              <% current_user.items.each do |item| %>
+                <a class="navbar-item drop" href="<%= carts_path %>">
+                <strong><em><%= item.title %></em></strong>
+                </a>
+              <% end %>
             <% else %>
               <a class="navbar-item drop" href="" >Connecte-toi d'abord !</a>
             <% end %>

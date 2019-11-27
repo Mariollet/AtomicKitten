@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%=  %> et merci pour ton achat !</h1>
+    <p>
+      Tu as passé une commande chez <%= %> en utilisant l'e-mail suivant : <%= %>.
+    </p>
+    <p>
+    Voici la photo que tu as acheté : 
+    <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:50%; height: auto">
+    </p>
+    <%= %> 
+    <p>
+      Pour accéder à ton espace client et commander de nouvelles photos, connecte-toi via : <%= %>/login.
+    </p>
+    <p> À très vite sur Chaton-mignon.fr !
+  </body>
+</html>
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un email avec la photo de chaton, et un wording pour lui dire merci toussa. -->

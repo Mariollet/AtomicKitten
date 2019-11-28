@@ -66,3 +66,5 @@ gem 'font-awesome-rails'
 gem 'letter_opener'
 gem 'dotenv'
 gem 'administrate'
+gem 'administrate-field-active_storage', '~> 0.1.8'
+gem "aws-sdk-s3", require: false

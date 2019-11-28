@@ -3,7 +3,12 @@
   <div class="card shadow-lg">
     <div class="row">
       <div class="col-8">
+
+        <% if @item.image.attached?%>
+            <%= image_tag @item.image, alt: 'Card image', style: "height: 100%; width: 100%; display: block;" %>
+        <% else %>
         <img style="height: 100%; width: 100%; display: block;" src='<%= @item.image_url %>' alt="Card image">
+        <% end %>
       </div>
       <div class="col-4"><br>
         <h1 class=" text-center" style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"><%= @item.title%></h1>

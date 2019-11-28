@@ -17,7 +17,7 @@
 
   <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/" style="text-decoration:none">
         <strong><h1>ATOMIC KITTEN</h1></strong>
       <a class="navbar-item">
         <h3> | </h3>
@@ -27,7 +27,7 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
 
-          <a class="navbar-item" href="<%= items_path %>">
+          <a class="navbar-item" href="<%= items_path %>" >
             Showroom
           </a>
 
@@ -55,13 +55,20 @@
           </a>
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>
-              <% current_user.items.each do |item| %>
-                <a class="navbar-item drop" href="<%= carts_path %>">
-                <strong><em><%= item.title %></em></strong>
-                </a>
+              <% if current_user.items.length < 1 %>
+                <a class="navbar-item drop" href="" >Aucun article</a>
+              <% else %>
+                <% current_user.items.each do |item| %>
+                  <a class="navbar-item drop" href="<%= carts_path %>">
+                  <em><%= item.title %></em></a>
+                  <hr class="dropdown-divider">
+                <% end %>
+               <a class="navbar-item drop title is-6" href="<%= carts_path %>" >Voir le panier : 
+               <img class="navbar-brand shop" height="35px" width="35px" src="https://image.flaticon.com/icons/svg/897/897295.svg">
+               </a>
               <% end %>
             <% else %>
-              <a class="navbar-item drop" href="" >Connecte-toi d'abord !</a>
+              <a class="navbar-item drop" <%= link_to "Connecte-toi d'abord !", edit_user_registration_path %></a>
             <% end %>
           </div>
         </div>
@@ -99,8 +106,6 @@
           <% end %>
           </div>
         </div>
-      </div>
-    </div>
   </nav>
     <%= yield %>
   </body>
@@ -111,7 +116,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>A propos</h6>
-          <p class="text-justify">Pellentesque vestibulum lacinia dignissim. In ut libero vel nulla fermentum dignissim a vel quam. Proin faucibus condimentum nulla, at ornare metus placerat non. Aliquam sit amet ante vitae felis blandit luctus at non ante. Nunc blandit massa sed purus interdum vulputate. Praesent pulvinar mi ut nulla facilisis mattis.</p>
+          <p class="text-justify">Vous êtes en manque d'amour? Commandez dès maintenant les photos de châton les plus mignonnes de votre région !</p>
         </div>
 
         <div class="col-xs-6 col-md-3">

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut Admin une nouvelle commande a été passé</h1>
+    <p>
+      Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@email%>.
+      <br>
+    <p>
+      Le client s'appelle <%=@firstname%> <%=@lastname%>.
+    </p>
+    <p>
+      le numéro de commande est : <%=@order_id%>.
+    </p>
+      <p>
+      <% if (@cartitems_length != 1)  %>
+      Il a acheté les photos suivantes : n° <%=@items_id_array%>.
+      <% else %>
+      Il a acheté la photo n° <%=@items_id_array[0]%>.
+      <% end %>
+      </p>
+       <!--<img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:25%; height: auto">-->
+          <%i = 0%>
+          <%while i < @cartitems_length do %>
+          <img src="<%=@items_url_array[i]%>" alt="petit chaton si mignon" style="width:25%; height: auto">
+          <%i = i+1%>
+          <% end %>
+       <br><br>
+      au prix de : <%=@items_url_price.inject(0){|sum,x| sum + x }%> €.
+    </p>
+
+    <p> Bonne journée chef !
+  </body>
+</html>
+<!--Il faut envoyer un email à l'administrateur du site (email décidé arbitrairement en attendant la classe "admin"), qui fait un récapitulatif de la commande qui vient d'être faite.-->

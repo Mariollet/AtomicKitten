@@ -62,7 +62,25 @@
 
 							<!--<td><a class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>  { :controller => "Order", :action => "create", :cart_id => session[@cart_id]} -->
             	<% if @global_amount != 0 %>
-							<td><%= button_to "Checkout >", order_index_url, params: {id: @cart_id}, method: :post, class:"btn btn-success" %></td>
+							<td>
+	<%= form_tag order_index_url do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= @global_amount.to_i %></span>
+    </label>
+  </article>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Paiement par CB"
+					data-label="Payer <%=@global_amount.to_i%> €"
+          data-amount="<%=(@global_amount.to_f*100)%>"
+          data-locale="auto"></script>
+<% end %></td>
 							<% else %>
 							<% end %>
 						</tr>

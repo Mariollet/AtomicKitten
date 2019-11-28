@@ -16,10 +16,6 @@ class CartItemsController < ApplicationController
     else
         render item_path(@cart_items.id)  # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
-
-
-
-
   end
 
   def destroy

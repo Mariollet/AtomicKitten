@@ -2,6 +2,7 @@
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -53,8 +54,13 @@
 							<td><a href="/items" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuer à shopper</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong><%= @global_amount %></strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-            </tr>
+								
+							<!--<td><a class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>  { :controller => "Order", :action => "create", :cart_id => session[@cart_id]} -->
+            	<% if @global_amount != 0 %>
+							<td><%= button_to "Checkout", order_index_url, params: {id: @cart_id}, method: :post %></td>
+							<% else %>
+							<% end %>
+						</tr>
 					</tfoot>
 				</table>
 </div>

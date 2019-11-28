@@ -1,59 +1,57 @@
-<br><br><br><br><br><br><br><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<body>
+    <div class="jumbotron3 jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4" style="color:#51344D;"/>Historique d'achat</h1>
+      </div>
+    </div>
+<br><br>
 
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-<h2>Commande passée</h2>
-
-<% @orders.each do |order| %>
 <div class="container">
-	<table id="cart" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
-    				<thead>
+<%= @orders.each do |order| %>
+	<table id="order" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
+            <thead>
+            
 						<tr>
 							<th style="width:50%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Produits</th>
 							<th style="width:10%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Prix</th>
-							<th style="width:8%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Quantité</th>
-							<th style="width:22%; color:#635255; font-family: 'Hammersmith One', sans-serif;" class="text-center">Sous-total</th>
-							
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-              <% @items.each do |item| %>
+            <tr>
+            <%= order.items.each do |item| %>
 							<td data-th="Product">
 								<div class="row">
-									<% if item.image.attached?%>
-										<div class="col-sm-2 hidden-xs"><%= image_tag item.image, alt: 'Card image' %></div>
-									<% else %>
-										<div class="col-sm-2 hidden-xs"><%= image_tag(item.image_url)%></div>
-									<% end %>
+										<div class="col-sm-2 hidden-xs"></div>
+										<div class="col-sm-2 hidden-xs"></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin"><%= item.title %></h4>
-										<p><%= item.description %></p>
+										<h4 class="nomargin"><%=item.title%></h4>
+										<p></p>
 									</div>
 								</div>
-							</td>
-							<td data-th="Price"><%= item.price %></td>
-							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td data-th="Subtotal" class="text-center"><%= item.price %></td>
-							<td class="actions" data-th="">
-							<%= button_to "Supprimer", {:controller => :carts,:action => 'destroy', :id => @cart.id,:item_id => item.id },:method => :delete, :class => 'btn btn-danger btn-sm' %>
-
-							</td>
+              </td>
+              <td data-th="Price"><%= item.price%></td>
 						</tr>
-					</tbody>
-					<%end%>
+            <div class="go-back" style="display:flex;justify-content:center;">
+              <td><a href="/items" class="btn btn-sm btn-outline-secondary">Continuer à shopper</a></td>
+            </div>
+          </tbody>
+          <%end%>
+          <%end%>
 					<tfoot>
-						<tr>
-							<td><a href="/items" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuer à shopper</a></td>
-							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong><%= @global_amount %></strong></td>
+				</tfoot>
+			</table>
+    </div>
+  </body>
+</html>
 
-							<!--<td><a class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>  { :controller => "Order", :action => "create", :cart_id => session[@cart_id]} -->
-            	<% if @global_amount != 0 %>
-							<td>
+
+
+

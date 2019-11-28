@@ -1,6 +1,6 @@
 class OrderController < ApplicationController
   protect_from_forgery
-  before_action :set_cart, only: [:create, :new,:index]
+  before_action :set_cart, only: [:create, :new]
   
   def new
   @amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
@@ -74,15 +74,20 @@ class OrderController < ApplicationController
 
 
   end
-  
+
   def index
-    @items = @cart.items
+    
     @orders = []
-    order_all.each do |order|
-      if (User.id = current_user.id)
+    
+    Order.all.each do |order|
+      if (order.user_id = current_user.id)
       @orders << order
       end
-    end   
+    end  
+    
+    
+    
+    
   end
 
   def set_cart

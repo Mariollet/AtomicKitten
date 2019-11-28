@@ -14296,3 +14296,603 @@ Did you mean?  order_url
                order_path):
   
 app/controllers/order_controller.rb:81:in `index'
+Started GET "/orders" for ::1 at 2019-11-28 21:13:53 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/order" for ::1 at 2019-11-28 21:13:59 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 34.2ms)
+
+
+  
+NoMethodError (undefined method `id=' for #<Class:0x00007f6b4d2de938>
+Did you mean?  ids):
+  
+app/controllers/order_controller.rb:83:in `block in index'
+app/controllers/order_controller.rb:82:in `index'
+Started GET "/order" for ::1 at 2019-11-28 21:14:54 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 27.2ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/order" for ::1 at 2019-11-28 21:17:00 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 26.6ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/order" for ::1 at 2019-11-28 21:17:25 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 27.3ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/order/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/order/index.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/order" for ::1 at 2019-11-28 21:27:16 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (40.1ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 4.1ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:35: unknown regexp option - p
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:36: syntax error, unexpected '<'
+									</div>
+									^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:37: unknown regexp options - dv
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:38: syntax error, unexpected '<'
+              </td>
+              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:39: unknown regexp options - td
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:39: unmatched close parenthesis: /td>
+              <td data-th="Price"><%= item.price );@output_buffer.safe_append='</
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:40: syntax error, unexpected '<'
+						</tr>
+						^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: unknown regexp option - t
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+...           <td><a href="/items" class="btn btn-sm btn-outlin...
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+...<td><a href="/items" class="btn btn-sm btn-outline-secondary...
+...                            ^~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="/items" class="btn btn-sm btn-outline-secondary">Continuer...
+...                            ^~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...n btn-sm btn-outline-secondary">Continuer à shopper</a></td>
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+...append='  <div class="container">
+...                      ^~~~~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <table id="cart" class="table table-hover ta...
+               ^~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+...  <table id="cart" class="table table-hover table-condensed"...
+...                          ^~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+... class="table table-hover table-condensed"  style="backgroun...
+...                          ^~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...le table-hover table-condensed"  style="background-color:#F4...
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+...e-condensed"  style="background-color:#F4F2F2; border-radiux...
+...                     ^~~~~~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected ':', expecting ')'
+...nsed"  style="background-color:#F4F2F2; border-radiux:9px;">
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:66: unknown regexp options - th
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:67: syntax error, unexpected '<'
+                <th style="width:8%; color:#63...
+                ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:68: unknown regexp options - th
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:70: syntax error, unexpected '<'
+              </tr>
+              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:71: unknown regexp options - thad
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:72: syntax error, unexpected '<'
+            <tbody>
+            ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:78: unterminated string meets end of file
+          end
+             ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:78: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/order/index.html.erb:35: unknown regexp option - p
+app/views/order/index.html.erb:36: syntax error, unexpected '<'
+app/views/order/index.html.erb:37: unknown regexp options - dv
+app/views/order/index.html.erb:38: syntax error, unexpected '<'
+app/views/order/index.html.erb:39: unknown regexp options - td
+app/views/order/index.html.erb:39: unmatched close parenthesis: /td>
+app/views/order/index.html.erb:40: syntax error, unexpected '<'
+app/views/order/index.html.erb:42: unknown regexp option - t
+app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:62: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:62: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:62: syntax error, unexpected ':', expecting ')'
+app/views/order/index.html.erb:66: unknown regexp options - th
+app/views/order/index.html.erb:67: syntax error, unexpected '<'
+app/views/order/index.html.erb:68: unknown regexp options - th
+app/views/order/index.html.erb:70: syntax error, unexpected '<'
+app/views/order/index.html.erb:71: unknown regexp options - thad
+app/views/order/index.html.erb:72: syntax error, unexpected '<'
+app/views/order/index.html.erb:78: unterminated string meets end of file
+app/views/order/index.html.erb:78: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/order" for ::1 at 2019-11-28 21:28:10 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.3ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:35: unknown regexp option - p
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:36: syntax error, unexpected '<'
+									</div>
+									^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:37: unknown regexp options - dv
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:38: syntax error, unexpected '<'
+              </td>
+              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:39: unknown regexp options - td
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:39: unmatched close parenthesis: /td>
+              <td data-th="Price"><%= item.price );@output_buffer.safe_append='</
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:40: syntax error, unexpected '<'
+						</tr>
+						^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: unknown regexp option - t
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+...           <td><a href="/items" class="btn btn-sm btn-outlin...
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+...<td><a href="/items" class="btn btn-sm btn-outline-secondary...
+...                            ^~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="/items" class="btn btn-sm btn-outline-secondary">Continuer...
+...                            ^~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...n btn-sm btn-outline-secondary">Continuer à shopper</a></td>
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+...append='  <div class="container">
+...                      ^~~~~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <table id="cart" class="table table-hover ta...
+               ^~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+...  <table id="cart" class="table table-hover table-condensed"...
+...                          ^~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+... class="table table-hover table-condensed"  style="backgroun...
+...                          ^~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...le table-hover table-condensed"  style="background-color:#F4...
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+...e-condensed"  style="background-color:#F4F2F2; border-radiux...
+...                     ^~~~~~~~~~
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:64: syntax error, unexpected ':', expecting ')'
+...nsed"  style="background-color:#F4F2F2; border-radiux:9px;">
+...                              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:68: unknown regexp options - th
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:69: syntax error, unexpected '<'
+                <th style="width:8%; color:#63...
+                ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:70: unknown regexp options - th
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:72: syntax error, unexpected '<'
+              </tr>
+              ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:73: unknown regexp options - thad
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:74: syntax error, unexpected '<'
+            <tbody>
+            ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:80: unterminated string meets end of file
+          end
+             ^
+/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:80: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/order/index.html.erb:35: unknown regexp option - p
+app/views/order/index.html.erb:36: syntax error, unexpected '<'
+app/views/order/index.html.erb:37: unknown regexp options - dv
+app/views/order/index.html.erb:38: syntax error, unexpected '<'
+app/views/order/index.html.erb:39: unknown regexp options - td
+app/views/order/index.html.erb:39: unmatched close parenthesis: /td>
+app/views/order/index.html.erb:40: syntax error, unexpected '<'
+app/views/order/index.html.erb:42: unknown regexp option - t
+app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:64: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/order/index.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/order/index.html.erb:64: syntax error, unexpected ':', expecting ')'
+app/views/order/index.html.erb:68: unknown regexp options - th
+app/views/order/index.html.erb:69: syntax error, unexpected '<'
+app/views/order/index.html.erb:70: unknown regexp options - th
+app/views/order/index.html.erb:72: syntax error, unexpected '<'
+app/views/order/index.html.erb:73: unknown regexp options - thad
+app/views/order/index.html.erb:74: syntax error, unexpected '<'
+app/views/order/index.html.erb:80: unterminated string meets end of file
+app/views/order/index.html.erb:80: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/order" for ::1 at 2019-11-28 21:28:52 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (11.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 12.7ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:80: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/order/index.html.erb:80: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/order" for ::1 at 2019-11-28 21:30:24 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 18]]
+  ↳ app/views/order/index.html.erb:28
+  Rendered order/index.html.erb within layouts/application (37.9ms)
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 143ms (Views: 109.9ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/order" for ::1 at 2019-11-28 21:32:07 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 18]]
+  ↳ app/views/order/index.html.erb:28
+  Rendered order/index.html.erb within layouts/application (8.2ms)
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 109ms (Views: 95.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/order" for ::1 at 2019-11-28 21:37:12 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.2ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/order/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/order" for ::1 at 2019-11-28 21:37:27 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `item' for #<Order:0x00007f6b5db2a500>
+Did you mean?  items):
+    31: 										<div class="col-sm-2 hidden-xs"></div>
+    32: 										<div class="col-sm-2 hidden-xs"></div>
+    33: 									<div class="col-sm-10">
+    34: 										<h4 class="nomargin"><%=order.item.title%></h4>
+    35: 										<p></p>
+    36: 									</div>
+    37: 								</div>
+  
+app/views/order/index.html.erb:34:in `block in _app_views_order_index_html_erb___1954951800322236740_70049555061300'
+app/views/order/index.html.erb:28:in `each'
+app/views/order/index.html.erb:28:in `_app_views_order_index_html_erb___1954951800322236740_70049555061300'
+Started GET "/order" for ::1 at 2019-11-28 21:37:49 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (1.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1 LIMIT $2[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/leovanel/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered order/index.html.erb within layouts/application (72.3ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 9.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Item::ActiveRecord_Associations_CollectionProxy:0x00007f6b59a80d38>):
+    31: 										<div class="col-sm-2 hidden-xs"></div>
+    32: 										<div class="col-sm-2 hidden-xs"></div>
+    33: 									<div class="col-sm-10">
+    34: 										<h4 class="nomargin"><%=order.items.title%></h4>
+    35: 										<p></p>
+    36: 									</div>
+    37: 								</div>
+  
+app/views/order/index.html.erb:34:in `block in _app_views_order_index_html_erb___1954951800322236740_70049521754200'
+app/views/order/index.html.erb:28:in `each'
+app/views/order/index.html.erb:28:in `_app_views_order_index_html_erb___1954951800322236740_70049521754200'
+Started GET "/order" for ::1 at 2019-11-28 21:39:54 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1 LIMIT $2[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/leovanel/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered order/index.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `price' for #<Item::ActiveRecord_Associations_CollectionProxy:0x00007f6b5ca8d2d8>):
+    36: 									</div>
+    37: 								</div>
+    38:               </td>
+    39:               <td data-th="Price"><%= order.items.price %></td>
+    40: 						</tr>
+    41:             <div class="go-back" style="display:flex;justify-content:center;">
+    42:               <td><a href="/items" class="btn btn-sm btn-outline-secondary">Continuer à shopper</a></td>
+  
+app/views/order/index.html.erb:39:in `block in _app_views_order_index_html_erb___1954951800322236740_70049554366140'
+app/views/order/index.html.erb:28:in `each'
+app/views/order/index.html.erb:28:in `_app_views_order_index_html_erb___1954951800322236740_70049554366140'
+Started GET "/order" for ::1 at 2019-11-28 21:40:07 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:94
+  [1m[36mOrder Load (3.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (11.5ms)
+  [1m[36mItem Load (2.8ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 118ms (Views: 100.0ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/order" for ::1 at 2019-11-28 22:05:26 +0100
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/controllers/order_controller.rb:102: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/order_controller.rb:102: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/order" for ::1 at 2019-11-28 22:06:23 +0100
+Processing by OrderController#index as HTML
+  [1m[36mOrder Load (33.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:83
+  Rendering order/index.html.erb within layouts/application
+  Rendered order/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 59.2ms)
+
+
+  
+SyntaxError (/home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/order/index.html.erb:62: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/order/index.html.erb:62: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/order" for ::1 at 2019-11-28 22:06:47 +0100
+Processing by OrderController#index as HTML
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/order_controller.rb:82
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:83
+  Rendering order/index.html.erb within layouts/application
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 3]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 4]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 5]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 6]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 8]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 9]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 10]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 11]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 12]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 13]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 14]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 15]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 16]]
+  ↳ app/views/order/index.html.erb:29
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1[0m  [["order_id", 17]]
+  ↳ app/views/order/index.html.erb:29
+  Rendered order/index.html.erb within layouts/application (197.2ms)
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 928ms (Views: 889.4ms | ActiveRecord: 32.9ms)
+
+

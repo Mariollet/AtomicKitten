@@ -11,10 +11,5 @@ class Order < ApplicationRecord
     OrderMailer.order_send_email(self).deliver_now
   end
 
-  def current_orders
-    order_all= Order.all
-    
-    return order_all
-  end
-
+ 
 end

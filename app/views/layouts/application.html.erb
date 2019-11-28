@@ -85,6 +85,7 @@
             </a>
 
             <div class="navbar-dropdown is-right">
+              <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Mes commandes", order_index_path %> </a>
               <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Mon profil", edit_user_registration_path %> </a>
                 <% if current_user.is_admin %>
                   <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Espace Admin", admin_root_path %></a>

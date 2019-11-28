@@ -84,8 +84,11 @@ class OrderController < ApplicationController
       @orders << order
       end
     end  
+
+    @order= Order.find_by(user_id: current_user.id)
     
-    
+   
+
     
     
   end
@@ -97,6 +100,6 @@ class OrderController < ApplicationController
     else
       @cart = Cart.find_by(user_id: current_user.id)
     end
-
+    
   end
 end

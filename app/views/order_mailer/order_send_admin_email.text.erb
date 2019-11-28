@@ -1,0 +1,27 @@
+  Salut Admin une nouvelle commande a été passé
+    
+  Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@email%>.
+    
+  Le client s'appelle <%=@firstname%> <%=@lastname%>.
+    
+    
+  le numéro de commande est : <%=@order_id%>.
+    
+      
+      <% if (@cartitems_length != 1)  %>
+      Il a acheté les photos suivantes : n° <%=@items_id_array%>.
+      <% else %>
+      Il a acheté la photo n° <%=@items_id_array[0]%>.
+      <% end %>
+      
+       <!--<img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:25%; height: auto">-->
+          <%i = 0%>
+          <%while i < @cartitems_length do %>
+          <img src="<%=@items_url_array[i]%>" alt="petit chaton si mignon" style="width:25%; height: auto">
+          <%i = i+1%>
+          <% end %>
+       
+      au prix de : <%=@items_url_price.inject(0){|sum,x| sum + x }%> €.
+    
+
+     Bonne journée chef !

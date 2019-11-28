@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <center>
+    <h1>Salut <%=@firstname%> et merci pour ton achat !</h1>
+    <p>
+      Tu as passé une commande (n° <%=@order_id%>) chez <%= @url %> en utilisant l'e-mail suivant : <%= @email %>.
+    </p>
+    <h3>
+          <% if (@cartitems_length != 1)  %>
+    Voici les photos que tu as acheté au prix total de <%= @items_url_price.inject(0){|sum,x| sum + x} %> €:
+        <% else %>
+    Voici la photos que tu as acheté au prix total de <%= @items_url_price.inject(0){|sum,x| sum + x} %> €:
+        <% end %>
+      </h3>
+    <br>
+    <br>
+    <!--<img src="<%=@items_url_array%>" alt="petit chaton si mignon" style="width:40%; height: auto">-->
+          <%i = 0%>
+          <%while i < @cartitems_length do %>
+          <img src="<%=@items_url_array[i]%>" alt="petit chaton si mignon" style="width:40%; height: auto">
+          <br>
+          <%i = i+1%>
+          <% end %>
+    <br>
+
+    <h4>
+      Mignon n'est-ce pas ?
+      <br>
+      Pour accéder à ton espace client et commander de nouvelles photos, connecte-toi via : <%=@url%>/login.
+    <br>
+    </h4>
+    <p> À très vite sur <%=@url%> !
+  </body>
+  </center>
+</html>
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un email avec la photo de chaton, et un wording pour lui dire merci toussa. -->

@@ -37,8 +37,8 @@ class OrderController < ApplicationController
 
   ##########MAIL#####################
 
-    OrderMailer.order_send_admin_email(order).deliver_now
-    OrderMailer.order_send_email(order).deliver_now
+    # OrderMailer.order_send_admin_email(order).deliver_now
+    # OrderMailer.order_send_email(order).deliver_now
 
   ##########MAIL#####################
 

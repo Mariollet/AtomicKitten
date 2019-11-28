@@ -99,5 +99,5 @@ class OrderMailer < ApplicationMailer
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: "anthonyph34000@gmail.com", subject: 'Une nouvelle commande a été passée !')
 
- end
+  end
 end

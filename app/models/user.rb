@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_many :cart_items, through: :cart
   has_many :items, through: :cart_items
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

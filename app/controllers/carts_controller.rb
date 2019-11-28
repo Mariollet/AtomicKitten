@@ -6,7 +6,7 @@ class CartsController < ApplicationController
 
   def index
     @global_amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
-    @items = @cart.items
+                                                                                                                                                                                                                                                                                                                                                                                                                                              
     @cart_id = @cart.id 
     end
 

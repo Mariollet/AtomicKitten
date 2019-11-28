@@ -73,7 +73,7 @@
 
  .jumbotron {
    background-image: url(/assets/jumbo.jpeg);
-   background-size: cover;
+   background-size: cover;  
    height: 800px;
    margin-bottom: -5px;
    color: whitesmoke;

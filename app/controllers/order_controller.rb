@@ -80,7 +80,7 @@ class OrderController < ApplicationController
     @orders = []
     
     Order.all.each do |order|
-      if (order.user_id = current_user.id)
+      if (order.user_id == current_user.id)
       @orders << order
       end
     end  

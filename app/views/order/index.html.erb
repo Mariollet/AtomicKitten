@@ -9,24 +9,25 @@
 <body>
     <div class="jumbotron3 jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4" style="color:#51344D;"/>Historique d'achat</h1>
+        <h1 class="display-4" style="color:#51344D;">Historique d'achat</h1>
       </div>
     </div>
 <br><br>
 
 <div class="container">
-<%= @orders.each do |order| %>
+<% i=1 %>
+<% @orders.each do |order| %>
 	<table id="order" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
             <thead>
             
 						<tr>
-							<th style="width:50%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Produits</th>
+							<th style="width:50%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Commande n°<%=i%></th>
 							<th style="width:10%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Prix</th>
 						</tr>
 					</thead>
 					<tbody>
             <tr>
-            <%= order.items.each do |item| %>
+            <% order.items.each do |item| %>
 							<td data-th="Product">
 								<div class="row">
 										<div class="col-sm-2 hidden-xs"></div>
@@ -40,9 +41,9 @@
               <td data-th="Price"><%= item.price%></td>
 						</tr>
             <div class="go-back" style="display:flex;justify-content:center;">
-              <td><a href="/items" class="btn btn-sm btn-outline-secondary">Continuer à shopper</a></td>
             </div>
           </tbody>
+          <% i= i +1 %>
           <%end%>
           <%end%>
 					<tfoot>

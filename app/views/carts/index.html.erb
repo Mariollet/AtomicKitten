@@ -1,18 +1,19 @@
 <br><br><br><br><br>
-
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
-
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
 <div class="jumbotron3 jumbotron-fluid">
   <div class="container">
     <h1 class="display-4" style="color:#51344D;">Mon panier</h1>
   </div>
 </div>
 <br><br>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
@@ -42,13 +43,13 @@
 								<input type="number" class="form-control text-center" value="1">
 							</td>
 							<td data-th="Subtotal" class="text-center"><%= item.price %></td>
-							<td class="actions" data-th="">
-                <% item.id %>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</td>
+							<td class="actions" data-th="">													
+							<%= button_to "Supprimer", {:controller => :carts,:action => 'destroy', :id => @cart.id,:item_id => item.id },:method => :delete, :class => 'btn btn-danger btn-sm' %>
+							 												
+							</td>											
 						</tr>
 					</tbody>
-          <%end%>
+					<%end%>	
 					<tfoot>
 						<tr>
 							<td><a href="/items" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuer à shopper</a></td>
@@ -64,3 +65,5 @@
 					</tfoot>
 				</table>
 </div>
+
+

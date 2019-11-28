@@ -17,6 +17,7 @@ class ItemDashboard < Administrate::BaseDashboard
     image_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    image: Field::ActiveStorage
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -43,6 +44,7 @@ class ItemDashboard < Administrate::BaseDashboard
   image_url
   created_at
   updated_at
+  image
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -55,6 +57,7 @@ class ItemDashboard < Administrate::BaseDashboard
   description
   price
   image_url
+  image
   ].freeze
 
   # COLLECTION_FILTERS

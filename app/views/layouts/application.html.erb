@@ -6,8 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Source+Code+Pro&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>AtomicKitten</title>
+    <%= favicon_link_tag 'logo.png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -27,7 +29,7 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
 
-          <a class="navbar-item" href="<%= items_path %>" >
+          <a class="navbar-item" href="/items" style="color:inherit;text-decoration:none;">
             Showroom
           </a>
 
@@ -37,10 +39,10 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item drop" href="/team">
+            <a class="navbar-item drop" href="/team" style="text-decoration:none;">
               Qui sommes-nous?
             </a>
-            <a class="navbar-item drop" href="/contact">
+            <a class="navbar-item drop" href="/contact" style="text-decoration:none;">
               Contactez-nous
             </a>
           </div>
@@ -56,19 +58,19 @@
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>
               <% if current_user.items.length < 1 %>
-                <a class="navbar-item drop" href="" >Aucun article</a>
+                <a class="navbar-item drop" href="" style="text-decoration:none;" >Aucun article</a>
               <% else %>
                 <% current_user.items.each do |item| %>
-                  <a class="navbar-item drop" href="<%= carts_path %>">
+                  <a class="navbar-item drop" href="<%= carts_path %>"  style="text-decoration:none;">
                   <em><%= item.title %></em></a>
                   <hr class="dropdown-divider">
                 <% end %>
-               <a class="navbar-item drop title is-6" href="<%= carts_path %>" >Voir le panier : 
+               <a class="navbar-item drop title is-6" href="<%= carts_path %>"  style="text-decoration:none;">Voir le panier :
                <img class="navbar-brand shop" height="35px" width="35px" src="https://image.flaticon.com/icons/svg/897/897295.svg">
                </a>
               <% end %>
             <% else %>
-              <a class="navbar-item drop" <%= link_to "Connecte-toi d'abord !", edit_user_registration_path %></a>
+              <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Connecte-toi d'abord !", edit_user_registration_path %></a>
             <% end %>
           </div>
         </div>
@@ -82,9 +84,9 @@
             </a>
 
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item drop"> <%= link_to "Mon profil", edit_user_registration_path %></a>
+              <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Mon profil", edit_user_registration_path %> </a>
                 <% if current_user.is_admin %>
-                  <a class="navbar-item drop"> <%= link_to "Espace Admin", admin_root_path %></a>
+                  <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Espace Admin", admin_root_path %></a>
                 <% end %>
               <a class="navbar-item drop" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
             </div>
@@ -100,8 +102,8 @@
             </a>
 
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item drop"<%= link_to "Se connecter", new_user_session_path %></a>
-              <a class="navbar-item drop"<%= link_to "S'inscrire", new_user_registration_path %></a>
+              <a class="navbar-item drop" style="text-decoration:none;"<%= link_to "Se connecter", new_user_session_path %></a>
+              <a class="navbar-item drop" style="text-decoration:none;"<%= link_to "S'inscrire", new_user_registration_path %></a>
             </div>
 
           </div>
@@ -118,18 +120,24 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
-          <h6>A propos</h6>
-          <p class="text-justify">Vous êtes en manque d'amour? Commandez dès maintenant les photos de châton les plus mignonnes de votre région !</p>
+          <h6>A propos</h6><br>
+          <p class="text-justify">Vous êtes en manque d'amour ?<br> Commandez dès maintenant les photos de chaton les plus mignonnes de votre région !</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <h6>En plus</h6>
+          <h6>En plus</h6><br>
           <ul class="footer-links">
             <li><a href="/team">La team</a></li>
             <li><a href="/contact">Contactez-nous</a></li>
           </ul>
         </div>
+      
+        <div class="col-xs-4">
+          <%= image_tag "footer.png" , :size => "160x180" %>
+        </div>
+
       </div>
+
       <hr>
       <div class="container">
        <div class="row">

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'team', to: "home#team"
   get 'contact', to: "home#contact"
   resources :items 
-  resources :orders, only: [:index, :show, :create]
+  resources :order, only: [:index, :show, :create]
   resources :cart_items, only: [:create,:destroy]
   resources :carts, only: [:index, :edit, :create, :update], path: "mon_panier"
   # get '/mon_panier', to: 'carts#show'

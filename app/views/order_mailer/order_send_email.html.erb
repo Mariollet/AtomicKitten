@@ -10,11 +10,17 @@
       Tu as passé une commande (n° <%=@order_id%>) chez <%= @url %> en utilisant l'e-mail suivant : <%= @email %>.
     </p>
     <h3>
-    Voici la photo que tu as acheté au doux prix de <%= @item_price %> €: 
+    Voici la/les photo(s) que tu as acheté au prix total de <%= @items_url_price.inject(0){|sum,x| sum + x} %> €: 
     <br>
     <br>
     <br>
-    <img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:40%; height: auto">
+    <!--<img src="<%=@items_url_array%>" alt="petit chaton si mignon" style="width:40%; height: auto">-->
+          <%i = 0%>
+          <%while i < @cartitems_length do %>
+          <img src="<%=@items_url_array[i]%>" alt="petit chaton si mignon" style="width:40%; height: auto">
+          <br>
+          <%i = i+1%>
+          <% end %>
     <br>
     </h3>
     <%= %> 

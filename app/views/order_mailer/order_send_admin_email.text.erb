@@ -1,0 +1,11 @@
+Salut Administrateur une nouvelle commande a été passé
+    
+Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@email%>.
+      
+le numéro de commande est : <%=@order_id%>. Le client a dépensé <%=@items_url_price.inject(0){|sum,x| sum + x }%>.
+
+Il a acheté la photo n° <%=@items_id_array[0]%>.
+
+Le client s'appelle <%=@firstname%> <%=@lastname%>.
+    
+Bonne journée chef !

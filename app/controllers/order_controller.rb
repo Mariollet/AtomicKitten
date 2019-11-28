@@ -27,7 +27,7 @@ class OrderController < ApplicationController
       orderitem.save
       i = i+1
       end
-
+ 
     cart.destroy
 
   end

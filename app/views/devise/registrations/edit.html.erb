@@ -2,21 +2,22 @@
 
 <div class="jumbotron5 jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Bonjour, <%= current_user.first_name %></h1>
+    <h1 class="title is-1">Bonjour, <%= current_user.first_name %> <img height="50px" width="50px" src="https://image.flaticon.com/icons/svg/107/107989.svg"></h1>
   </div>
 </div>
-<br>
+<br><br>
 <div class="container">
 
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
       <img class="img-fluid" src="https://images.pexels.com/photos/1287518/pexels-photo-1287518.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="">
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
+      <h1 class="display-4"><%= current_user.first_name %> <%= current_user.last_name %></h2>
       <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prénom : <i style="font-size:13px;"><%= current_user.first_name %></i></h3><br>
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom : <i style="font-size:13px;"><%= current_user.last_name %></i></h3><br>
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Email : <i style="font-size:13px;"><%= current_user.email %></i></h3>
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prénom : <i style="font-size:16px;"><%= current_user.first_name %></i></h3><br>
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom : <i style="font-size:16px;"><%= current_user.last_name %></i></h3><br>
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Email : <i style="font-size:16px;"><%= current_user.email %></i></h3>
       <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
 
       <div class="accordion" id="accordionExample">
@@ -178,3 +179,4 @@
   </div>
 </div>
 </div>
+<br><br>

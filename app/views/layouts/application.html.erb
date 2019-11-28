@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Source+Code+Pro&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <title>AtomicKitten</title>
+    <title>Atomic Kitten</title>
     <%= favicon_link_tag 'logo.png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,6 +21,7 @@
   <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/" style="text-decoration:none">
+      <img height="40px" width="40px" src="https://image.flaticon.com/icons/svg/107/107979.svg">
         <strong><h1>ATOMIC KITTEN</h1></strong>
       <a class="navbar-item">
         <h3> | </h3>
@@ -32,6 +33,10 @@
 
           <a class="navbar-item" href="/items" style="color:inherit;text-decoration:none;">
             Showroom
+          </a>
+
+          <a class="navbar-item" href="https://www.la-spa.fr/adoption-chat" style="color:inherit;text-decoration:none;" target="#_blank">
+          Adoptez un chat
           </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
@@ -62,8 +67,8 @@
                 <a class="navbar-item drop" href="" style="text-decoration:none;" >Aucun article</a>
               <% else %>
                 <% current_user.items.each do |item| %>
-                  <a class="navbar-item drop" href="<%= carts_path %>"  style="text-decoration:none;">
-                  <em><%= item.title %></em></a>
+                  <a class="navbar-item drop" href="<%= carts_path %>" style="text-decoration:none;">
+                  <%= image_tag(item.image_url, :size => "40x80")%><em><%= item.title %></em></a>
                   <hr class="dropdown-divider">
                 <% end %>
                <a class="navbar-item drop title is-6" href="<%= carts_path %>"  style="text-decoration:none;">Voir le panier :
@@ -115,14 +120,13 @@
   </nav>
     <%= yield %>
   </body>
-<br><br>
   <!-- Site footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>A propos</h6><br>
-          <p class="text-justify">Vous êtes en manque d'amour ?<br> Commandez dès maintenant les photos de chaton les plus mignonnes de votre région !</p>
+          <p class="text-justify">Vous êtes en manque d'amour ?<br> Commandez dès maintenant les photos de chatons les plus mignonnes de votre région !</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
@@ -130,11 +134,15 @@
           <ul class="footer-links">
             <li><a href="/team">La team</a></li>
             <li><a href="/contact">Contactez-nous</a></li>
+            <li><a href="https://www.la-spa.fr/adoption-chat" target="#_blank">Adoptez un chat !</a></li>
+
           </ul>
         </div>
       
         <div class="col-xs-4">
-          <%= image_tag "footer.png" , :size => "160x180" %>
+          <a href="/">
+          <%= image_tag("footer.png" , :size => "160x180") %>
+          </a>
         </div>
 
       </div>

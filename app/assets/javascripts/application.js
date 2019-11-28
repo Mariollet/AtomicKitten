@@ -12,8 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
+
+window.addEventListener("DOMContentLoaded", nomDeLaFonction);
+function nomDeLaFonction() {
 
 // Wrap every letter in a span
 var textWrapper = document.querySelector('.ml11 .letters');
@@ -48,5 +50,6 @@ anime.timeline({loop: true})
     delay: 1000
   });
 
+};
 
-  
+nomDeLaFonction()

@@ -1,21 +1,23 @@
 class CartsController < ApplicationController
+
   before_action :authenticate_user!
-  before_action :set_cart, only: [:index, :edit, :update]
+  before_action :set_cart, only: [:index, :edit, :update,:destroy]
+
 
   def index
     @global_amount = @cart.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }
     @items = @cart.items
-  end
+    end
+    
 
-  def edit
-  end
+
 
   def create
   end
 
   def update
     @item = Item.find(params[:id])
-    @cart_id = @cart.id
+    
     @additem = CartItem.new(item_id:@item.id, cart_id: @cart.id)
     
     if @additem.save # essaie de sauvegarder en base @gossip
@@ -28,6 +30,16 @@ class CartsController < ApplicationController
     end
   
  
+  end
+
+  def destroy
+     
+    @item_to_destroy= CartItem.find_by(item_id: params[:item_id],cart_id: @cart.id)
+    
+    @item_to_destroy.destroy 
+      
+    redirect_to carts_path
+
   end
 
   private
@@ -45,5 +57,7 @@ class CartsController < ApplicationController
     end
     
   end
+
+  
 
 end

@@ -1,4 +1,11 @@
 <br><br><br><br>
+
+<div class="jumbotron5 jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Bonjour, <%= current_user.first_name %></h1>
+  </div>
+</div>
+<br>
 <div class="container">
 
   <div class="row">
@@ -6,17 +13,17 @@
       <img class="img-fluid" src="https://images.pexels.com/photos/1287518/pexels-photo-1287518.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="">
     </div>
     <div class="col-md-5">
-      <hr class="my-3">
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prénom : <i><%= current_user.first_name %></i></h3><br>
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom : <i><%= current_user.last_name %></i></h3><br>
-      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Email : <i><%= current_user.email %></i></h3>
-      <hr class="my-3">
+      <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Prénom : <i style="font-size:13px;"><%= current_user.first_name %></i></h3><br>
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Nom : <i style="font-size:13px;"><%= current_user.last_name %></i></h3><br>
+      <h3 style="color:#635255; font-size:20px;font-family: 'Hammersmith One', sans-serif;">Email : <i style="font-size:13px;"><%= current_user.email %></i></h3>
+      <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
 
       <div class="accordion" id="accordionExample">
-        <div class="card" style="background-color:#E9E7E6; border-radius:5px;">
+        <div class="card" style="background-color:#F4F2F2; border-radius:5px;">
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:#635255;">Modifier mon mot de passe</button>
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color:#635255;text-decoration:none;">Modifier mon mot de passe</button>
             </h2>
           </div>
 
@@ -91,56 +98,77 @@
           </div>
         </div>
 
+        <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 10px; height: 0;">
 
         <div class="accordion text-center" id="accordionExample">
-          <div class="card" style="background-color:#E9E7E6; border-radius:5px;"">
+          <div class="card" style="background-color:#F4F2F2; border-radius:5px;"">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="color:#635255">Modifier mon profil</button>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color:#635255;text-decoration:none;">Modifier mon profil</button>
               </h2>
             </div>
 
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
+              <div class="card-body text-left">
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
 
-              <div class="form-group">
-                <%= f.label :Prénom %><br />
-                <%= f.text_field :first_name %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :Nom %><br />
-                <%= f.text_field :last_name %>
+              <div class="field">
+                <h2>Prénom:</h2>
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="first_name" placeholder="first_name"<%= f.text_field :first_name %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user-secret"></i>
+                  </span>
+                </p>
               </div>
 
               <div class="field">
-                <%= f.label :Email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-              </div><br>
-
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-              <% end %>
+                <h2>Nom:</h2>
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="last_name" placeholder="last_name"<%= f.text_field :last_name %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </p>
+              </div>
 
               <div class="field">
-                <%= f.label :Mot_de_passe %><br />
-                <%= f.password_field :current_password, autocomplete: "current-password" %>
+                <h2>Email :</h2>
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Email" <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
+              </div>
+
+              <div class="field">
+                <h2>Mot de passe actuel :</h2>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password" <%= f.password_field :current_password, autocomplete: "current-password" %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
               </div><br>
 
-              <div class="actions">
+              <div class="actions text-center">
                 <button <%= f.submit "Modifier", class:"button is-success" %> Modifier</button>
-              </div><br>
+              </div>
             <% end %>
 
-            <h3>Supprimer son compte ?</h3>
+            <hr style="border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0;">
 
-            <p>Malheureux ?</p><br>
+          </div>
+
+            <h2>Malheureux ? 🙁</h2><br>
             <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"button is-danger"%>
-
-
+          <br>
               </div>
             </div>
           </div>

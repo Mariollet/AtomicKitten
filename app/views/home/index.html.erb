@@ -2,9 +2,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 <div class="jumbotron"style=" background-attachment: fixed; background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.5) 100%), url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)"><br><br>
+  <% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    <div class="notice text-center"><%= flash[:notice] %></div>
+  </div>
+  <% end %><br>
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 animated fadeIn delay-1s">
           <h1 class="ml12">Atomic Kitten</h1>
           <hr class="my-4">
           <p class="lead jumbo">Vous êtes en manque d'amour ?</p><br>
@@ -23,7 +28,7 @@
     </div>
   </section>
 
-  <div class="container"><br>
+  <div class="container animated zoomIn delay-2s"><br>
     <div class="row">
       <div class="col-sm text-center">
         <img height="100px" width="100px" src="https://image.flaticon.com/icons/svg/1669/1669730.svg">

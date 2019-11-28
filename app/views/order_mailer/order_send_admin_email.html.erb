@@ -4,25 +4,30 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut Administrateur une nouvelle commande a été passé</h1>
+    <h1>Salut Admin une nouvelle commande a été passé</h1>
     <p>
       Une commande a été passé chez <%=@url%> avec l'e-mail suivant : <%=@email%>.
       <br>
     <p>
       Le client s'appelle <%=@firstname%> <%=@lastname%>.
     </p>
-    <br>
+    <p>
       le numéro de commande est : <%=@order_id%>.
-      <br>
-      Il a acheté la/les photo(s) n° <%=@items_id_array%>.
-      <br>
+    </p>
+      <p>
+      <% if (@cartitems_length != 1)  %>
+      Il a acheté les photos suivantes : n° <%=@items_id_array%>.
+      <% else %>
+      Il a acheté la photo n° <%=@items_id_array[0]%>.
+      <% end %>
+      </p>
        <!--<img src="<%=@item_url%>" alt="petit chaton si mignon" style="width:25%; height: auto">-->
           <%i = 0%>
           <%while i < @cartitems_length do %>
           <img src="<%=@items_url_array[i]%>" alt="petit chaton si mignon" style="width:25%; height: auto">
           <%i = i+1%>
           <% end %>
-       <br>
+       <br><br>
       au prix de : <%=@items_url_price.inject(0){|sum,x| sum + x }%> €.
     </p>
 

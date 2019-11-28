@@ -75,7 +75,7 @@ puts "admin created"
 
   user.save
   puts "user seed n°#{i}" 
-  #sleep(rand(5..10))
+  sleep(rand(5..10))
 end
 ################# ITEM creation ##########################
 
@@ -139,7 +139,7 @@ end
  orderitems.save
 
  puts "order_item seed n°#{i}"
- #sleep(rand(5..10))
+ sleep(rand(5..10))
 end
 
 ################# Category ##########################

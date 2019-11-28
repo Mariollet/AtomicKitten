@@ -11899,3 +11899,2400 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 86ms (Views: 73.4ms | ActiveRecord: 1.5ms)
 
 
+  [1m[36mUser Load (27.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/mon_panier" for ::1 at 2019-11-28 20:01:12 +0100
+  [1m[35m (29.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20191128144021)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (212.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191128144021_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191128144021"]]
+  ↳ bin/rails:9
+  [1m[35m (60.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryItems (20191128144115)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (133.0ms)[0m  [1m[35mCREATE TABLE "category_items" ("id" bigserial primary key, "category_id" bigint, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7a30442eed"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_4bf77fe76a"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[35m (44.0ms)[0m  [1m[35mCREATE  INDEX  "index_category_items_on_category_id" ON "category_items"  ("category_id")[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE  INDEX  "index_category_items_on_item_id" ON "category_items"  ("item_id")[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191128144115"]]
+  ↳ bin/rails:9
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (17.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started DELETE "/users/sign_out" for ::1 at 2019-11-28 20:03:57 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mzVEpFppMCVJl4Y3ZyjL2giKU5UqXCNWiC0Y4dkmL1AdH/jr2LIP+cRsZXOHeyi2UL4TxhdbIi+PoUBQnLjwXQ=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 549ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:03:58 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (7.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 8476ms (Views: 8409.1ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-28 20:04:14 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb__3439709371119671509_70328709389680 at /home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 294ms (Views: 216.2ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 20:04:32 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i/gO+LLV4gJZWNovZeJDF9EnZ3czPoSvWd/ULl4kP1/X5q5UeEs4I+q3N5twuJRO/uYcz+bWCJbuQmVlIdy1OQ==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bibi@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 951ms (ActiveRecord: 1.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i/gO+LLV4gJZWNovZeJDF9EnZ3czPoSvWd/ULl4kP1/X5q5UeEs4I+q3N5twuJRO/uYcz+bWCJbuQmVlIdy1OQ==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb__3439709371119671509_70328709718960 at /home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 420ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 20:04:44 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xuFmkdKHRuyXJHmoj2FeBeEsRB19pEd9pyQBULKJBiGa/8Y9GBmczSTLlByaO4lczu0/pahMy0QQubAbzXGMRw==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bibi@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xuFmkdKHRuyXJHmoj2FeBeEsRB19pEd9pyQBULKJBiGa/8Y9GBmczSTLlByaO4lczu0/pahMy0QQubAbzXGMRw==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb__3439709371119671509_70328692815780 at /home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 342ms (Views: 99.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-28 20:04:49 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IswbsG63pkJj3N54sFC87duqHoaDqULELO7BPtunH5B+0rscpCl8Y9AzM8ylCmu09GtlPlZBzv2bc3B1pF+V9g==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bibi@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IswbsG63pkJj3N54sFC87duqHoaDqULELO7BPtunH5B+0rscpCl8Y9AzM8ylCmu09GtlPlZBzv2bc3B1pF+V9g==", "user"=>{"email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Se connecter"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_sessions_new_html_erb__3439709371119671509_70328684260060 at /home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/devise/sessions/new.html.erb:14)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 357ms (Views: 114.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-28 20:04:58 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_registrations_new_html_erb__3745972059197397009_70328698175940 at /home/leovanel/Bureau/THP/project_boutique/AtomicKitten/app/views/devise/registrations/new.html.erb:14)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 146ms (Views: 144.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-11-28 20:05:18 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZYmZeeRf3TWRROPILmzEHqrdQRxOelmc7Y27rJYOMvU5lznVLsEHFCKrDnw7NhNHhRw6pJuS1aVaEArn6fa4kw==", "user"=>{"first_name"=>"ld", "last_name"=>"fe", "email"=>"bibi@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bibi@yopmail.com"], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (62.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bibi@yopmail.com"], ["encrypted_password", "$2a$11$y18DWMnEq32ncq6tBkIOderQ.jp8oJ9zd6Qtorq/JPGld4jXDDbGq"], ["created_at", "2019-11-28 19:05:19.193552"], ["updated_at", "2019-11-28 19:05:19.193552"], ["first_name", "ld"], ["last_name", "fe"]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (2.2ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (4.2ms)
+UserMailer#welcome_email: processed outbound mail in 742.5ms
+Sent mail to bibi@yopmail.com (780.4ms)
+Date: Thu, 28 Nov 2019 20:05:20 +0100
+From: no-reply@chaton-mignon.fr
+To: bibi@yopmail.com
+Message-ID: <5de01a703d96e_53312adc1932f670701d2@leovanel-HP-Pavilion-15-Notebook-PC.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de01a7032f9f_53312adc1932f670700a6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de01a7032f9f_53312adc1932f670700a6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut ld et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+bibi@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5de01a7032f9f_53312adc1932f670700a6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Bienvenue=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                      ld !=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e=
+-mail suivant : bibi@yopmail.com.=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                Va vite regarder notre joli showroom et adopte ta photo c=
+oup de =E2=9D=A4=EF=B8=8F !=0D
+                <br>=0D
+                Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi =
+via : www.chaton-mignon.fr.=0D
+                <br>=0D
+                <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D=
+
+                <br>=0D
+                Miaousement votre.=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de01a7032f9f_53312adc1932f670700a6--
+
+  [1m[35m (84.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 2191ms (ActiveRecord: 147.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:05:21 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (30.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 776ms (Views: 711.2ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/items/6" for ::1 at 2019-11-28 20:05:34 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (96.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 6]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (851.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 1821ms (Views: 1544.0ms | ActiveRecord: 114.6ms)
+
+
+Started PUT "/mon_panier/6" for ::1 at 2019-11-28 20:06:07 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RFkNRxQnc40MkU92ReiMLL6ti70SyiTtGT94wEn3ASsYR63r3rmprL9+osJQslt1kWzwBcciqNSuosmLNg+LTQ==", "item"=>{"id"=>"6"}, "id"=>"6"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mCart Create (247.3ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-11-28 19:06:15.982610"], ["updated_at", "2019-11-28 19:06:15.982610"]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (17.0ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 16], ["item_id", 6]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (58.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 484ms (ActiveRecord: 389.1ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:06:16 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 617ms (Views: 609.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 20:06:21 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (2.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 16]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  Rendered carts/index.html.erb within layouts/application (96.1ms)
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 276ms (Views: 185.6ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/order" for ::1 at 2019-11-28 20:08:59 +0100
+Processing by OrderController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgPwIjFj4SI/RIUuxBV0KPb9UvOktPJTN/5cnwmEgDWaHVCO+/07A4yraJrRT6Nx2TwpS3FcfmqAY+3UdnwKUw==", "stripeToken"=>"tok_1FjsMGIQEd8oNedTAgEymVSi", "stripeTokenType"=>"card", "stripeEmail"=>"leo@leo.fr"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:92
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:92
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:95
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 16]]
+  ↳ app/controllers/order_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Create (11.4ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-11-28 19:09:03.117372"], ["updated_at", "2019-11-28 19:09:03.117372"]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:56
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:58
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:59
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:60
+  [1m[36mCartItem Load (20.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 18]]
+  ↳ app/mailers/order_mailer.rb:66
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  Rendering order_mailer/order_send_admin_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.html.erb within layouts/mailer (3.2ms)
+  Rendering order_mailer/order_send_admin_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.text.erb within layouts/mailer (4.1ms)
+OrderMailer#order_send_admin_email: processed outbound mail in 155.4ms
+Sent mail to anthonyph34000@gmail.com (621.6ms)
+Date: Thu, 28 Nov 2019 20:09:04 +0100
+From: no-reply@chaton-mignon.fr
+To: anthonyph34000@gmail.com
+Message-ID: <5de01b503250e_53312adc1932f670703ae@leovanel-HP-Pavilion-15-Notebook-PC.mail>
+Subject: =?UTF-8?Q?Une_nouvelle_commande_a_=C3=A9t=C3=A9_pass=C3=A9e_!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de01b5026f9b_53312adc1932f6707025e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de01b5026f9b_53312adc1932f6707025e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+  Salut Admin une nouvelle commande a =C3=A9t=C3=A9 pass=C3=A9=0D
+    =0D
+  Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-mignon.fr avec =
+l'e-mail suivant : bibi@yopmail.com.=0D
+    =0D
+  Le client s'appelle ld fe.=0D
+    =0D
+    =0D
+  le num=C3=A9ro de commande est : 17.=0D
+    =0D
+      =0D
+      Il a achet=C3=A9 la photo n=C2=B0 6.=0D
+      =0D
+       <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D"width:25=
+%; height: auto">-->=0D
+          <img src=3D"https://images.pexels.com/photos/127028/pexels-phot=
+o-127028.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D=
+"petit chaton si mignon" style=3D"width:25%; height: auto">=0D
+       =0D
+      au prix de : 14.0 =E2=82=AC.=0D
+    =0D
+=0D
+     Bonne journ=C3=A9e chef !=0D
+
+----==_mimepart_5de01b5026f9b_53312adc1932f6707025e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                      Admin !=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-m=
+ignon.fr avec l'e-mail suivant : bibi@yopmail.com.=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                Le client s'appelle ld fe (n=C2=B0 de commande : 17)=0D
+                <br>=0D
+                Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi =
+via : www.chaton-mignon.fr.=0D
+                <p>=0D
+                Il a achet=C3=A9 la photo n=C2=B0 6.=0D
+                </p>=0D
+                 <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D=
+"width:25%; height: auto">-->=0D
+                    <img src=3D"https://images.pexels.com/photos/127028/p=
+exels-photo-127028.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&amp=
+;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%; =
+height: auto">=0D
+                    <br><br>=0D
+                au prix de : 14.0 =E2=82=AC.=0D
+                <p>Bonne journ=C3=A9e chef !</p>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Il faut envoyer un email =C3=A0 l'administrateur du site (email d=C3=A9=
+cid=C3=A9 arbitrairement en attendant la classe "admin"), qui fait un r=C3=
+=A9capitulatif de la commande qui vient d'=C3=AAtre faite.-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de01b5026f9b_53312adc1932f6707025e--
+
+  [1m[36mCACHE Order Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:10
+  [1m[36mCACHE CartItem Load (0.0ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 18]]
+  ↳ app/mailers/order_mailer.rb:15
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  Rendering order_mailer/order_send_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.html.erb within layouts/mailer (4.0ms)
+  Rendering order_mailer/order_send_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.text.erb within layouts/mailer (2.5ms)
+OrderMailer#order_send_email: processed outbound mail in 87.6ms
+Sent mail to bibi@yopmail.com (48.5ms)
+Date: Thu, 28 Nov 2019 20:09:04 +0100
+From: no-reply@chaton-mignon.fr
+To: bibi@yopmail.com
+Message-ID: <5de01b50d9c94_53312adc1932f67070555@leovanel-HP-Pavilion-15-Notebook-PC.mail>
+Subject: Merci pour votre commande !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de01b50d7a06_53312adc1932f6707042b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de01b50d7a06_53312adc1932f6707042b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut ld et merci pour ton achat !=0D
+    =0D
+Tu as pass=C3=A9 une commande (n=C2=B0 17) chez www.chaton-mignon.fr en u=
+tilisant l'e-mail suivant : bibi@yopmail.com.=0D
+=0D
+Voici la photos que tu as achet=C3=A9 au prix total de 14.0 =E2=82=AC:=0D=
+
+=0D
+    <!--<img src=3D"["https://images.pexels.com/photos/127028/pexels-phot=
+o-127028.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940"]" al=
+t=3D"petit chaton si mignon" style=3D"width:40%; height: auto">-->=0D
+<img src=3D"https://images.pexels.com/photos/127028/pexels-photo-127028.j=
+peg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D"petit c=
+haton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+        =0D
+Mignon n'est-ce pas ?=0D
+      =0D
+Pour acc=C3=A9der =C3=A0 ton espace client et commander de nouvelles phot=
+os, connecte-toi via : www.chaton-mignon.fr/login.=0D
+    =0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+
+----==_mimepart_5de01b50d7a06_53312adc1932f6707042b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                       ld=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Merci pour ton achat =F0=9F=A4=97=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                <p>=0D
+                  Tu as pass=C3=A9 une commande (n=C2=B0 17) chez www.cha=
+ton-mignon.fr en utilisant l'e-mail suivant : bibi@yopmail.com.=0D
+                </p>=0D
+                <h3>=0D
+                Voici la photo que tu as achet=C3=A9 au prix total de 14.=
+0 =E2=82=AC:=0D
+                  </h3>=0D
+                <br>=0D
+                <br>=0D
+                <!--<img src=3D"[&quot;https://images.pexels.com/photos/1=
+27028/pexels-photo-127028.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D=
+2&amp;h=3D650&amp;w=3D940&quot;]" alt=3D"petit chaton si mignon" style=3D=
+"width:40%; height: auto">-->=0D
+                      <img src=3D"https://images.pexels.com/photos/127028=
+/pexels-photo-127028.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&a=
+mp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:40%=
+; height: auto">=0D
+                      <br>=0D
+                <br>=0D
+                <h4>=0D
+                  Mignon n'est-ce pas ?=0D
+                  <br>=0D
+                  Pour acc=C3=A9der =C3=A0 ton espace client et commander=
+ de nouvelles photos, connecte-toi via : www.chaton-mignon.fr/login.=0D
+                <br>=0D
+                </h4>=0D
+                <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D=
+
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un =
+email avec la photo de chaton, et un wording pour lui dire merci toussa. =
+-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de01b50d7a06_53312adc1932f6707042b--
+
+  [1m[36mCartItem Load (1.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 16]]
+  ↳ app/controllers/order_controller.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (25.6ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 16], ["item_id", 6]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (21.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Load (0.6ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 16]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (36.7ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCart Destroy (1.5ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[35m (46.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:67
+Redirected to http://localhost:3000/
+Completed 302 Found in 4444ms (ActiveRecord: 204.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:09:05 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 1239ms (Views: 1229.9ms | ActiveRecord: 4.3ms)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mItem Load (19.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "order_items" ON "items"."id" = "order_items"."item_id" WHERE "order_items"."order_id" = $1 LIMIT $2[0m  [["order_id", 16], ["LIMIT", 11]]
+Started GET "/orders" for ::1 at 2019-11-28 20:16:08 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:17:06 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:18:39 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/order" for ::1 at 2019-11-28 20:24:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/order"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:24:42 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders/" for ::1 at 2019-11-28 20:24:47 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:27:18 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:27:57 +0100
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:32:43 +0100
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant OrdersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (20.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-28 20:44:00 +0100
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (25.5ms)
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 2512ms (Views: 2397.4ms | ActiveRecord: 38.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-28 20:44:13 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (48.5ms)
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 210ms (Views: 185.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:44:22 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 146ms (Views: 138.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/items/5" for ::1 at 2019-11-28 20:44:32 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 5]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (97.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 227ms (Views: 163.2ms | ActiveRecord: 19.8ms)
+
+
+Started PUT "/mon_panier/5" for ::1 at 2019-11-28 20:44:34 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zkKUVjWpe4ev0MI83b1REqSGSzdEH8LEfSmjNQkZsejJ6r9kkh/z61QrrzmLCIdZVNilAj48zKmaRfHq9zsoQ==", "item"=>{"id"=>"5"}, "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mCart Create (20.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-11-28 19:44:34.437756"], ["updated_at", "2019-11-28 19:44:34.437756"]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (1.9ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 17], ["item_id", 5]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 89.7ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:44:34 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 91ms (Views: 84.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 20:44:43 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 17]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  Rendered carts/index.html.erb within layouts/application (11.0ms)
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 126ms (Views: 92.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/order" for ::1 at 2019-11-28 20:45:16 +0100
+Processing by OrderController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CpFZqrIoygAi1r3CNcJD0a3PTzaiLF844nlWEL0p8yZWj/kGeLYQIZE5UHYgmJSIgg40jnfE0wFV5OdbwtF5QA==", "stripeToken"=>"tok_1FjsvNIQEd8oNedTINfPnRJ8", "stripeTokenType"=>"card", "stripeEmail"=>"leo@leo.fr"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:90
+  [1m[36mCart Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:90
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:93
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 17]]
+  ↳ app/controllers/order_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Create (2.4ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-11-28 19:45:18.048102"], ["updated_at", "2019-11-28 19:45:18.048102"]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:56
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:58
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:59
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:60
+  [1m[36mCartItem Load (1.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 18]]
+  ↳ app/mailers/order_mailer.rb:66
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  Rendering order_mailer/order_send_admin_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.html.erb within layouts/mailer (3.8ms)
+  Rendering order_mailer/order_send_admin_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.text.erb within layouts/mailer (1.5ms)
+OrderMailer#order_send_admin_email: processed outbound mail in 447.0ms
+Sent mail to anthonyph34000@gmail.com (162.7ms)
+Date: Thu, 28 Nov 2019 20:45:18 +0100
+From: no-reply@chaton-mignon.fr
+To: anthonyph34000@gmail.com
+Message-ID: <5de023ce8ade7_62012acf8c764a047915e@leovanel-HP-Pavilion-15-Notebook-PC.mail>
+Subject: =?UTF-8?Q?Une_nouvelle_commande_a_=C3=A9t=C3=A9_pass=C3=A9e_!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de023ce85a79_62012acf8c764a04790bf";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de023ce85a79_62012acf8c764a04790bf
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+  Salut Admin une nouvelle commande a =C3=A9t=C3=A9 pass=C3=A9=0D
+    =0D
+  Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-mignon.fr avec =
+l'e-mail suivant : bibi@yopmail.com.=0D
+    =0D
+  Le client s'appelle ld fe.=0D
+    =0D
+    =0D
+  le num=C3=A9ro de commande est : 18.=0D
+    =0D
+      =0D
+      Il a achet=C3=A9 la photo n=C2=B0 5.=0D
+      =0D
+       <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D"width:25=
+%; height: auto">-->=0D
+          <img src=3D"https://images.pexels.com/photos/96938/pexels-photo=
+-96938.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D=
+"petit chaton si mignon" style=3D"width:25%; height: auto">=0D
+       =0D
+      au prix de : 44.0 =E2=82=AC.=0D
+    =0D
+=0D
+     Bonne journ=C3=A9e chef !=0D
+
+----==_mimepart_5de023ce85a79_62012acf8c764a04790bf
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                      Admin !=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-m=
+ignon.fr avec l'e-mail suivant : bibi@yopmail.com.=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                Le client s'appelle ld fe (n=C2=B0 de commande : 18)=0D
+                <br>=0D
+                Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi =
+via : www.chaton-mignon.fr.=0D
+                <p>=0D
+                Il a achet=C3=A9 la photo n=C2=B0 5.=0D
+                </p>=0D
+                 <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D=
+"width:25%; height: auto">-->=0D
+                    <img src=3D"https://images.pexels.com/photos/96938/pe=
+xels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&amp;h=
+=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%; he=
+ight: auto">=0D
+                    <br><br>=0D
+                au prix de : 44.0 =E2=82=AC.=0D
+                <p>Bonne journ=C3=A9e chef !</p>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Il faut envoyer un email =C3=A0 l'administrateur du site (email d=C3=A9=
+cid=C3=A9 arbitrairement en attendant la classe "admin"), qui fait un r=C3=
+=A9capitulatif de la commande qui vient d'=C3=AAtre faite.-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de023ce85a79_62012acf8c764a04790bf--
+
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:6
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:9
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:10
+  [1m[36mCACHE CartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 18]]
+  ↳ app/mailers/order_mailer.rb:15
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  Rendering order_mailer/order_send_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.html.erb within layouts/mailer (4.1ms)
+  Rendering order_mailer/order_send_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.text.erb within layouts/mailer (1.8ms)
+OrderMailer#order_send_email: processed outbound mail in 74.3ms
+Sent mail to bibi@yopmail.com (89.7ms)
+Date: Thu, 28 Nov 2019 20:45:18 +0100
+From: no-reply@chaton-mignon.fr
+To: bibi@yopmail.com
+Message-ID: <5de023cec2afe_62012acf8c764a0479367@leovanel-HP-Pavilion-15-Notebook-PC.mail>
+Subject: Merci pour votre commande !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de023cebed82_62012acf8c764a04792d3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de023cebed82_62012acf8c764a04792d3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut ld et merci pour ton achat !=0D
+    =0D
+Tu as pass=C3=A9 une commande (n=C2=B0 18) chez www.chaton-mignon.fr en u=
+tilisant l'e-mail suivant : bibi@yopmail.com.=0D
+=0D
+Voici la photos que tu as achet=C3=A9 au prix total de 44.0 =E2=82=AC:=0D=
+
+=0D
+    <!--<img src=3D"["https://images.pexels.com/photos/96938/pexels-photo=
+-96938.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940"]" alt=3D=
+"petit chaton si mignon" style=3D"width:40%; height: auto">-->=0D
+<img src=3D"https://images.pexels.com/photos/96938/pexels-photo-96938.jpe=
+g?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D"petit cha=
+ton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+        =0D
+Mignon n'est-ce pas ?=0D
+      =0D
+Pour acc=C3=A9der =C3=A0 ton espace client et commander de nouvelles phot=
+os, connecte-toi via : www.chaton-mignon.fr/login.=0D
+    =0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+
+----==_mimepart_5de023cebed82_62012acf8c764a04792d3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                       ld=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Merci pour ton achat =F0=9F=A4=97=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                <p>=0D
+                  Tu as pass=C3=A9 une commande (n=C2=B0 18) chez www.cha=
+ton-mignon.fr en utilisant l'e-mail suivant : bibi@yopmail.com.=0D
+                </p>=0D
+                <h3>=0D
+                Voici la photo que tu as achet=C3=A9 au prix total de 44.=
+0 =E2=82=AC:=0D
+                  </h3>=0D
+                <br>=0D
+                <br>=0D
+                <!--<img src=3D"[&quot;https://images.pexels.com/photos/9=
+6938/pexels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D=
+2&amp;h=3D650&amp;w=3D940&quot;]" alt=3D"petit chaton si mignon" style=3D=
+"width:40%; height: auto">-->=0D
+                      <img src=3D"https://images.pexels.com/photos/96938/=
+pexels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&amp=
+;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:40%; =
+height: auto">=0D
+                      <br>=0D
+                <br>=0D
+                <h4>=0D
+                  Mignon n'est-ce pas ?=0D
+                  <br>=0D
+                  Pour acc=C3=A9der =C3=A0 ton espace client et commander=
+ de nouvelles photos, connecte-toi via : www.chaton-mignon.fr/login.=0D
+                <br>=0D
+                </h4>=0D
+                <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D=
+
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un =
+email avec la photo de chaton, et un wording pour lui dire merci toussa. =
+-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de023cebed82_62012acf8c764a04792d3--
+
+  [1m[36mCartItem Load (1.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 17]]
+  ↳ app/controllers/order_controller.rb:59
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (1.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 17], ["item_id", 5]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 17]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCart Destroy (1.2ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:67
+Redirected to http://localhost:3000/
+Completed 302 Found in 2488ms (ActiveRecord: 74.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 20:45:19 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 128ms (Views: 118.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/order_index" for ::1 at 2019-11-28 20:45:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/order_index"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2019-11-28 20:45:46 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/order" for ::1 at 2019-11-28 20:46:35 +0100
+Processing by OrderController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:90
+  [1m[36mCart Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:90
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mCart Create (1.1ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-11-28 19:46:35.768208"], ["updated_at", "2019-11-28 19:46:35.768208"]]
+  ↳ app/controllers/order_controller.rb:91
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:91
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1 LIMIT $2[0m  [["cart_id", 18], ["LIMIT", 11]]
+  ↳ /home/leovanel/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1 LIMIT $2[0m  [["cart_id", 18], ["LIMIT", 11]]
+  ↳ /home/leovanel/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+Completed 500 Internal Server Error in 530ms (ActiveRecord: 35.3ms)
+
+
+  
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1 LIMIT $2[0m  [["cart_id", 18], ["LIMIT", 11]]
+  ↳ /home/leovanel/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+NameError (undefined local variable or method `order_all' for #<OrderController:0x00007f6b5c3a8d28>
+Did you mean?  order_url
+               order_path):
+  
+app/controllers/order_controller.rb:81:in `index'

@@ -15,5 +15,8 @@ Go to:
 Or :
 - `http://chaton-mignon.herokuapp.com/`
 
-### Made in Montpellier
+Adimn : 
+ - email: "anthony.phim@gmail.com"
+ - password: "123456"
 
+### Made in Montpellier

@@ -25295,3 +25295,3132 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 68ms (Views: 63.0ms | ActiveRecord: 3.4ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddIsAdminToUsers (20191127170113)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (679.3ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean DEFAULT FALSE[0m
+  ↳ db/migrate/20191127170113_add_is_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191127170113"]]
+  ↳ bin/rails:9
+  [1m[35m (73.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mOrderItem Load (101.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:9
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (52.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (83.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:9
+  [1m[35m (33.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:9
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:9
+  [1m[35m (33.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:9
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:9
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:9
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mOrderItem Destroy (0.2ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:9
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (1.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (23.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 36]]
+  ↳ db/seeds.rb:11
+  [1m[35m (33.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 37]]
+  ↳ db/seeds.rb:11
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 38]]
+  ↳ db/seeds.rb:11
+  [1m[35m (68.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCartItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 39]]
+  ↳ db/seeds.rb:11
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.4ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[35m (37.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 3]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:13
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 4]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:13
+  [1m[35m (44.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 5]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:13
+  [1m[35m (45.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 6]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.4ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:13
+  [1m[35m (44.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 7]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.2ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:13
+  [1m[35m (34.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 8]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.2ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:13
+  [1m[35m (45.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 9]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.2ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:13
+  [1m[35m (44.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 10]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:13
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 11]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:13
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 12]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:13
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 13]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:13
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 14]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.4ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:13
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 15]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.6ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:13
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 17]]
+  ↳ db/seeds.rb:13
+  [1m[36mCart Destroy (0.6ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:13
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:15
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:15
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:15
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.9ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:15
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.9ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:15
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.9ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:15
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:15
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:15
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:15
+  [1m[35m (21.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:15
+  [1m[35m (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:15
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:15
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:15
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:15
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:15
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:15
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[36mOrder Load (24.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (1.1ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:17
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:17
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:17
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:17
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:17
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:17
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:17
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:17
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:17
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:17
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:17
+  [1m[35m (101.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.7ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:17
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.7ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:17
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:17
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (35.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:19
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:19
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:19
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:19
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:19
+  [1m[35m (60.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:19
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:19
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:19
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:19
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:19
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anthony.phim@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "anthony.phim@gmail.com"], ["encrypted_password", "$2a$11$/YqP3bE5DQtr7jBg/sJWYu0rB3hZlPVqCxEYaEoMRcISwfg9jHmlq"], ["created_at", "2019-11-28 13:08:34.789619"], ["updated_at", "2019-11-28 13:08:34.789619"], ["first_name", "username"], ["last_name", "lastnameuser"]]
+  ↳ db/seeds.rb:56
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.9ms)
+UserMailer#welcome_email: processed outbound mail in 186.0ms
+Sent mail to anthony.phim@gmail.com (18.1ms)
+Date: Thu, 28 Nov 2019 14:08:35 +0100
+From: no-reply@chaton-mignon.fr
+To: anthony.phim@gmail.com
+Message-ID: <5ddfc6d31cb4_32332acf8991a5b82638a@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d310e8_32332acf8991a5b826218";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d310e8_32332acf8991a5b826218
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut username et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+anthony.phim@gmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d310e8_32332acf8991a5b826218
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut username et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : anthony.phim@gmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d310e8_32332acf8991a5b826218--
+
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arcesilaus.molly@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "arcesilaus.molly@yopmail.com"], ["encrypted_password", "$2a$11$Loe44T6EHIZHi77HVQP3WOsZkDFGkurLeHzAafgYGu.hqBCQDZo3y"], ["created_at", "2019-11-28 13:08:35.319198"], ["updated_at", "2019-11-28 13:08:35.319198"], ["first_name", "Arcesilaus"], ["last_name", "Molly"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+UserMailer#welcome_email: processed outbound mail in 8.3ms
+Sent mail to arcesilaus.molly@yopmail.com (18.2ms)
+Date: Thu, 28 Nov 2019 14:08:35 +0100
+From: no-reply@chaton-mignon.fr
+To: arcesilaus.molly@yopmail.com
+Message-ID: <5ddfc6d350954_32332acf8991a5b826586@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d34fd8e_32332acf8991a5b8264f6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d34fd8e_32332acf8991a5b8264f6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Arcesilaus et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+arcesilaus.molly@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d34fd8e_32332acf8991a5b8264f6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Arcesilaus et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : arcesilaus.molly@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d34fd8e_32332acf8991a5b8264f6--
+
+  [1m[35m (116.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "epicurus.harley@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "epicurus.harley@yopmail.com"], ["encrypted_password", "$2a$11$FqhXNre7Vl4Rp27XAtMu7uUYMaEvj4hHuliJ.KLrc23hGFeZ5ex0e"], ["created_at", "2019-11-28 13:08:35.624655"], ["updated_at", "2019-11-28 13:08:35.624655"], ["first_name", "Epicurus"], ["last_name", "Harley"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+UserMailer#welcome_email: processed outbound mail in 18.3ms
+Sent mail to epicurus.harley@yopmail.com (29.7ms)
+Date: Thu, 28 Nov 2019 14:08:35 +0100
+From: no-reply@chaton-mignon.fr
+To: epicurus.harley@yopmail.com
+Message-ID: <5ddfc6d39e45e_32332acf8991a5b8267a@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d39c22c_32332acf8991a5b826693";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d39c22c_32332acf8991a5b826693
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Epicurus et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+epicurus.harley@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d39c22c_32332acf8991a5b826693
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Epicurus et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : epicurus.harley@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d39c22c_32332acf8991a5b826693--
+
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plato.cooper@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "plato.cooper@yopmail.com"], ["encrypted_password", "$2a$11$2/0p1cneNyZPqpo3MrxizuxfSzLgJwOJWcueqyJyzhFRTRs2muWxW"], ["created_at", "2019-11-28 13:08:35.842710"], ["updated_at", "2019-11-28 13:08:35.842710"], ["first_name", "Plato"], ["last_name", "Cooper"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 14.2ms
+Sent mail to plato.cooper@yopmail.com (20.6ms)
+Date: Thu, 28 Nov 2019 14:08:35 +0100
+From: no-reply@chaton-mignon.fr
+To: plato.cooper@yopmail.com
+Message-ID: <5ddfc6d3d393c_32332acf8991a5b826986@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d3d2917_32332acf8991a5b8268a2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d3d2917_32332acf8991a5b8268a2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Plato et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+plato.cooper@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d3d2917_32332acf8991a5b8268a2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Plato et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : plato.cooper@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d3d2917_32332acf8991a5b8268a2--
+
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antisthenes.lucy@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "antisthenes.lucy@yopmail.com"], ["encrypted_password", "$2a$11$Xec1Q2tXT.nmXZWqerQcmOp7R4wPxnUGdDaICuRDYiP1sAGtOYTqu"], ["created_at", "2019-11-28 13:08:36.091518"], ["updated_at", "2019-11-28 13:08:36.091518"], ["first_name", "Antisthenes"], ["last_name", "Lucy"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 7.8ms
+Sent mail to antisthenes.lucy@yopmail.com (20.5ms)
+Date: Thu, 28 Nov 2019 14:08:36 +0100
+From: no-reply@chaton-mignon.fr
+To: antisthenes.lucy@yopmail.com
+Message-ID: <5ddfc6d4191a1_32332acf8991a5b827154@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d418649_32332acf8991a5b827011";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d418649_32332acf8991a5b827011
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Antisthenes et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+antisthenes.lucy@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d418649_32332acf8991a5b827011
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Antisthenes et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : antisthenes.lucy@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d418649_32332acf8991a5b827011--
+
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anaxagoras.rocky@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "anaxagoras.rocky@yopmail.com"], ["encrypted_password", "$2a$11$ywKXjB1wuMrGUYqA8alZ.uNvTH1Z2QNK3dwejUPWcSzo0M.ZiQh62"], ["created_at", "2019-11-28 13:08:36.318650"], ["updated_at", "2019-11-28 13:08:36.318650"], ["first_name", "Anaxagoras"], ["last_name", "Rocky"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+UserMailer#welcome_email: processed outbound mail in 12.0ms
+Sent mail to anaxagoras.rocky@yopmail.com (42.4ms)
+Date: Thu, 28 Nov 2019 14:08:36 +0100
+From: no-reply@chaton-mignon.fr
+To: anaxagoras.rocky@yopmail.com
+Message-ID: <5ddfc6d451ed3_32332acf8991a5b827314@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d4510d3_32332acf8991a5b82725d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d4510d3_32332acf8991a5b82725d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Anaxagoras et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+anaxagoras.rocky@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d4510d3_32332acf8991a5b82725d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Anaxagoras et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : anaxagoras.rocky@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d4510d3_32332acf8991a5b82725d--
+
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pythagoras.luna@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "pythagoras.luna@yopmail.com"], ["encrypted_password", "$2a$11$1ydNPN5eCllB.9dnVf4MyuMDomXNeNW2IbEEJEWn5U6UthsLlXoty"], ["created_at", "2019-11-28 13:08:36.569864"], ["updated_at", "2019-11-28 13:08:36.569864"], ["first_name", "Pythagoras"], ["last_name", "Luna"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 20.5ms
+Sent mail to pythagoras.luna@yopmail.com (50.3ms)
+Date: Thu, 28 Nov 2019 14:08:36 +0100
+From: no-reply@chaton-mignon.fr
+To: pythagoras.luna@yopmail.com
+Message-ID: <5ddfc6d490b42_32332acf8991a5b82755b@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d48d127_32332acf8991a5b827483";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d48d127_32332acf8991a5b827483
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Pythagoras et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+pythagoras.luna@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d48d127_32332acf8991a5b827483
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Pythagoras et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : pythagoras.luna@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d48d127_32332acf8991a5b827483--
+
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gorgias.sugar@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "gorgias.sugar@yopmail.com"], ["encrypted_password", "$2a$11$CzBP4.7Tr0woDEFG8fHY0eH1Jk8erSxOG7Zg7xON8/Q/PD8Dek1JK"], ["created_at", "2019-11-28 13:08:36.851696"], ["updated_at", "2019-11-28 13:08:36.851696"], ["first_name", "Gorgias"], ["last_name", "Sugar"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+UserMailer#welcome_email: processed outbound mail in 10.1ms
+Sent mail to gorgias.sugar@yopmail.com (70.0ms)
+Date: Thu, 28 Nov 2019 14:08:36 +0100
+From: no-reply@chaton-mignon.fr
+To: gorgias.sugar@yopmail.com
+Message-ID: <5ddfc6d4d5866_32332acf8991a5b82778a@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d4d4ca1_32332acf8991a5b827688";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d4d4ca1_32332acf8991a5b827688
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Gorgias et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+gorgias.sugar@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d4d4ca1_32332acf8991a5b827688
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Gorgias et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : gorgias.sugar@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d4d4ca1_32332acf8991a5b827688--
+
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plato.rusty@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "plato.rusty@yopmail.com"], ["encrypted_password", "$2a$11$W8GospIR0G3yfPXDYBP0WeRWd3fOK/i0HY2SwCFndslwYqEMHreT6"], ["created_at", "2019-11-28 13:08:37.145239"], ["updated_at", "2019-11-28 13:08:37.145239"], ["first_name", "Plato"], ["last_name", "Rusty"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 9.7ms
+Sent mail to plato.rusty@yopmail.com (81.7ms)
+Date: Thu, 28 Nov 2019 14:08:37 +0100
+From: no-reply@chaton-mignon.fr
+To: plato.rusty@yopmail.com
+Message-ID: <5ddfc6d52722a_32332acf8991a5b82796a@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d525dbd_32332acf8991a5b82787d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d525dbd_32332acf8991a5b82787d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Plato et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+plato.rusty@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d525dbd_32332acf8991a5b82787d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Plato et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : plato.rusty@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d525dbd_32332acf8991a5b82787d--
+
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "solon.baxter@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "solon.baxter@yopmail.com"], ["encrypted_password", "$2a$11$rrs5lc2kLlFZs1dQwVUgD.69QGd53QnpOPAJcBUalTQLL6DQwsA9."], ["created_at", "2019-11-28 13:08:37.436055"], ["updated_at", "2019-11-28 13:08:37.436055"], ["first_name", "Solon"], ["last_name", "Baxter"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 9.0ms
+Sent mail to solon.baxter@yopmail.com (137.1ms)
+Date: Thu, 28 Nov 2019 14:08:37 +0100
+From: no-reply@chaton-mignon.fr
+To: solon.baxter@yopmail.com
+Message-ID: <5ddfc6d56d482_32332acf8991a5b828124@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d56c766_32332acf8991a5b8280e6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d56c766_32332acf8991a5b8280e6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Solon et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+solon.baxter@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d56c766_32332acf8991a5b8280e6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Solon et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : solon.baxter@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d56c766_32332acf8991a5b8280e6--
+
+  [1m[35m (51.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "parmenides.bailey@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "parmenides.bailey@yopmail.com"], ["encrypted_password", "$2a$11$cJ5gtZs2b4JkLpRQ14NcbOScOx6ANSW3kx9.QiNWxAyTVVDEX.TCK"], ["created_at", "2019-11-28 13:08:37.784843"], ["updated_at", "2019-11-28 13:08:37.784843"], ["first_name", "Parmenides"], ["last_name", "Bailey"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+UserMailer#welcome_email: processed outbound mail in 11.3ms
+Sent mail to parmenides.bailey@yopmail.com (47.6ms)
+Date: Thu, 28 Nov 2019 14:08:37 +0100
+From: no-reply@chaton-mignon.fr
+To: parmenides.bailey@yopmail.com
+Message-ID: <5ddfc6d5c3039_32332acf8991a5b8283e6@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d5c19e2_32332acf8991a5b828261";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d5c19e2_32332acf8991a5b828261
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Parmenides et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+parmenides.bailey@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d5c19e2_32332acf8991a5b828261
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Parmenides et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : parmenides.bailey@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d5c19e2_32332acf8991a5b828261--
+
+  [1m[35m (91.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hippocrates.roxie@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hippocrates.roxie@yopmail.com"], ["encrypted_password", "$2a$11$tSQXOr5xay.w/SUe9FzPKOYYLV/ZH8QO5ZuC0JezsFK.ruAP91w9e"], ["created_at", "2019-11-28 13:08:38.076592"], ["updated_at", "2019-11-28 13:08:38.076592"], ["first_name", "Hippocrates"], ["last_name", "Roxie"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 15.5ms
+Sent mail to hippocrates.roxie@yopmail.com (45.9ms)
+Date: Thu, 28 Nov 2019 14:08:38 +0100
+From: no-reply@chaton-mignon.fr
+To: hippocrates.roxie@yopmail.com
+Message-ID: <5ddfc6d617132_32332acf8991a5b8285bf@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d6166c1_32332acf8991a5b828494";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d6166c1_32332acf8991a5b828494
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Hippocrates et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+hippocrates.roxie@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d6166c1_32332acf8991a5b828494
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Hippocrates et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : hippocrates.roxie@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d6166c1_32332acf8991a5b828494--
+
+  [1m[35m (43.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "epicurus.diamond@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "epicurus.diamond@yopmail.com"], ["encrypted_password", "$2a$11$Hg5FDCDZrWM2QESLKNAdO.7mL520g55A76FvhZ9XKw0ARsET14uyy"], ["created_at", "2019-11-28 13:08:38.335727"], ["updated_at", "2019-11-28 13:08:38.335727"], ["first_name", "Epicurus"], ["last_name", "Diamond"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 7.1ms
+Sent mail to epicurus.diamond@yopmail.com (31.1ms)
+Date: Thu, 28 Nov 2019 14:08:38 +0100
+From: no-reply@chaton-mignon.fr
+To: epicurus.diamond@yopmail.com
+Message-ID: <5ddfc6d654489_32332acf8991a5b828762@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d653bd7_32332acf8991a5b828639";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d653bd7_32332acf8991a5b828639
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Epicurus et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+epicurus.diamond@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d653bd7_32332acf8991a5b828639
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Epicurus et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : epicurus.diamond@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d653bd7_32332acf8991a5b828639--
+
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "plutarch.shadow@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "plutarch.shadow@yopmail.com"], ["encrypted_password", "$2a$11$.rDOhuPZqVoFT.qryZ9fHO8QMnF1hWk/BRfBAnXhUg58K2lsaQzda"], ["created_at", "2019-11-28 13:08:38.580031"], ["updated_at", "2019-11-28 13:08:38.580031"], ["first_name", "Plutarch"], ["last_name", "Shadow"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 9.6ms
+Sent mail to plutarch.shadow@yopmail.com (29.4ms)
+Date: Thu, 28 Nov 2019 14:08:38 +0100
+From: no-reply@chaton-mignon.fr
+To: plutarch.shadow@yopmail.com
+Message-ID: <5ddfc6d69095e_32332acf8991a5b8289f4@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d68fde4_32332acf8991a5b8288db";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d68fde4_32332acf8991a5b8288db
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Plutarch et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+plutarch.shadow@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d68fde4_32332acf8991a5b8288db
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Plutarch et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : plutarch.shadow@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d68fde4_32332acf8991a5b8288db--
+
+  [1m[35m (172.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "epicurus.oreo@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "epicurus.oreo@yopmail.com"], ["encrypted_password", "$2a$11$hYaq2l/UogU.zyfzYTI3uOFvgNpl2UYrvJIW5DadSMZkTW/zaXoLy"], ["created_at", "2019-11-28 13:08:39.009109"], ["updated_at", "2019-11-28 13:08:39.009109"], ["first_name", "Epicurus"], ["last_name", "Oreo"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+UserMailer#welcome_email: processed outbound mail in 22.7ms
+Sent mail to epicurus.oreo@yopmail.com (54.3ms)
+Date: Thu, 28 Nov 2019 14:08:39 +0100
+From: no-reply@chaton-mignon.fr
+To: epicurus.oreo@yopmail.com
+Message-ID: <5ddfc6d78be1_32332acf8991a5b8291a9@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d753d3_32332acf8991a5b82901f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d753d3_32332acf8991a5b82901f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Epicurus et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+epicurus.oreo@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d753d3_32332acf8991a5b82901f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Epicurus et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : epicurus.oreo@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d753d3_32332acf8991a5b82901f--
+
+  [1m[35m (44.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chrysippus.roxie@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "chrysippus.roxie@yopmail.com"], ["encrypted_password", "$2a$11$n6OHV2HxyNkihlwnG4YIuuMNdxnzaf8Yyz28.Gk5gMWbjNiX02XBW"], ["created_at", "2019-11-28 13:08:39.293221"], ["updated_at", "2019-11-28 13:08:39.293221"], ["first_name", "Chrysippus"], ["last_name", "Roxie"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+UserMailer#welcome_email: processed outbound mail in 21.5ms
+Sent mail to chrysippus.roxie@yopmail.com (44.1ms)
+Date: Thu, 28 Nov 2019 14:08:39 +0100
+From: no-reply@chaton-mignon.fr
+To: chrysippus.roxie@yopmail.com
+Message-ID: <5ddfc6d74d9bb_32332acf8991a5b829350@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d74cd84_32332acf8991a5b82925e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d74cd84_32332acf8991a5b82925e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Chrysippus et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+chrysippus.roxie@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d74cd84_32332acf8991a5b82925e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Chrysippus et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : chrysippus.roxie@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d74cd84_32332acf8991a5b82925e--
+
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "posidonius.toby@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "posidonius.toby@yopmail.com"], ["encrypted_password", "$2a$11$dEWpkPhb5NvGyJC1xdFNCeBXn347gEwqFPmk9OI9B1xrzBKtoE15K"], ["created_at", "2019-11-28 13:08:39.526633"], ["updated_at", "2019-11-28 13:08:39.526633"], ["first_name", "Posidonius"], ["last_name", "Toby"]]
+  ↳ db/seeds.rb:69
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+UserMailer#welcome_email: processed outbound mail in 13.7ms
+Sent mail to posidonius.toby@yopmail.com (36.3ms)
+Date: Thu, 28 Nov 2019 14:08:39 +0100
+From: no-reply@chaton-mignon.fr
+To: posidonius.toby@yopmail.com
+Message-ID: <5ddfc6d7849a3_32332acf8991a5b829511@amos-GP62MVR-7RFX.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ddfc6d783b55_32332acf8991a5b82948a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ddfc6d783b55_32332acf8991a5b82948a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut Posidonius et bienvenue chez nous !=0D
+   =0D
+Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suivant : =
+posidonius.toby@yopmail.com.=0D
+=0D
+Vas vite regarder notre jolie showroom et adopte ta photo coup de coeur !=
+=0D
+=0D
+Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.chaton=
+-mignon.fr.=0D
+=0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+=0D
+Miaousement votre. =0D
+
+----==_mimepart_5ddfc6d783b55_32332acf8991a5b82948a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+   <center>=0D
+    <h1>Salut Posidonius et bienvenue chez nous !</h1>=0D
+    <p>=0D
+      Tu t'es inscrit sur www.chaton-mignon.fr en utilisant l'e-mail suiv=
+ant : posidonius.toby@yopmail.com.=0D
+    </p>=0D
+    <h3>=0D
+    <br>=0D
+      Vas vite regarder notre jolie showroom et adopte ta photo coup de c=
+oeur !=0D
+    </h3>=0D
+    <p>=0D
+    <br>=0D
+      Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via : www.=
+chaton-mignon.fr.=0D
+    </p>=0D
+    <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D
+=0D
+    <p> Miaousement votre. </p>=0D
+     </center>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5ddfc6d783b55_32332acf8991a5b82948a--
+
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "I Will Fear No Evil"], ["description", "The secret to humor is surprise."], ["price", "21.0"], ["image_url", "https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg"], ["created_at", "2019-11-28 13:08:39.605849"], ["updated_at", "2019-11-28 13:08:39.605849"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "If I Forget Thee Jerusalem"], ["description", "Beware the barrenness of a busy life."], ["price", "19.0"], ["image_url", "https://images.pexels.com/photos/9413/animal-cute-kitten-cat.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"], ["created_at", "2019-11-28 13:08:39.640813"], ["updated_at", "2019-11-28 13:08:39.640813"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (33.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Stranger in a Strange Land"], ["description", "It is impossible to begin to learn that which one thinks one already knows."], ["price", "35.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.677986"], ["updated_at", "2019-11-28 13:08:39.677986"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (2.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Consider the Lilies"], ["description", "Beware the barrenness of a busy life."], ["price", "26.0"], ["image_url", "https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.723215"], ["updated_at", "2019-11-28 13:08:39.723215"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Darkling Plain"], ["description", "It is impossible to begin to learn that which one thinks one already knows."], ["price", "36.0"], ["image_url", "https://images.pexels.com/photos/96938/pexels-photo-96938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.770772"], ["updated_at", "2019-11-28 13:08:39.770772"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (2.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "If Not Now, When?"], ["description", "Philosophy is the highest music."], ["price", "33.0"], ["image_url", "https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.805763"], ["updated_at", "2019-11-28 13:08:39.805763"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Paths of Glory"], ["description", "Rhetoric is the art of ruling the minds of men."], ["price", "54.0"], ["image_url", "https://images.pexels.com/photos/1056251/pexels-photo-1056251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.841480"], ["updated_at", "2019-11-28 13:08:39.841480"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (1.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "An Instant In The Wind"], ["description", "Control thy passions lest they take vengence on thee."], ["price", "10.0"], ["image_url", "https://images.pexels.com/photos/1444321/pexels-photo-1444321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.879255"], ["updated_at", "2019-11-28 13:08:39.879255"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Noli Me Tangere"], ["description", "Control thy passions lest they take vengence on thee."], ["price", "32.0"], ["image_url", "https://images.pexels.com/photos/257532/pexels-photo-257532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.928619"], ["updated_at", "2019-11-28 13:08:39.928619"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (1.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Proper Study"], ["description", "Love is composed of a single soul inhabiting two bodies."], ["price", "16.0"], ["image_url", "https://images.pexels.com/photos/290204/pexels-photo-290204.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:39.963624"], ["updated_at", "2019-11-28 13:08:39.963624"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "In a Glass Darkly"], ["description", "There was never a genius without a tincture of madness."], ["price", "22.0"], ["image_url", "https://images.pexels.com/photos/209037/pexels-photo-209037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:40.018839"], ["updated_at", "2019-11-28 13:08:40.018839"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cover Her Face"], ["description", "Only the educated are free."], ["price", "39.0"], ["image_url", "https://images.pexels.com/photos/1056252/pexels-photo-1056252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:40.077155"], ["updated_at", "2019-11-28 13:08:40.077155"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (59.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time of our Darkness"], ["description", "Only the educated are free."], ["price", "49.0"], ["image_url", "https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:40.140244"], ["updated_at", "2019-11-28 13:08:40.140244"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (73.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Stranger in a Strange Land"], ["description", "Philosophy is the highest music."], ["price", "35.0"], ["image_url", "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"], ["created_at", "2019-11-28 13:08:40.229002"], ["updated_at", "2019-11-28 13:08:40.229002"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (61.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["description", "It's not what happens to you, but how you react to it that matters."], ["price", "15.0"], ["image_url", "https://images.pexels.com/photos/1359307/pexels-photo-1359307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:40.304738"], ["updated_at", "2019-11-28 13:08:40.304738"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (57.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["description", "Quality is not an act, it is a habit."], ["price", "48.0"], ["image_url", "https://images.pexels.com/photos/3250642/pexels-photo-3250642.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"], ["created_at", "2019-11-28 13:08:40.365730"], ["updated_at", "2019-11-28 13:08:40.365730"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (67.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Many-Splendoured Thing"], ["description", "Pleasure in the job puts perfection in the work."], ["price", "18.0"], ["image_url", "https://cdn.radiofrance.fr/s3/cruiser-production/2018/06/38dd3787-27c5-4001-a0c8-c87add17328c/870x489_870x489_jeremy_b_williams-r-3e2a7262-modifier.jpg"], ["created_at", "2019-11-28 13:08:40.436239"], ["updated_at", "2019-11-28 13:08:40.436239"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (70.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time of our Darkness"], ["description", "There was never a genius without a tincture of madness."], ["price", "47.0"], ["image_url", "https://images.pexels.com/photos/1416792/pexels-photo-1416792.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"], ["created_at", "2019-11-28 13:08:40.509681"], ["updated_at", "2019-11-28 13:08:40.509681"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (54.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Absalom, Absalom!"], ["description", "The virtue of justice consists in moderation, as regulated by wisdom."], ["price", "35.0"], ["image_url", "https://jngnposwzs-flywheel.netdna-ssl.com/wp-content/uploads/2019/05/kitten-2249619_1920-1024x683.jpg"], ["created_at", "2019-11-28 13:08:40.566027"], ["updated_at", "2019-11-28 13:08:40.566027"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Moab Is My Washpot"], ["description", "It's not what happens to you, but how you react to it that matters."], ["price", "43.0"], ["image_url", "https://cdn.pixabay.com/photo/2015/10/12/15/01/cat-984097__340.jpg"], ["created_at", "2019-11-28 13:08:40.608469"], ["updated_at", "2019-11-28 13:08:40.608469"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Last Enemy"], ["description", "Beware the barrenness of a busy life."], ["price", "49.0"], ["image_url", "https://cdn.pixabay.com/photo/2019/08/03/15/05/cat-4381938_960_720.jpg"], ["created_at", "2019-11-28 13:08:40.635178"], ["updated_at", "2019-11-28 13:08:40.635178"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (1.0ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 13:08:40.715407"], ["updated_at", "2019-11-28 13:08:40.715407"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["created_at", "2019-11-28 13:08:40.752165"], ["updated_at", "2019-11-28 13:08:40.752165"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (1.0ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["created_at", "2019-11-28 13:08:40.793259"], ["updated_at", "2019-11-28 13:08:40.793259"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 4], ["created_at", "2019-11-28 13:08:40.828387"], ["updated_at", "2019-11-28 13:08:40.828387"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 5], ["created_at", "2019-11-28 13:08:40.861821"], ["updated_at", "2019-11-28 13:08:40.861821"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (2.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 6], ["created_at", "2019-11-28 13:08:40.896600"], ["updated_at", "2019-11-28 13:08:40.896600"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (25.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 7], ["created_at", "2019-11-28 13:08:40.930426"], ["updated_at", "2019-11-28 13:08:40.930426"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 8], ["created_at", "2019-11-28 13:08:40.965750"], ["updated_at", "2019-11-28 13:08:40.965750"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 9], ["created_at", "2019-11-28 13:08:41.001733"], ["updated_at", "2019-11-28 13:08:41.001733"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (1.1ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 10], ["created_at", "2019-11-28 13:08:41.040301"], ["updated_at", "2019-11-28 13:08:41.040301"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 11], ["created_at", "2019-11-28 13:08:41.076069"], ["updated_at", "2019-11-28 13:08:41.076069"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 12], ["created_at", "2019-11-28 13:08:41.111960"], ["updated_at", "2019-11-28 13:08:41.111960"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 13], ["created_at", "2019-11-28 13:08:41.146120"], ["updated_at", "2019-11-28 13:08:41.146120"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 14], ["created_at", "2019-11-28 13:08:41.180409"], ["updated_at", "2019-11-28 13:08:41.180409"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mCart Create (0.7ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 15], ["created_at", "2019-11-28 13:08:41.216602"], ["updated_at", "2019-11-28 13:08:41.216602"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (1.1ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 1], ["item_id", 1]]
+  ↳ db/seeds.rb:108
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (1.1ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 2], ["item_id", 2]]
+  ↳ db/seeds.rb:108
+  [1m[35m (23.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (2.0ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 3], ["item_id", 3]]
+  ↳ db/seeds.rb:108
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (1.1ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 4], ["item_id", 4]]
+  ↳ db/seeds.rb:108
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (2.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 5], ["item_id", 5]]
+  ↳ db/seeds.rb:108
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (2.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (1.0ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 6], ["item_id", 6]]
+  ↳ db/seeds.rb:108
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.8ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 7], ["item_id", 7]]
+  ↳ db/seeds.rb:108
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 8], ["item_id", 8]]
+  ↳ db/seeds.rb:108
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 9], ["item_id", 9]]
+  ↳ db/seeds.rb:108
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 10], ["item_id", 10]]
+  ↳ db/seeds.rb:108
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (2.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.8ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 11], ["item_id", 11]]
+  ↳ db/seeds.rb:108
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 12], ["item_id", 12]]
+  ↳ db/seeds.rb:108
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 13], ["item_id", 13]]
+  ↳ db/seeds.rb:108
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 14], ["item_id", 14]]
+  ↳ db/seeds.rb:108
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mCartItem Create (2.0ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 15], ["item_id", 15]]
+  ↳ db/seeds.rb:108
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (5.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 13:08:41.917917"], ["updated_at", "2019-11-28 13:08:41.917917"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["created_at", "2019-11-28 13:08:41.960676"], ["updated_at", "2019-11-28 13:08:41.960676"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["created_at", "2019-11-28 13:08:41.995638"], ["updated_at", "2019-11-28 13:08:41.995638"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 4], ["created_at", "2019-11-28 13:08:42.029041"], ["updated_at", "2019-11-28 13:08:42.029041"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 5], ["created_at", "2019-11-28 13:08:42.064261"], ["updated_at", "2019-11-28 13:08:42.064261"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 6], ["created_at", "2019-11-28 13:08:42.099778"], ["updated_at", "2019-11-28 13:08:42.099778"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (1.5ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 7], ["created_at", "2019-11-28 13:08:42.135755"], ["updated_at", "2019-11-28 13:08:42.135755"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (2.0ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 8], ["created_at", "2019-11-28 13:08:42.177727"], ["updated_at", "2019-11-28 13:08:42.177727"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (1.2ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 9], ["created_at", "2019-11-28 13:08:42.223722"], ["updated_at", "2019-11-28 13:08:42.223722"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (1.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 10], ["created_at", "2019-11-28 13:08:42.269827"], ["updated_at", "2019-11-28 13:08:42.269827"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (2.0ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 11], ["created_at", "2019-11-28 13:08:42.316237"], ["updated_at", "2019-11-28 13:08:42.316237"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (1.5ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 12], ["created_at", "2019-11-28 13:08:42.365814"], ["updated_at", "2019-11-28 13:08:42.365814"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (1.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 13], ["created_at", "2019-11-28 13:08:42.411234"], ["updated_at", "2019-11-28 13:08:42.411234"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (2.1ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 14], ["created_at", "2019-11-28 13:08:42.452957"], ["updated_at", "2019-11-28 13:08:42.452957"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 15], ["created_at", "2019-11-28 13:08:42.492902"], ["updated_at", "2019-11-28 13:08:42.492902"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (4.4ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 1], ["item_id", 1]]
+  ↳ db/seeds.rb:132
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (1.0ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 2], ["item_id", 2]]
+  ↳ db/seeds.rb:132
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (3.5ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 3], ["item_id", 3]]
+  ↳ db/seeds.rb:132
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 4], ["item_id", 4]]
+  ↳ db/seeds.rb:132
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.4ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 5], ["item_id", 5]]
+  ↳ db/seeds.rb:132
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.4ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 6], ["item_id", 6]]
+  ↳ db/seeds.rb:132
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (2.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (1.6ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 7], ["item_id", 7]]
+  ↳ db/seeds.rb:132
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (1.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 8], ["item_id", 8]]
+  ↳ db/seeds.rb:132
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (1.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 9], ["item_id", 9]]
+  ↳ db/seeds.rb:132
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 10], ["item_id", 10]]
+  ↳ db/seeds.rb:132
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (1.7ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 11], ["item_id", 11]]
+  ↳ db/seeds.rb:132
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 12], ["item_id", 12]]
+  ↳ db/seeds.rb:132
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (2.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 13], ["item_id", 13]]
+  ↳ db/seeds.rb:132
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 14], ["item_id", 14]]
+  ↳ db/seeds.rb:132
+  [1m[35m (27.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mOrderItem Create (0.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 15], ["item_id", 15]]
+  ↳ db/seeds.rb:132
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+Started GET "/" for ::1 at 2019-11-28 14:09:31 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/amos/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:59
+Completed 200 OK in 2038ms (Views: 1984.8ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/contact" for ::1 at 2019-11-28 14:10:48 +0100
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 86ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:10:54 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for ::1 at 2019-11-28 14:11:01 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items/1" for ::1 at 2019-11-28 14:11:03 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/items/1" for ::1 at 2019-11-28 14:12:20 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 101ms (Views: 96.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 14:12:45 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 62.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items" for ::1 at 2019-11-28 14:12:46 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  Rendered items/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contact" for ::1 at 2019-11-28 14:12:48 +0100
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:12:50 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:13:34 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:13:43 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:13:53 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for ::1 at 2019-11-28 14:14:05 +0100
+Processing by HomeController#team as HTML
+  Rendering home/team.html.erb within layouts/application
+  Rendered home/team.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+

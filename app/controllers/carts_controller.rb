@@ -9,6 +9,7 @@ class CartsController < ApplicationController
     @items = @cart.items
 
 
+
   end
     
 
@@ -35,10 +36,11 @@ class CartsController < ApplicationController
   end
 
   def destroy
-        
-    @item_to_destroy= CartItem.find_by(item_id:'id',cart_id: @cart.id)
+     
+    @item_to_destroy= CartItem.find_by(item_id: params[:item_id],cart_id: @cart.id)
+    
     @item_to_destroy.destroy 
-    flash[:notice] = "item supprimé"    
+      
     redirect_to carts_path
 
   end

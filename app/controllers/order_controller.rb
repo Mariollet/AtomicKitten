@@ -65,7 +65,7 @@ class OrderController < ApplicationController
       end
 
     cart.destroy
-    redirect_to "/"  
+    redirect_to order_index_path  
     
     rescue Stripe::CardError => e
     flash[:error] = e.message

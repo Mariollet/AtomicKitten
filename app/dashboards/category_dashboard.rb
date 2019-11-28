@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,21 +8,12 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
-    first_name: Field::String,
-    last_name: Field::String,
-    cart: Field::HasOne,
-    cart_items: Field::HasMany,
+    category_items: Field::HasMany,
     items: Field::HasMany,
-    orders: Field::HasMany,
-    email: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
+    id: Field::Number,
+    name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    is_admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,50 +22,29 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  first_name
-  last_name
-  email
-  orders
-  is_admin
-  created_at
+    id
+    name
+    items
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  first_name
-  last_name
-  cart
-  cart_items
+  category_items
   items
-  orders
-  email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
+  id
+  name
   created_at
-  is_admin
+  updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  cart
-  cart_items
+  name
   items
-  orders
-  email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  first_name
-  last_name
-  is_admin
+  category_items
   ].freeze
 
   # COLLECTION_FILTERS
@@ -89,10 +59,10 @@ class UserDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "#{user.first_name} #{user.last_name} (##{user.id})"
+  def display_resource(category)
+    "#{category.name} (##{category.id})"
   end
 end

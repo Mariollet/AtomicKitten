@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :items
       resources :orders
       resources :order_items
+      resources :categories
+      resources :category_items
 
       root to: "users#index"
     end
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :cart_items, only: [:create,:destroy]
 
   resources :carts, only: [:index, :create, :update, :show, :destroy], path: "mon_panier"
+  resources :orders
 
   # get '/mon_panier', to: 'carts#show'
   devise_for :users

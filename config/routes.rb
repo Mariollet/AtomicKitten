@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :cart_items, only: [:create,:destroy]
 
   resources :carts, only: [:index, :create, :update, :show, :destroy], path: "mon_panier"
+  resources :orders
 
   # get '/mon_panier', to: 'carts#show'
   devise_for :users

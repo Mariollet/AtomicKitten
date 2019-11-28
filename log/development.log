@@ -10067,3 +10067,1835 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 123ms (Views: 111.7ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for ::1 at 2019-11-28 18:16:08 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20191128144021)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191128144021_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191128144021"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryItems (20191128144115)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "category_items" ("id" bigserial primary key, "category_id" bigint, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7a30442eed"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_4bf77fe76a"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_category_items_on_category_id" ON "category_items"  ("category_id")[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_category_items_on_item_id" ON "category_items"  ("item_id")[0m
+  ↳ db/migrate/20191128144115_create_category_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191128144115"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4522263803887317810)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-28 18:17:16 +0100
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 328ms (Views: 291.7ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-28 18:17:19 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.9ms)
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 88ms (Views: 80.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 18:17:22 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mCart Create (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 17:17:22.446577"], ["updated_at", "2019-11-28 17:17:22.446577"]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 28]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (37.1ms)
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 173ms (Views: 104.1ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/items" for ::1 at 2019-11-28 18:17:24 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  Rendered items/index.html.erb within layouts/application (96.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 174ms (Views: 158.3ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/items/8" for ::1 at 2019-11-28 18:17:25 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 8]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (44.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 147ms (Views: 134.1ms | ActiveRecord: 9.5ms)
+
+
+Started PUT "/mon_panier/8" for ::1 at 2019-11-28 18:17:27 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vg3dHg30dkO5yZp9IxfB8QVm+kiRfSgoFX7CGJ4lhIlE1hnrMDKH4Wwf+xbpkWW9wuhUl6SHSzJeE7pe8M509w==", "item"=>{"id"=>"8"}, "id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 28], ["item_id", 8]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:17:27 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (3.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 107ms (Views: 99.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/items/5" for ::1 at 2019-11-28 18:17:28 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 5]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (34.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 125ms (Views: 112.9ms | ActiveRecord: 5.2ms)
+
+
+Started PUT "/mon_panier/5" for ::1 at 2019-11-28 18:17:29 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7KF+0FJC4r50z/ZrvGsq3wVbZj9j2Gacnm/gux8lY3b+erolb4QTHKEZlwB27Y6TwtXI4FYiBYbVApj9cc6TCA==", "item"=>{"id"=>"5"}, "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (0.5ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 28], ["item_id", 5]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:17:29 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 83ms (Views: 77.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 18:17:31 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 28]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  Rendered carts/index.html.erb within layouts/application (28.0ms)
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 122ms (Views: 96.1ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/order" for ::1 at 2019-11-28 18:17:59 +0100
+Processing by OrderController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yBmSUs2luVF7sEpc3XB9IJF9ALe4V3RKGmLCrCYCBLrawlan8GNI865mKzcX9tlsVvOuaI2tF1BRD7rqSOn0xA==", "stripeToken"=>"tok_1FjqcqIQEd8oNedT0a7eF5Qx", "stripeTokenType"=>"card", "stripeEmail"=>"lana@lana.fr"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:80
+  [1m[36mCart Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:80
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:83
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 28]]
+  ↳ app/controllers/order_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Create (1.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 17:18:01.676279"], ["updated_at", "2019-11-28 17:18:01.676279"]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:56
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:58
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:59
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:60
+  [1m[36mCartItem Load (1.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 1]]
+  ↳ app/mailers/order_mailer.rb:66
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  Rendering order_mailer/order_send_admin_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.html.erb within layouts/mailer (1.4ms)
+  Rendering order_mailer/order_send_admin_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.text.erb within layouts/mailer (1.2ms)
+OrderMailer#order_send_admin_email: processed outbound mail in 186.0ms
+Sent mail to anthonyph34000@gmail.com (40.3ms)
+Date: Thu, 28 Nov 2019 18:18:01 +0100
+From: no-reply@chaton-mignon.fr
+To: anthonyph34000@gmail.com
+Message-ID: <5de00149d8d34_78e72aedbc149a2c654b@anthony-UX510UX.mail>
+Subject: =?UTF-8?Q?Une_nouvelle_commande_a_=C3=A9t=C3=A9_pass=C3=A9e_!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de00149d78bc_78e72aedbc149a2c64c0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de00149d78bc_78e72aedbc149a2c64c0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+  Salut Admin une nouvelle commande a =C3=A9t=C3=A9 pass=C3=A9=0D
+    =0D
+  Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-mignon.fr avec =
+l'e-mail suivant : anthony.phim@gmail.com.=0D
+    =0D
+  Le client s'appelle username lastnameuser.=0D
+    =0D
+    =0D
+  le num=C3=A9ro de commande est : 30.=0D
+    =0D
+      =0D
+      Il a achet=C3=A9 les photos suivantes : n=C2=B0 [5, 8].=0D
+      =0D
+       <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D"width:25=
+%; height: auto">-->=0D
+          <img src=3D"https://images.pexels.com/photos/96938/pexels-photo=
+-96938.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D=
+"petit chaton si mignon" style=3D"width:25%; height: auto">=0D
+          <img src=3D"https://images.pexels.com/photos/1444321/pexels-pho=
+to-1444321.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" al=
+t=3D"petit chaton si mignon" style=3D"width:25%; height: auto">=0D
+       =0D
+      au prix de : 82.0 =E2=82=AC.=0D
+    =0D
+=0D
+     Bonne journ=C3=A9e chef !=0D
+
+----==_mimepart_5de00149d78bc_78e72aedbc149a2c64c0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                      Admin !=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-m=
+ignon.fr avec l'e-mail suivant : anthony.phim@gmail.com.=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                Le client s'appelle username lastnameuser (n=C2=B0 de com=
+mande : 30)=0D
+                <br>=0D
+                Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi =
+via : www.chaton-mignon.fr.=0D
+                <p>=0D
+                Il a achet=C3=A9 les photos suivantes : n=C2=B0 [5, 8].=0D=
+
+                </p>=0D
+                 <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D=
+"width:25%; height: auto">-->=0D
+                    <img src=3D"https://images.pexels.com/photos/96938/pe=
+xels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&amp;h=
+=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%; he=
+ight: auto">=0D
+                    <img src=3D"https://images.pexels.com/photos/1444321/=
+pexels-photo-1444321.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&a=
+mp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%=
+; height: auto">=0D
+                    <br><br>=0D
+                au prix de : 82.0 =E2=82=AC.=0D
+                <p>Bonne journ=C3=A9e chef !</p>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Il faut envoyer un email =C3=A0 l'administrateur du site (email d=C3=A9=
+cid=C3=A9 arbitrairement en attendant la classe "admin"), qui fait un r=C3=
+=A9capitulatif de la commande qui vient d'=C3=AAtre faite.-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de00149d78bc_78e72aedbc149a2c64c0--
+
+  [1m[36mCACHE Order Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:9
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:10
+  [1m[36mCACHE CartItem Load (0.0ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 1]]
+  ↳ app/mailers/order_mailer.rb:15
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  Rendering order_mailer/order_send_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.html.erb within layouts/mailer (2.2ms)
+  Rendering order_mailer/order_send_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.text.erb within layouts/mailer (1.4ms)
+OrderMailer#order_send_email: processed outbound mail in 36.6ms
+Sent mail to anthony.phim@gmail.com (54.8ms)
+Date: Thu, 28 Nov 2019 18:18:01 +0100
+From: no-reply@chaton-mignon.fr
+To: anthony.phim@gmail.com
+Message-ID: <5de00149ec4cb_78e72aedbc149a2c67f7@anthony-UX510UX.mail>
+Subject: Merci pour votre commande !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de00149eb2eb_78e72aedbc149a2c663e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de00149eb2eb_78e72aedbc149a2c663e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut username et merci pour ton achat !=0D
+    =0D
+Tu as pass=C3=A9 une commande (n=C2=B0 30) chez www.chaton-mignon.fr en u=
+tilisant l'e-mail suivant : anthony.phim@gmail.com.=0D
+=0D
+Voici les photos que tu as achet=C3=A9 au prix total de 82.0 =E2=82=AC:=0D=
+
+=0D
+    <!--<img src=3D"["https://images.pexels.com/photos/96938/pexels-photo=
+-96938.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940", "http=
+s://images.pexels.com/photos/1444321/pexels-photo-1444321.jpeg?auto=3Dcom=
+press&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940"]" alt=3D"petit chaton si mig=
+non" style=3D"width:40%; height: auto">-->=0D
+<img src=3D"https://images.pexels.com/photos/96938/pexels-photo-96938.jpe=
+g?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D"petit cha=
+ton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+<img src=3D"https://images.pexels.com/photos/1444321/pexels-photo-1444321=
+.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D"petit=
+ chaton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+        =0D
+Mignon n'est-ce pas ?=0D
+      =0D
+Pour acc=C3=A9der =C3=A0 ton espace client et commander de nouvelles phot=
+os, connecte-toi via : www.chaton-mignon.fr/login.=0D
+    =0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+
+----==_mimepart_5de00149eb2eb_78e72aedbc149a2c663e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                       username=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Merci pour ton achat =F0=9F=A4=97=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                <p>=0D
+                  Tu as pass=C3=A9 une commande (n=C2=B0 30) chez www.cha=
+ton-mignon.fr en utilisant l'e-mail suivant : anthony.phim@gmail.com.=0D
+                </p>=0D
+                <h3>=0D
+                Voici les photos que tu as achet=C3=A9 au prix total de 8=
+2.0 =E2=82=AC:=0D
+                  </h3>=0D
+                <br>=0D
+                <br>=0D
+                <!--<img src=3D"[&quot;https://images.pexels.com/photos/9=
+6938/pexels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D=
+2&amp;h=3D650&amp;w=3D940&quot;, &quot;https://images.pexels.com/photos/1=
+444321/pexels-photo-1444321.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dp=
+r=3D2&amp;h=3D650&amp;w=3D940&quot;]" alt=3D"petit chaton si mignon" styl=
+e=3D"width:40%; height: auto">-->=0D
+                      <img src=3D"https://images.pexels.com/photos/96938/=
+pexels-photo-96938.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&amp=
+;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:40%; =
+height: auto">=0D
+                      <br>=0D
+                      <img src=3D"https://images.pexels.com/photos/144432=
+1/pexels-photo-1444321.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2=
+&amp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:4=
+0%; height: auto">=0D
+                      <br>=0D
+                <br>=0D
+                <h4>=0D
+                  Mignon n'est-ce pas ?=0D
+                  <br>=0D
+                  Pour acc=C3=A9der =C3=A0 ton espace client et commander=
+ de nouvelles photos, connecte-toi via : www.chaton-mignon.fr/login.=0D
+                <br>=0D
+                </h4>=0D
+                <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D=
+
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un =
+email avec la photo de chaton, et un wording pour lui dire merci toussa. =
+-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de00149eb2eb_78e72aedbc149a2c663e--
+
+  [1m[36mCartItem Load (4.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 28]]
+  ↳ app/controllers/order_controller.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (4.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (4.5ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 29], ["item_id", 8]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (5.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 29], ["item_id", 5]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Load (2.0ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 28]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (1.2ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 34]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 35]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCart Destroy (1.0ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 28]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:67
+Redirected to http://localhost:3000/
+Completed 302 Found in 2370ms (ActiveRecord: 79.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:18:02 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 111ms (Views: 106.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:19:06 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 18:19:10 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mCart Create (0.9ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 17:19:10.507808"], ["updated_at", "2019-11-28 17:19:10.507808"]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 29]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (2.4ms)
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 109ms (Views: 69.3ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/items" for ::1 at 2019-11-28 18:19:12 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  Rendered items/index.html.erb within layouts/application (78.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 160ms (Views: 142.1ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/items/15" for ::1 at 2019-11-28 18:19:14 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 15]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 2.2ms)
+
+
+Started PUT "/mon_panier/15" for ::1 at 2019-11-28 18:19:16 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"goa2WljZY7tfklNnAlRt/d+zdlRlflXlPsV+4mmEeniQXXKvZR+SGYpEMgzI0smxGD3Yi1CENv91qAakB2+KBg==", "item"=>{"id"=>"15"}, "id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 29], ["item_id", 15]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:19:16 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 88ms (Views: 81.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items/4" for ::1 at 2019-11-28 18:19:18 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:33
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:7
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_items" ON "categories"."id" = "category_items"."category_id" WHERE "category_items"."item_id" = $1[0m  [["item_id", 4]]
+  ↳ app/views/items/show.html.erb:23
+  Rendered items/show.html.erb within layouts/application (29.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 125ms (Views: 112.8ms | ActiveRecord: 4.6ms)
+
+
+Started PUT "/mon_panier/4" for ::1 at 2019-11-28 18:19:20 +0100
+Processing by CartsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVC8fDM59zxrMnStsQdUwFz2FTOcFP9k/A6IO8wZj5xzi3iJDv8Gnr7kFcZ7gfCMm3i77KnunH63Y/B9ovJ/4g==", "item"=>{"id"=>"4"}, "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("cart_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["cart_id", 29], ["item_id", 4]]
+  ↳ app/controllers/carts_controller.rb:24
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:19:20 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 18:19:21 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:57
+  [1m[36mItem Load (2.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 29]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/carts/index.html.erb:34
+  Rendered carts/index.html.erb within layouts/application (27.8ms)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 146ms (Views: 112.6ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/order" for ::1 at 2019-11-28 18:19:54 +0100
+Processing by OrderController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xXIsG8Hukq5yH3+/XOJMxXfwnRwVM5Vtyk+10P0mmSHXqeju/ChjDKfJHtSWZOiJsH4zwyDJ9neBIs2Wk81pXw==", "stripeToken"=>"tok_1FjqeiIQEd8oNedTjpR9kUrR", "stripeTokenType"=>"card", "stripeEmail"=>"ant@ant.ant"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:80
+  [1m[36mCart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:80
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:83
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 29]]
+  ↳ app/controllers/order_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Create (1.6ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 17:19:56.207071"], ["updated_at", "2019-11-28 17:19:56.207071"]]
+  ↳ app/controllers/order_controller.rb:35
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:35
+  [1m[36mOrder Load (5.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:56
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:58
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:59
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:60
+  [1m[36mCartItem Load (4.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 1]]
+  ↳ app/mailers/order_mailer.rb:66
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:79
+  [1m[36mCACHE Item Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  [1m[36mCACHE Item Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:90
+  Rendering order_mailer/order_send_admin_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.html.erb within layouts/mailer (3.4ms)
+  Rendering order_mailer/order_send_admin_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_admin_email.text.erb within layouts/mailer (1.4ms)
+OrderMailer#order_send_admin_email: processed outbound mail in 90.3ms
+Sent mail to anthonyph34000@gmail.com (48.9ms)
+Date: Thu, 28 Nov 2019 18:19:56 +0100
+From: no-reply@chaton-mignon.fr
+To: anthonyph34000@gmail.com
+Message-ID: <5de001bc4d7d3_78e72aedbc1498886920@anthony-UX510UX.mail>
+Subject: =?UTF-8?Q?Une_nouvelle_commande_a_=C3=A9t=C3=A9_pass=C3=A9e_!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de001bc4bb36_78e72aedbc149888684b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de001bc4bb36_78e72aedbc149888684b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+  Salut Admin une nouvelle commande a =C3=A9t=C3=A9 pass=C3=A9=0D
+    =0D
+  Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-mignon.fr avec =
+l'e-mail suivant : anthony.phim@gmail.com.=0D
+    =0D
+  Le client s'appelle username lastnameuser.=0D
+    =0D
+    =0D
+  le num=C3=A9ro de commande est : 31.=0D
+    =0D
+      =0D
+      Il a achet=C3=A9 les photos suivantes : n=C2=B0 [4, 15].=0D
+      =0D
+       <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D"width:25=
+%; height: auto">-->=0D
+          <img src=3D"https://images.pexels.com/photos/45170/kittens-cat-=
+cat-puppy-rush-45170.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=
+=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%; height: auto">=
+=0D
+          <img src=3D"https://images.pexels.com/photos/1359307/pexels-pho=
+to-1359307.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" al=
+t=3D"petit chaton si mignon" style=3D"width:25%; height: auto">=0D
+       =0D
+      au prix de : 56.0 =E2=82=AC.=0D
+    =0D
+=0D
+     Bonne journ=C3=A9e chef !=0D
+
+----==_mimepart_5de001bc4bb36_78e72aedbc149888684b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                      Admin !=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Une commande a =C3=A9t=C3=A9 pass=C3=A9 chez www.chaton-m=
+ignon.fr avec l'e-mail suivant : anthony.phim@gmail.com.=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                Le client s'appelle username lastnameuser (n=C2=B0 de com=
+mande : 31)=0D
+                <br>=0D
+                Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi =
+via : www.chaton-mignon.fr.=0D
+                <p>=0D
+                Il a achet=C3=A9 les photos suivantes : n=C2=B0 [4, 15].=0D=
+
+                </p>=0D
+                 <!--<img src=3D"" alt=3D"petit chaton si mignon" style=3D=
+"width:25%; height: auto">-->=0D
+                    <img src=3D"https://images.pexels.com/photos/45170/ki=
+ttens-cat-cat-puppy-rush-45170.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp=
+;dpr=3D2&amp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D=
+"width:25%; height: auto">=0D
+                    <img src=3D"https://images.pexels.com/photos/1359307/=
+pexels-photo-1359307.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2&a=
+mp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:25%=
+; height: auto">=0D
+                    <br><br>=0D
+                au prix de : 56.0 =E2=82=AC.=0D
+                <p>Bonne journ=C3=A9e chef !</p>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Il faut envoyer un email =C3=A0 l'administrateur du site (email d=C3=A9=
+cid=C3=A9 arbitrairement en attendant la classe "admin"), qui fait un r=C3=
+=A9capitulatif de la commande qui vient d'=C3=AAtre faite.-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de001bc4bb36_78e72aedbc149888684b--
+
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/mailers/order_mailer.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:10
+  [1m[36mCACHE CartItem Load (0.0ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" IN (SELECT "carts"."id" FROM "carts" WHERE "carts"."user_id" = $1)[0m  [["user_id", 1]]
+  ↳ app/mailers/order_mailer.rb:15
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:29
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/mailers/order_mailer.rb:40
+  Rendering order_mailer/order_send_email.html.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.html.erb within layouts/mailer (1.6ms)
+  Rendering order_mailer/order_send_email.text.erb within layouts/mailer
+  Rendered order_mailer/order_send_email.text.erb within layouts/mailer (1.1ms)
+OrderMailer#order_send_email: processed outbound mail in 47.4ms
+Sent mail to anthony.phim@gmail.com (60.3ms)
+Date: Thu, 28 Nov 2019 18:19:56 +0100
+From: no-reply@chaton-mignon.fr
+To: anthony.phim@gmail.com
+Message-ID: <5de001bc65090_78e72aedbc149888712e@anthony-UX510UX.mail>
+Subject: Merci pour votre commande !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5de001bc64273_78e72aedbc1498887064";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5de001bc64273_78e72aedbc1498887064
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Salut username et merci pour ton achat !=0D
+    =0D
+Tu as pass=C3=A9 une commande (n=C2=B0 31) chez www.chaton-mignon.fr en u=
+tilisant l'e-mail suivant : anthony.phim@gmail.com.=0D
+=0D
+Voici les photos que tu as achet=C3=A9 au prix total de 56.0 =E2=82=AC:=0D=
+
+=0D
+    <!--<img src=3D"["https://images.pexels.com/photos/45170/kittens-cat-=
+cat-puppy-rush-45170.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=
+=3D940", "https://images.pexels.com/photos/1359307/pexels-photo-1359307.j=
+peg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940"]" alt=3D"petit=
+ chaton si mignon" style=3D"width:40%; height: auto">-->=0D
+<img src=3D"https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-=
+rush-45170.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" al=
+t=3D"petit chaton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+<img src=3D"https://images.pexels.com/photos/1359307/pexels-photo-1359307=
+.jpeg?auto=3Dcompress&cs=3Dtinysrgb&dpr=3D2&h=3D650&w=3D940" alt=3D"petit=
+ chaton si mignon" style=3D"width:40%; height: auto">=0D
+          =0D
+        =0D
+Mignon n'est-ce pas ?=0D
+      =0D
+Pour acc=C3=A9der =C3=A0 ton espace client et commander de nouvelles phot=
+os, connecte-toi via : www.chaton-mignon.fr/login.=0D
+    =0D
+=C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !=0D
+
+----==_mimepart_5de001bc64273_78e72aedbc1498887064
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+    <style type=3D"text/css">=0D
+  body {margin: 0; padding: 0; min-width: 100%!important;}=0D
+  img {height: auto;}=0D
+  .content {width: 100%; max-width: 600px;}=0D
+  .header {padding: 40px 30px 20px 30px;}=0D
+  .innerpadding {padding: 30px 30px 30px 30px;}=0D
+  .borderbottom {border-bottom: 1px solid #f2eeed;}=0D
+  .subhead {font-size: 15px; color: #AD7E79; font-family: sans-serif; let=
+ter-spacing: 10px;}=0D
+  .h1, .h2, .bodycopy {color: #AD7E79; font-family: sans-serif;}=0D
+  .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}=0D
+  .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weig=
+ht: bold;}=0D
+  .bodycopy {font-size: 16px; line-height: 22px;}=0D
+  .button {text-align: center; font-size: 18px; font-family: sans-serif; =
+font-weight: bold; padding: 0 30px 0 30px;}=0D
+  .button a {color: #ffffff; text-decoration: none;}=0D
+  .footer {padding: 20px 30px 15px 30px;}=0D
+  .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}=
+=0D
+  .footercopy a {color: #ffffff; text-decoration: underline;}=0D
+=0D
+  @media only screen and (max-width: 550px), screen and (max-device-width=
+: 550px) {=0D
+  body[yahoo] .hide {display: none!important;}=0D
+  body[yahoo] .buttonwrapper {background-color: transparent!important;}=0D=
+
+  body[yahoo] .button {padding: 0px!important;}=0D
+  body[yahoo] .button a {background-color: #EFE6EA; padding: 15px 15px 13=
+px!important;}=0D
+  body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10=
+px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!i=
+mportant; font-weight: bold;}=0D
+  }=0D
+=0D
+  /*@media only screen and (min-device-width: 601px) {=0D
+    .content {width: 600px !important;}=0D
+    .col425 {width: 425px!important;}=0D
+    .col380 {width: 380px!important;}=0D
+    }*/=0D
+=0D
+  </style>=0D
+</head>=0D
+=0D
+<body yahoo bgcolor=3D"#F4F2F2">=0D
+<table width=3D"100%" bgcolor=3D"#F4F2F2" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=0D
+<tr>=0D
+  <td>=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">=0D
+        <tr>=0D
+          <td>=0D
+    <![endif]-->=0D
+    <table bgcolor=3D"#ffffff" class=3D"content" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0">=0D
+      <tr>=0D
+        <td bgcolor=3D"#EFE6EA" class=3D"header">=0D
+          <table width=3D"70" align=3D"left" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"70" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/871/871975.svg" width=3D"70" height=3D"70" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+          <!--[if (gte mso 9)|(IE)]>=0D
+            <table width=3D"425" align=3D"left" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0">=0D
+              <tr>=0D
+                <td>=0D
+          <![endif]-->=0D
+          <table class=3D"col425" align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 425px;">=0D
+            <tr>=0D
+              <td height=3D"70">=0D
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">=0D
+                  <tr>=0D
+                    <td class=3D"subhead" style=3D"padding: 0 0 0 3px;">=0D=
+
+                      Salut=0D
+                    </td>=0D
+                  </tr>=0D
+                  <tr>=0D
+                    <td class=3D"h1" style=3D"padding: 5px 0 0 0;">=0D
+                       username=0D
+                    </td>=0D
+                  </tr>=0D
+                </table>=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D
+            <tr>=0D
+              <td class=3D"h2" style=3D"text-align:center;">=0D
+                Merci pour ton achat =F0=9F=A4=97=0D
+              </td>=0D
+            </tr>=0D
+            <tr>=0D
+              <td class=3D"bodycopy" style=3D"text-align:center;">=0D
+                <p>=0D
+                  Tu as pass=C3=A9 une commande (n=C2=B0 31) chez www.cha=
+ton-mignon.fr en utilisant l'e-mail suivant : anthony.phim@gmail.com.=0D
+                </p>=0D
+                <h3>=0D
+                Voici les photos que tu as achet=C3=A9 au prix total de 5=
+6.0 =E2=82=AC:=0D
+                  </h3>=0D
+                <br>=0D
+                <br>=0D
+                <!--<img src=3D"[&quot;https://images.pexels.com/photos/4=
+5170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=3Dcompress&amp;cs=3Dtinys=
+rgb&amp;dpr=3D2&amp;h=3D650&amp;w=3D940&quot;, &quot;https://images.pexel=
+s.com/photos/1359307/pexels-photo-1359307.jpeg?auto=3Dcompress&amp;cs=3Dt=
+inysrgb&amp;dpr=3D2&amp;h=3D650&amp;w=3D940&quot;]" alt=3D"petit chaton s=
+i mignon" style=3D"width:40%; height: auto">-->=0D
+                      <img src=3D"https://images.pexels.com/photos/45170/=
+kittens-cat-cat-puppy-rush-45170.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&a=
+mp;dpr=3D2&amp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D=
+"width:40%; height: auto">=0D
+                      <br>=0D
+                      <img src=3D"https://images.pexels.com/photos/135930=
+7/pexels-photo-1359307.jpeg?auto=3Dcompress&amp;cs=3Dtinysrgb&amp;dpr=3D2=
+&amp;h=3D650&amp;w=3D940" alt=3D"petit chaton si mignon" style=3D"width:4=
+0%; height: auto">=0D
+                      <br>=0D
+                <br>=0D
+                <h4>=0D
+                  Mignon n'est-ce pas ?=0D
+                  <br>=0D
+                  Pour acc=C3=A9der =C3=A0 ton espace client et commander=
+ de nouvelles photos, connecte-toi via : www.chaton-mignon.fr/login.=0D
+                <br>=0D
+                </h4>=0D
+                <p> =C3=80 tr=C3=A8s vite sur www.chaton-mignon.fr !</p>=0D=
+
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+      <tr>=0D
+        <td class=3D"innerpadding borderbottom">=0D
+          <table width=3D"115" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">=0D
+            <tr>=0D
+              <td height=3D"115" style=3D"padding: 0 20px 20px 0;">=0D
+                <img class=3D"fix" src=3D"https://image.flaticon.com/icon=
+s/svg/24/24674.svg" width=3D"115" height=3D"115" border=3D"0" alt=3D"" />=
+=0D
+              </td>=0D
+            </tr>=0D
+          </table>=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </td>=0D
+</tr>=0D
+</table>=0D
+</body>=0D
+</html>=0D
+<!--Quand un utilisateur passe une commande, le site doit lui envoyer un =
+email avec la photo de chaton, et un wording pour lui dire merci toussa. =
+-->=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5de001bc64273_78e72aedbc1498887064--
+
+  [1m[36mCartItem Load (3.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 29]]
+  ↳ app/controllers/order_controller.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (3.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (0.5ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 30], ["item_id", 15]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrder Load (5.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mItem Load (2.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[36mOrderItem Create (2.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 30], ["item_id", 4]]
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 29]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 36]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCartItem Destroy (1.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[36mCart Destroy (2.9ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = $1[0m  [["id", 29]]
+  ↳ app/controllers/order_controller.rb:67
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_controller.rb:67
+Redirected to http://localhost:3000/
+Completed 302 Found in 1584ms (ActiveRecord: 58.1ms)
+
+
+Started GET "/" for ::1 at 2019-11-28 18:19:56 +0100
+Processing by HomeController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT $1[0m  [["LIMIT", 7]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 138ms (Views: 117.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mon_panier" for ::1 at 2019-11-28 18:20:12 +0100
+Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mCart Create (1.1ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2019-11-28 17:20:12.637167"], ["updated_at", "2019-11-28 17:20:12.637167"]]
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carts_controller.rb:55
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" WHERE "cart_items"."cart_id" = $1[0m  [["cart_id", 30]]
+  ↳ app/controllers/carts_controller.rb:8
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 79ms (Views: 57.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/items" for ::1 at 2019-11-28 18:20:18 +0100
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Item"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/items/index.html.erb:21
+  Rendered items/index.html.erb within layouts/application (83.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:60
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 166ms (Views: 152.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-11-28 18:20:26 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/anthony/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered devise/shared/_error_messages.html.erb (0.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.9ms)
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "cart_items" ON "items"."id" = "cart_items"."item_id" INNER JOIN "carts" ON "cart_items"."cart_id" = "carts"."id" WHERE "carts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/layouts/application.html.erb:61
+Completed 200 OK in 86ms (Views: 73.4ms | ActiveRecord: 1.5ms)
+
+

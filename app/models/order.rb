@@ -1,9 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :order_items
-  has_many :items, through: :order_items  
-  before_create :bill_send
-  before_create :admin_send
+  has_many :order_items, dependent: :destroy
+  has_many :items, through: :order_items
 
   def admin_send
     OrderMailer.order_send_admin_email(self).deliver_now

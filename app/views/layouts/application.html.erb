@@ -6,8 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Source+Code+Pro&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>AtomicKitten</title>
+    <%= favicon_link_tag 'logo.png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -116,7 +118,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>A propos</h6>
-          <p class="text-justify">Vous êtes en manque d'amour? Commandez dès maintenant les photos de châton les plus mignonnes de votre région !</p>
+          <p class="text-justify">Vous êtes en manque d'amour? Commandez dès maintenant les photos de chaton les plus mignonnes de votre région !</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
@@ -126,7 +128,13 @@
             <li><a href="/contact">Contactez-nous</a></li>
           </ul>
         </div>
+      
+        <div class="col-xs-4">
+          <%= image_tag "footer.png" , :size => "160x180" %>
+        </div>
+
       </div>
+
       <hr>
       <div class="container">
        <div class="row">

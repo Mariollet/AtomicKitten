@@ -192,6 +192,10 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
+  bottom: 0px;
+  width: 100%;
+  position: inherit;
+
 }
 .site-footer hr
 {
@@ -352,6 +356,7 @@
 body {
   font-family: 'Didact Gothic', sans-serif;
   background-color: #E9E7E8;
+  height: 100%;
 }
 
 .container-fluid {

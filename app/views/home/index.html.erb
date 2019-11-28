@@ -1,12 +1,13 @@
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   <div class="jumbotron"style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.5) 100%), url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)"><br><br>
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <h1 class="display-3">Atomic Kitten</h1>
-          <p class="lead jumbo">Vous êtes en manque d'amour ?</p>
+          <h1 class="ml12">Atomic Kitten</h1>
           <hr class="my-4">
-          <p class="jumbo">Commandez dès maintenant les photos de chaton les plus mignonnes de votre région !</p><br>
+          <p class="lead jumbo">Vous êtes en manque d'amour ?</p><br>
+          <p class="jumbo">Commandez dès maintenant les photos de chatons les plus mignonnes de votre région !</p><br>
           <a class="btn btn-secondary btn-lg"  href="items" role="button" style="color:#DABECA;">Showroom</a>
         </div>
       </div>
@@ -16,13 +17,10 @@
   <section class="hero is-small is-light text-center">
     <div class="hero-body">
       <div class="container">
-        <h1 style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"> Gallerie :</h1>
+        <h1 style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"> Gallerie : <img height="50px" width="50px" src="https://image.flaticon.com/icons/svg/107/107973.svg"></h1>
       </div>
     </div>
   </section>
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
 
   <div class="container">
 
@@ -38,5 +36,29 @@
     </div>
 
   </div>
+
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml12');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml12 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+  }).add({
+    targets: '.ml12 .letter',
+    translateX: [0,-30],
+    opacity: [1,0],
+    easing: "easeInExpo",
+    duration: 1100,
+    delay: (el, i) => 100 + 30 * i
+  });
+</script>
 
 </body>

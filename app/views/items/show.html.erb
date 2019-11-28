@@ -19,15 +19,23 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Nom : <%= @item.title%></li>
           <li class="list-group-item">Prix : <%= @item.price%>€</li>
+            <%if @item.categories.length > 0 %>
+              <ul class="list-group-item">Catégories :
+                <% @item.categories.each do |category| %>
+                  <li class="list-group-item"><%= category.name%></li>
+                <% end %>
+              </ul>
+            <% end %>
           <li class="list-group-item"><%= form_for @item, url: :cart, html: { method: :put } do |f| %>
-            <div >
-              <%= f.hidden_field :'id' %>
-            </div><br>
-            <div class="actions">
-              <button type="submit" class="btn btn-outline-dark">
-              <img style="height: 40px; width: 40px" src='https://image.flaticon.com/icons/svg/982/982526.svg'><a> | Ajouter au panier</a>
-              </button>
-            </div>
+              <div >
+                <%= f.hidden_field :'id' %>
+              </div><br>
+              <div class="actions">
+                <button type="submit" class="btn btn-outline-dark">
+                <img style="height: 40px; width: 40px" src='https://image.flaticon.com/icons/svg/982/982526.svg'><a> | Ajouter au panier</a>
+                </button>
+              </div>
+            </li>
             <% end %>
         </ul>
       </div>

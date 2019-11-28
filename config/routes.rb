@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :items
       resources :orders
       resources :order_items
+      resources :categories
+      resources :category_items
 
       root to: "users#index"
     end

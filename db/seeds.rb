@@ -6,18 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-OrderItem.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('order_items')
-CartItem.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('cart_items') 
-Cart.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('carts')
 Item.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('items') 
-Order.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
+Category.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('categories')
+CategoryItem.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('category_items')
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
+Cart.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('carts')
+CartItem.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('cart_items') 
+Order.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('orders') 
+OrderItem.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('order_items')
 
 
 kitten_pictures_url = ["https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg", 
@@ -48,12 +52,15 @@ require 'faker'
 
 ################# User creation #######################
 user = User.new(
-  first_name: "username", 
-  last_name: "lastnameuser", 
-  email:"anthony.phim@gmail.com", 
-  password:"AZERTY93",
+  first_name: "admin", 
+  last_name: "admin", 
+  email: "anthony.phim@gmail.com", 
+  password: "123456",
+  is_admin: true
 )
 user.save
+
+puts "admin created"
 
 (0..15).each do |i|
   username = Faker::GreekPhilosophers.name
@@ -133,5 +140,31 @@ end
 
  puts "order_item seed n°#{i}"
  #sleep(rand(5..10))
+end
+
+################# Category ##########################
+
+(1..10).each do |i|
+  category = Category.new(
+ name: Faker::Book.title,
+ )
+
+ category.save
+
+ puts "category seed n°#{i}"
+end
+
+
+################# Category items ##########################
+
+(0..15).each do |i|
+  category_items = CategoryItem.new(
+ category_id: rand(1..10),
+ item_id: i,
+ )
+
+ category_items.save
+
+ puts "category_item seed n°#{i}"
 end
 

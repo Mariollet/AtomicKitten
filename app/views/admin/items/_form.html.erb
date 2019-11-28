@@ -38,18 +38,6 @@ and renders all form fields for a resource's editable attributes.
       <%= render_field attribute, f: f %>
     </div>
   <% end -%>
-
-  <div class="field-unit">
-    <label> Image </label>
-    <%= f.file_field :image, size: '20x2', class: 'form-control align-middle', placeholder: "Upload une image" %>
-  </div>
-
-  <div class="field-unit__label">
-    <label> Image 2 </label>
-  </div>
-  <div class="field-unit__field">
-    <%= f.file_field :image, multiple: true %>
-  </div>
         
   <div class="form-actions">
     <%= f.submit %>

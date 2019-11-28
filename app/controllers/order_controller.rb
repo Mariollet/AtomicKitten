@@ -65,7 +65,10 @@ class OrderController < ApplicationController
       end
 
     cart.destroy
-    redirect_to order_index_path  
+
+    flash[:notice] = "Merci de votre achat, un mail vous a était envoyé, à bientôt !" 
+    redirect_to order_index_path    
+
     
     rescue Stripe::CardError => e
     flash[:error] = e.message

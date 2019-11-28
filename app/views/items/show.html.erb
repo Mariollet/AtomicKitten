@@ -1,4 +1,4 @@
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 <div class="container">
   <div class="card shadow-lg">
     <div class="row">
@@ -14,7 +14,7 @@
         <h1 class=" text-center" style="color:#635255; font-size:30px;font-family: 'Hammersmith One', sans-serif;"><%= @item.title%></h1>
         <hr>
         <div class="card-body">
-          <p><%= @item.description%></p>
+          <p><img height="40px" width="40px" src="https://image.flaticon.com/icons/svg/107/107979.svg"><br><%= @item.description%></p>
         </div><br>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Nom : <%= @item.title%></li>
@@ -30,7 +30,6 @@
               </li>
             <% end %>
 
-
           <li class="list-group-item"><%= form_for @item, url: :cart, html: { method: :put } do |f| %>
               <div >
                 <%= f.hidden_field :'id' %>
@@ -39,11 +38,14 @@
                 <button type="submit" class="btn btn-outline-dark">
                 <img style="height: 40px; width: 40px" src='https://image.flaticon.com/icons/svg/982/982526.svg'><a> | Ajouter au panier</a>
                 </button>
-              </div>
+              </div><br>
+              <a href="/items" class="button is-dark is-outlined"><i class="fa fa-angle-left"></i>&nbsp;Continuer à shopper</a>
             </li>
             <% end %>
+
         </ul>
       </div>
     </div>
   </div>
-</div><br><br>
+</div>
+<br><br><br>

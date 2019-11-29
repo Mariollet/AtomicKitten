@@ -1,9 +1,69 @@
-<br><br><br><br><br><br><br><br>
-
+<br><br><br><br><br>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
-
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="jumbotron3 jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" style="color:#51344D;">Mes commandes</h1>
+  </div>
+</div>
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    <div class="notice text-center"><%= flash[:notice] %></div>
+  </div>
+  <%end %>
+<br><br>
 
-<h2>Commande passée</h2>
+<div class="container">
+<% i=1 %>
+<% @orders.each do |order| %>
+	<table id="order" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
+            <thead>
+            
+						<tr>
+							<th style="width:50%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Commande n°<%=i%></th>
+							<th style="width:10%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Prix</th>
+						</tr>
+					</thead>
+					<tbody>
+            <tr>
+            <% order.items.each do |item| %>
+							<td data-th="Product">
+								<div class="row">
+                <% if item.image.attached?%>
+                <div class="col-sm-2 hidden-xs"><%= image_tag item.image, alt: 'Card image' %></div>
+              <% else %>
+                <div class="col-sm-2 hidden-xs"><%= image_tag(item.image_url)%></div>
+              <% end %>
+									<div class="col-sm-10">
+										<h4 class="nomargin"><%=item.title%></h4>
+										<p></p>
+									</div>
+								</div>
+              </td>
+              <td data-th="Price"><%= item.price%> €</td>
+						</tr>
+            <div class="go-back" style="display:flex;justify-content:center;">
+            </div>
+          </tbody>
+          
+          <% i= i +1 %>
+          <%end%>
+          
+          
+          <tfoot>
+          <tr>
+          <td class="hidden-xs  "><strong>Total: <%= order.items.map {|item| item.price}.inject(0) {|sum, price| sum+price }%> €</strong></td>
+          
+    <%end%>
+				</tfoot>
+			</table>
+    </div>
+  </body>
+</html>
+
+
+
+

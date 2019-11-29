@@ -65,8 +65,10 @@ class OrderController < ApplicationController
       end
 
     cart.destroy
+
     flash[:notice] = "Merci de votre achat, un mail vous a était envoyé, à bientôt !" 
-    redirect_to "/"  
+    redirect_to order_index_path    
+
     
     rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -76,6 +78,24 @@ class OrderController < ApplicationController
 
   end
 
+  def index
+    
+    @orders = []
+    
+    Order.all.each do |order|
+      if (order.user_id == current_user.id)
+      @orders << order
+      end
+    end  
+
+    @order= Order.find_by(user_id: current_user.id)
+    
+   
+
+    
+    
+  end
+
   def set_cart
 
     unless Cart.exists?(user_id: current_user.id)
@@ -83,6 +103,6 @@ class OrderController < ApplicationController
     else
       @cart = Cart.find_by(user_id: current_user.id)
     end
-
+    
   end
 end

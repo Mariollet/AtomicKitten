@@ -11,4 +11,5 @@ class Order < ApplicationRecord
     OrderMailer.order_send_email(self).deliver_now
   end
 
+ 
 end

@@ -9,16 +9,16 @@
     <h1 class="display-4" style="color:#51344D;">Mon panier</h1>
   </div>
 </div>
-<br><hr><br><br><br><br>
+<br><hr><br><br>
 
 <div class="container">
 	<table id="cart" class="table table-hover table-condensed"  style="background-color:#F4F2F2; border-radiux:9px;">
     				<thead>
 						<tr>
-							<th style="width:85%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Produits</th>
-							<th style="width:5%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Prix</th>
+							<th style="width:80%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Produits</th>
+							<th style="width:7%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Prix HT</th>
 							<th style="width:0%; color:#635255; font-family: 'Hammersmith One', sans-serif;"></th>
-							<th style="width:15%; color:#635255; font-family: 'Hammersmith One', sans-serif;" class="text-center">Sous-total</th>
+							<th style="width:15%; color:#635255; font-family: 'Hammersmith One', sans-serif;" class="text-center">Prix TTC</th>
 							<th style="width:10%; color:#635255; font-family: 'Hammersmith One', sans-serif;">Supprimer</th>
 						</tr>
 					</thead>
@@ -32,18 +32,18 @@
 									<% else %>
 										<div class="col-sm-2 hidden-xs"><%= image_tag(item.image_url)%></div>
 									<% end %>
-									<div class="col-sm-10">
-										<h4 class="nomargin"><%= item.title %></h4>
+									<div class="col-sm-10"><br>
+										<a class="nomargin title is-5"><%= item.title %></a>
 										<p><%= item.description %></p>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price"><%= item.price %>€</td>
+							<td data-th="Price"><br><%= item.price %>€</td>
 							<td data-th="Quantity">
 							</td>
-							<td data-th="Subtotal" class="text-center"><%= item.price %>€</td>
+							<td data-th="Subtotal" class="text-center"><br><%= item.price %>€</td>
 							<td class="actions" data-th="">
-							<%= button_to "Supprimer", {:controller => :carts,:action => 'destroy', :id => @cart.id,:item_id => item.id },:method => :delete, :class => 'button is-danger is-outlined is-small is-rounded' %>
+							<br><%= button_to "Supprimer", {:controller => :carts,:action => 'destroy', :id => @cart.id,:item_id => item.id },:method => :delete, :class => 'button is-danger is-outlined is-small is-rounded' %>
 
 							</td>
 						</tr>
@@ -78,4 +78,9 @@
 						</tr>
 					</tfoot>
 				</table>
-</div><br><br><br><br><br>
+</div><br><br><br><br>
+<% if @cart.items.length < 1 %>
+<br><br><br><br><br><br><br><br>
+<% elsif @cart.items.length < 2 %>
+<br><br><br><br>
+<%end%>

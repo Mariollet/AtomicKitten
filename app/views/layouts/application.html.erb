@@ -551,7 +551,9 @@
         <div class="navbar-item has-dropdown is-hoverable move">
           <a class="cart" href="<%= carts_path %>">
             <img class="navbar-brand move" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
-            <span class="notif"><%= current_user.items.length %></span>
+            <% if user_signed_in? && current_user.items.length > 0 %>
+              <span class="notif"><%= current_user.items.length %></span>
+            <% end %>
           </a>
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>

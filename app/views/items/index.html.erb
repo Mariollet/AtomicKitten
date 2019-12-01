@@ -29,7 +29,7 @@
   <div class="card-columns">
 
     <% @items.each do |item|%>
-      <div class="card h-60 shadow-lg animated flipInX ">
+      <div class="card h-60 shadow-lg animated flipInX">
         <div class="card-body" style="background-color:#E2E0E0;">
           <h1 class="card-title text-center" style="color:#635255; font-size:17px;font-family: 'Hammersmith One', sans-serif;"><em><strong><%= item.title %></strong></em></h1>
           <a href="<%= item_path(item.id) %>" class="d-block mb-4 h-100">

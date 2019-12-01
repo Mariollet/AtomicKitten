@@ -477,6 +477,10 @@
   table#cart tfoot td .btn{display:block;}
   }
   
+  .move:hover {
+    transform: scale(1.05);
+  }
+
   .cart {
     margin-left: 5px;
   }
@@ -489,6 +493,16 @@
     margin-top: -10px;
   }
 
+  .notif {
+    position: absolute;
+    top: 2px;
+    right: 22px;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 50%;
+    padding:  1px 6px;
+  }
+
     </style>
 
   </head>
@@ -497,7 +511,7 @@
 
   <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/" style="text-decoration:none">
+      <a class="navbar-item move" href="/" style="text-decoration:none">
       <img height="40px" width="40px" src="https://image.flaticon.com/icons/svg/107/107979.svg">
         <strong><h1>ATOMIC KITTEN</h1></strong>
       <a class="navbar-item">
@@ -508,24 +522,24 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
 
-          <a class="navbar-item" href="/items" style="color:inherit;text-decoration:none;">
+          <a class="navbar-item move" href="/items" style="color:inherit;text-decoration:none;">
             Showroom
           </a>
 
-          <a class="navbar-item" href="https://www.la-spa.fr/adoption-chat" style="color:inherit;text-decoration:none;" target="#_blank">
+          <a class="navbar-item move" href="https://www.la-spa.fr/adoption-chat" style="color:inherit;text-decoration:none;" target="#_blank">
           Adoptez un chat
           </a>
 
-        <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-item has-dropdown is-hoverable move">
           <a class="navbar-item">
             A propos
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item drop" href="/team" style="text-decoration:none;">
+            <a class="navbar-item drop move" href="/team" style="text-decoration:none;">
               Qui sommes-nous?
             </a>
-            <a class="navbar-item drop" href="/contact" style="text-decoration:none;">
+            <a class="navbar-item drop move" href="/contact" style="text-decoration:none;">
               Contactez-nous
             </a>
           </div>
@@ -534,9 +548,10 @@
 
       <div class="navbar-end">
 
-        <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-item has-dropdown is-hoverable move">
           <a class="cart" href="<%= carts_path %>">
-            <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
+            <img class="navbar-brand move" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/982/982529.svg">
+            <span class="notif"><%= current_user.items.length %></span>
           </a>
           <div class="navbar-dropdown is-right">
             <% if user_signed_in? %>
@@ -551,7 +566,7 @@
                   </div></a>
                   <hr class="dropdown-divider">
                 <% end %>
-               <a class="navbar-item drop title is-6 cart-1" href="<%= carts_path %>">Voir le panier :
+               <a class="navbar-item drop title is-6 cart-1 move" href="<%= carts_path %>">Voir le panier :
                <img class="navbar-brand shop" height="35px" width="35px" src="https://image.flaticon.com/icons/svg/897/897295.svg">
                </a>
               <% end %>
@@ -563,35 +578,35 @@
 
           <% if user_signed_in? %>
 
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item has-dropdown is-hoverable move">
 
             <a class="avatar">
-              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/145/145842.svg">
+              <img class="navbar-brand move" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/145/145842.svg">
             </a>
 
             <div class="navbar-dropdown is-right">
               
-              <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Mon profil", edit_user_registration_path %> </a>
-              <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Mes commandes", order_index_path %> </a>
+              <a class="navbar-item drop move" style="text-decoration:none;" <%= link_to "Mon profil", edit_user_registration_path %> </a>
+              <a class="navbar-item drop move" style="text-decoration:none;" <%= link_to "Mes commandes", order_index_path %> </a>
                 <% if current_user.is_admin %>
-                  <a class="navbar-item drop" style="text-decoration:none;" <%= link_to "Espace Admin", admin_root_path %></a>
+                  <a class="navbar-item drop move" style="text-decoration:none;" <%= link_to "Espace Admin", admin_root_path %></a>
                 <% end %>
-              <a class="navbar-item drop" style="text-decoration:none;" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
+              <a class="navbar-item drop move" style="text-decoration:none;" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
             </div>
 
           </div>
 
           <% else %>
 
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item has-dropdown is-hoverable move">
 
             <a class="avatar">
-              <img class="navbar-brand" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
+              <img class="navbar-brand move" height="40px" width="40px" src="https://image.flaticon.com/icons/svg/1177/1177568.svg">
             </a>
 
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item drop" style="text-decoration:none;"<%= link_to "Se connecter", new_user_session_path %></a>
-              <a class="navbar-item drop" style="text-decoration:none;"<%= link_to "S'inscrire", new_user_registration_path %></a>
+              <a class="navbar-item drop move" style="text-decoration:none;"<%= link_to "Se connecter", new_user_session_path %></a>
+              <a class="navbar-item drop move" style="text-decoration:none;"<%= link_to "S'inscrire", new_user_registration_path %></a>
             </div>
 
           </div>
